@@ -20,10 +20,6 @@
     "SGMP_MAP_CACHE_WIDGET_PREFIX" : "sgmp_cache_widget_map_",
     "SGMP_MAP_CACHE_WIDGET_TIME_PREFIX" : "sgmp_cache_time_widget_map_",
 
-    "SGMP_DB_GEOMASHUP_DATA_CACHE" : "sgmp_cache_mashup_map",
-    "SGMP_DB_GEOMASHUP_DATA_CACHE_TIME" : "sgmp_cache_time_mashup_map",
-
-
     "SGMP_AJAX_CACHE_MAP_ACTION" : "sgmp_ajax_cache_map_action",
     "SGMP_TIMESTAMP" : "timestamp",
     "SGMP_PERSISTED_SHORTCODES" : "sgmp_persisted_shortcodes",
