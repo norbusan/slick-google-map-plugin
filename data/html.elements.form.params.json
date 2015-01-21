@@ -1,0 +1,352 @@
+[
+    {
+        "backendFunctionNameSuffix": "input",
+        "cssClasses": "widefat",
+        "dbParameterId": "title",
+        "dbParameterName": "title",
+        "htmlLabelValue": "Title",
+        "inlineCss": "width: 98% !important;",
+        "templateTokenNameSuffix": "title"
+    },
+    {
+        "backendFunctionNameSuffix": "input",
+        "cssClasses": "widefat notshortcodeitem",
+        "dbParameterId": "shortcode-title",
+        "dbParameterName": "shortcode-title",
+        "htmlLabelValue": "Title (unique per sh.code)",
+        "inlineCss": "width: 98% !important;",
+        "templateTokenNameSuffix": "shortcodetitle"
+    },
+    {
+        "backendFunctionNameSuffix": "textarea",
+        "cssClasses": "sgmp-styles-textarea",
+        "dbParameterId": "styles",
+        "dbParameterName": "styles",
+        "htmlLabelValue": "",
+        "inlineCss": "",
+        "templateTokenNameSuffix": "styles"
+    },
+    {
+        "backendFunctionNameSuffix": "select",
+        "cssClasses": "widefat",
+        "dbParameterId": "mapalign",
+        "dbParameterName": "mapalign",
+        "htmlLabelValue": "Alignment",
+        "htmlSelectOptionsKey": "map_aligns",
+        "templateTokenNameSuffix": "mapalign"
+    },
+    {
+        "backendFunctionNameSuffix": "input",
+        "cssClasses": "widefat text-field",
+        "dbParameterId": "width",
+        "dbParameterName": "width",
+        "dbParameterValue": "350",
+        "htmlLabelValue": "Width (px OR %)",
+        "templateTokenNameSuffix": "width"
+    },
+    {
+        "backendFunctionNameSuffix": "input",
+        "cssClasses": "widefat text-field",
+        "dbParameterId": "height",
+        "dbParameterName": "height",
+        "dbParameterValue": "350",
+        "htmlLabelValue": "Height (px ONLY)",
+        "templateTokenNameSuffix": "height"
+    },
+    {
+        "backendFunctionNameSuffix": "input",
+        "cssClasses": "widefat text-field",
+        "dbParameterId": "zoom",
+        "dbParameterName": "zoom",
+        "dbParameterValue": "12",
+        "htmlLabelValue": "Zoom",
+        "templateTokenNameSuffix": "zoom"
+    },
+    {
+        "backendFunctionNameSuffix": "select",
+        "dbParameterId": "maptype",
+        "dbParameterName": "maptype",
+        "htmlLabelValue": "Map type",
+        "htmlSelectOptionsKey": "map_types",
+        "templateTokenNameSuffix": "maptype"
+    },
+    {
+        "backendFunctionNameSuffix": "select",
+        "dbParameterId": "directionhint",
+        "dbParameterName": "directionhint",
+        "dbParameterValue": "false",
+        "htmlLabelValue": "Direction Hint",
+        "htmlSelectOptionsKey": "enable_disable",
+        "templateTokenNameSuffix": "directionhint"
+    },
+    {
+        "backendFunctionNameSuffix": "select",
+        "dbParameterId": "language",
+        "dbParameterName": "language",
+        "htmlLabelValue": "Map Language",
+        "htmlSelectOptionsKey": "languages",
+        "templateTokenNameSuffix": "language"
+    },
+    {
+        "backendFunctionNameSuffix": "select",
+        "dbParameterId": "m_aptypecontrol",
+        "dbParameterName": "m_aptypecontrol",
+        "htmlLabelValue": "MapType",
+        "htmlSelectOptionsKey": "show_hide",
+        "templateTokenNameSuffix": "m_aptypecontrol"
+    },
+    {
+        "backendFunctionNameSuffix": "select",
+        "dbParameterId": "pancontrol",
+        "dbParameterName": "pancontrol",
+        "htmlLabelValue": "Pan",
+        "htmlSelectOptionsKey": "show_hide",
+        "templateTokenNameSuffix": "pancontrol"
+    },
+    {
+        "backendFunctionNameSuffix": "select",
+        "dbParameterId": "z_oomcontrol",
+        "dbParameterName": "z_oomcontrol",
+        "htmlLabelValue": "Zoom",
+        "htmlSelectOptionsKey": "show_hide",
+        "templateTokenNameSuffix": "z_oomcontrol"
+    },
+    {
+        "backendFunctionNameSuffix": "select",
+        "dbParameterId": "scalecontrol",
+        "dbParameterName": "scalecontrol",
+        "htmlLabelValue": "Scale",
+        "htmlSelectOptionsKey": "show_hide",
+        "templateTokenNameSuffix": "scalecontrol"
+    },
+    {
+        "backendFunctionNameSuffix": "select",
+        "dbParameterId": "streetviewcontrol",
+        "dbParameterName": "streetviewcontrol",
+        "htmlLabelValue": "StreetView",
+        "htmlSelectOptionsKey": "show_hide",
+        "templateTokenNameSuffix": "streetviewcontrol"
+    },
+    {
+        "backendFunctionNameSuffix": "select",
+        "dbParameterId": "scrollwheelcontrol",
+        "dbParameterName": "scrollwheelcontrol",
+        "dbParameterValue": "false",
+        "htmlLabelValue": "ScrollWheel",
+        "htmlSelectOptionsKey": "enable_disable",
+        "templateTokenNameSuffix": "scrollwheelcontrol"
+    },
+    {
+        "backendFunctionNameSuffix": "select",
+        "dbParameterId": "tiltfourtyfive",
+        "dbParameterName": "tiltfourtyfive",
+        "dbParameterValue": "false",
+        "htmlLabelValue": "Tilt 45 &deg;",
+        "htmlSelectOptionsKey": "enable_disable",
+        "templateTokenNameSuffix": "tiltfourtyfive"
+    },
+    {
+        "backendFunctionNameSuffix": "select",
+        "dbParameterId": "poweredby",
+        "dbParameterName": "poweredby",
+        "dbParameterValue": "false",
+        "htmlLabelValue": "'Powered By'",
+        "htmlSelectOptionsKey": "enable_disable",
+        "templateTokenNameSuffix": "poweredby"
+    },
+    {
+        "backendFunctionNameSuffix": "select",
+        "dbParameterId": "draggable",
+        "dbParameterName": "draggable",
+        "dbParameterValue": "true",
+        "htmlLabelValue": "Map Draggable",
+        "htmlSelectOptionsKey": "enable_disable",
+        "templateTokenNameSuffix": "draggable"
+    },
+    {
+        "backendFunctionNameSuffix": "select",
+        "dbParameterId": "showbike",
+        "dbParameterName": "showbike",
+        "dbParameterValue": "false",
+        "htmlLabelValue": "Bike Paths",
+        "htmlSelectOptionsKey": "show_hide",
+        "templateTokenNameSuffix": "showbike"
+    },
+    {
+        "backendFunctionNameSuffix": "select",
+        "dbParameterId": "showtraffic",
+        "dbParameterName": "showtraffic",
+        "dbParameterValue": "false",
+        "htmlLabelValue": "Traffic Info",
+        "htmlSelectOptionsKey": "show_hide",
+        "templateTokenNameSuffix": "showtraffic"
+    },
+    {
+        "backendFunctionNameSuffix": "select",
+        "dbParameterId": "distanceunits",
+        "dbParameterName": "distanceunits",
+        "dbParameterValue": "miles",
+        "htmlLabelValue": "Show Distance In",
+        "htmlSelectOptionsKey": "miles_km",
+        "templateTokenNameSuffix": "distanceunits"
+    },
+    {
+        "backendFunctionNameSuffix": "select",
+        "dbParameterId": "bubbleautopan",
+        "dbParameterName": "bubbleautopan",
+        "dbParameterValue": "true",
+        "htmlLabelValue": "Bubble Pan",
+        "htmlSelectOptionsKey": "enable_disable",
+        "templateTokenNameSuffix": "bubbleautopan"
+    },
+    {
+        "backendFunctionNameSuffix": "input",
+        "cssClasses": "widefat",
+        "dbParameterId": "kml",
+        "dbParameterName": "kml",
+        "htmlLabelValue": "URL",
+        "inlineCss": "width: 98% !important;",
+        "templateTokenNameSuffix": "kml"
+    },
+    {
+        "backendFunctionNameSuffix": "input",
+        "cssClasses": "button-primary add-additonal-location notshortcodeitem",
+        "dbParameterId": "addmarker",
+        "dbParameterName": "addmarker",
+        "dbParameterValue": "Add",
+        "htmlInputElementType": "button",
+        "htmlLabelValue": "",
+        "templateTokenNamePrefix": "button",
+        "templateTokenNameSuffix": "addmarker"
+    },
+    {
+        "backendFunctionNameSuffix": "input",
+        "cssClasses": "widefat marker-location-icon default-marker-icon notshortcodeitem",
+        "dbParameterId": "addmarkerinput",
+        "dbParameterName": "addmarkerinput",
+        "htmlLabelValue": "Location",
+        "templateTokenNameSuffix": "addmarkerinput"
+    },
+    {
+        "backendFunctionNameSuffix": "input",
+        "cssClasses": "marker-text-details marker-input-info-text marker-location-text notshortcodeitem",
+        "dbParameterId": "locationaddmarkerinput",
+        "dbParameterName": "locationaddmarkerinput",
+        "dbParameterValue": "Enter marker destination address or latitude,longitude here (required)",
+        "templateTokenNameSuffix": "locationaddmarkerinput"
+    },
+    {
+        "backendFunctionNameSuffix": "input",
+        "cssClasses": "marker-text-details marker-input-info-text marker-infobubble-text notshortcodeitem",
+        "dbParameterId": "bubbletextaddmarkerinput",
+        "dbParameterName": "bubbletextaddmarkerinput",
+        "dbParameterValue": "Enter marker info bubble text here (optional)",
+        "templateTokenNameSuffix": "bubbletextaddmarkerinput"
+    },
+    {
+        "backendFunctionNameSuffix": "custom",
+        "cssClasses": "custom-icons-placeholder",
+        "dbParameterId": "addmarkericons",
+        "dbParameterName": "addmarkericons",
+        "htmlLabelValue": "",
+        "templateTokenNameSuffix": "addmarkericons"
+    },
+    {
+        "backendFunctionNameSuffix": "input",
+        "cssClasses": "marker-clustering",
+        "dbParameterId": "enablemarkerclustering",
+        "dbParameterName": "enablemarkerclustering",
+        "htmlInputElementType": "checkbox",
+        "htmlLabelValue": "Some applications are required to display a large number of locations or markers. Naively plotting hundreds-to-thousands of markers on a map can quickly lead to a degraded user experience. Too many markers on the map cause both visual overload and sluggish interaction with the map. To overcome this poor performance, the information displayed on the map can be simplified by organizing markers into clusters.</b> ",
+        "templateTokenNameSuffix": "enablemarkerclustering"
+    },
+    {
+        "backendFunctionNameSuffix": "input",
+        "cssClasses": "gps-location-marker",
+        "dbParameterId": "enablegeolocationmarker",
+        "dbParameterName": "enablegeolocationmarker",
+        "htmlInputElementType": "checkbox",
+        "htmlLabelValue": "Enable end-user's current GPS location by adding a Geo marker to the map.<br /><b>This feature will function in browsers supporting the W3C Geolocation API.<br />This excludes Internet Explorer versions 8 and older.</b> ",
+        "templateTokenNameSuffix": "enablegeolocationmarker"
+    },
+    {
+        "backendFunctionNameSuffix": "input",
+        "cssClasses": "marker-geo-mashup",
+        "dbParameterId": "addmarkermashup",
+        "dbParameterName": "addmarkermashup",
+        "htmlInputElementType": "checkbox",
+        "htmlLabelValue": "Make this map a Marker Geo Mashup",
+        "templateTokenNameSuffix": "addmarkermashup"
+    },
+    {
+        "backendFunctionNameSuffix": "geobubble",
+        "cssClasses": "shortcodeitem marker-bubble-geo-mashup",
+        "dbParameterId": "addmarkermashupbubble",
+        "dbParameterName": "addmarkermashupbubble",
+        "htmlLabelValue": "",
+        "templateTokenNameSuffix": "addmarkermashupbubble"
+    },
+    {
+        "backendFunctionNameSuffix": "input",
+        "cssClasses": "notshortcodeitem",
+        "dbParameterId": "enablemarkerclusteringhidden",
+        "dbParameterName": "enablemarkerclusteringhidden",
+        "htmlInputElementType": "hidden",
+        "htmlLabelValue": "",
+        "templateTokenNamePrefix": "hidden",
+        "templateTokenNameSuffix": "enablemarkerclusteringhidden"
+    },
+    {
+        "backendFunctionNameSuffix": "input",
+        "cssClasses": "notshortcodeitem",
+        "dbParameterId": "enablegeolocationmarkerhidden",
+        "dbParameterName": "enablegeolocationmarkerhidden",
+        "htmlInputElementType": "hidden",
+        "htmlLabelValue": "",
+        "templateTokenNamePrefix": "hidden",
+        "templateTokenNameSuffix": "enablegeolocationmarkerhidden"
+    },
+    {
+        "backendFunctionNameSuffix": "input",
+        "cssClasses": "notshortcodeitem",
+        "dbParameterId": "addmarkermashuphidden",
+        "dbParameterName": "addmarkermashuphidden",
+        "htmlInputElementType": "hidden",
+        "htmlLabelValue": "",
+        "templateTokenNamePrefix": "hidden",
+        "templateTokenNameSuffix": "addmarkermashuphidden"
+    },
+    {
+        "backendFunctionNameSuffix": "list",
+        "cssClasses": "token-input-list",
+        "dbParameterId": "addmarkerlist",
+        "dbParameterName": "addmarkerlist",
+        "htmlLabelValue": "",
+        "templateTokenNameSuffix": "addmarkerlist"
+    },
+    {
+        "backendFunctionNameSuffix": "input",
+        "dbParameterId": "addmarkerlisthidden",
+        "dbParameterName": "addmarkerlisthidden",
+        "htmlInputElementType": "hidden",
+        "htmlLabelValue": "",
+        "templateTokenNameSuffix": "addmarkerlisthidden"
+    },
+    {
+        "backendFunctionNameSuffix": "select",
+        "dbParameterId": "showpanoramio",
+        "dbParameterName": "showpanoramio",
+        "dbParameterValue": "false",
+        "htmlLabelValue": "Panoramio",
+        "htmlSelectOptionsKey": "show_hide",
+        "templateTokenNameSuffix": "showpanoramio"
+    },
+    {
+        "backendFunctionNameSuffix": "input",
+        "cssClasses": "widefat text-field",
+        "dbParameterId": "panoramiouid",
+        "dbParameterName": "panoramiouid",
+        "htmlLabelValue": "User ID (Opt.)",
+        "templateTokenNameSuffix": "panoramiouid"
+    }
+]

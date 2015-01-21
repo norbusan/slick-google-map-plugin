@@ -1,0 +1,111 @@
+.powered-by {margin-bottom: 18px !important; min-height: 15px;  line-height: 17px; height: 15px; display: block !important; z-index: 99999999}
+.powered-by a {color: #444444; cursor: pointer; font-weight: normal !important; text-decoration: underline; font-size: 10px !important; font-family: Arial,Helvetica,sans-serif; }
+.sgmp-directions-hint {display: block !important}
+.direction-controls-placeholder #d_close{background-color:#eee;height:20px;position:absolute;right:12px;top:-5px;width:20px}
+.direction-controls-placeholder #d_close .close{margin:5px;opacity:0.7}
+.direction-controls-placeholder #d_close:hover{background-color:#ccc}
+.direction-controls-placeholder #d_close:hover .close{opacity:0.6}
+.direction-controls-placeholder .dir-tm{direction:ltr;margin:0 29px 0 44px}
+.direction-controls-placeholder .dir-tm .kd-button{min-width:50px;padding:0;width:50px}
+.direction-controls-placeholder .dir-tm .kd-button:focus{-moz-transition:all 0 ease 0;border-color:#4D90FE;outline:medium none;z-index:2}
+.direction-controls-placeholder .kd-buttonbar{overflow:hidden}
+.direction-controls-placeholder .kd-buttonbar .kd-button:hover{z-index:2}
+.direction-controls-placeholder .kd-buttonbar .kd-button:first-child{margin-left:0}
+.direction-controls-placeholder .kd-buttonbar .kd-button-right{border-radius:0 2px 2px 0;margin-left:5px}
+.direction-controls-placeholder .kd-buttonbar-right .kd-button:first-child{margin-right:0}
+.direction-controls-placeholder .kd-button{-moz-transition:all 0.218s ease 0;background-color:#F5F5F5;background-image:none;border:1px solid rgba(0, 0, 0, 0.1);border-radius:2px 2px 2px 2px;color:#444;display:inline-block;font-size:85%;font-weight:700;height:20px;line-height:20px;min-width:54px;overflow:visible;padding:10px 0 0 !important;text-align:center}
+.direction-controls-placeholder .kd-button.mini{height:17px;line-height:17px;min-width:0}
+.direction-controls-placeholder .kd-button:hover{-moz-transition:all 0 ease 0;background-color:#F8F8F8;background-image:none;border:1px solid #C6C6C6;box-shadow:0 1px 1px rgba(0, 0, 0, 0.1);color:#333;text-decoration:none}
+.direction-controls-placeholder .kd-button.selected{background-color:#DDD;background-image:none;border:1px solid #CCC;box-shadow:0 1px 2px rgba(0, 0, 0, 0.1) inset;color:#333}
+.direction-controls-placeholder .kd-button-submit{background-color:#4D90FE;background-image:none;border:1px solid #3079ED;color:#FFF}
+.direction-controls-placeholder .kd-button-submit:hover{background-color:#357AE8;background-image:none;border:1px solid #2F5BB7;color:#FFF}
+.direction-controls-placeholder .kd-button-share{background-color:#3D9400;background-image:none;border:1px solid #29691D;color:#FFF;text-shadow:0 1px rgba(0, 0, 0, 0.1)}
+.direction-controls-placeholder .kd-button-share:hover{background-color:#368200;background-image:none;border:1px solid #2D6200;color:#FFF;text-shadow:0 1px rgba(0, 0, 0, 0.3)}
+.direction-controls-placeholder .ml-loading-img{background-image:url("assets/css/images/my_location_button_spinner.gif");height:10px !important;width:10px !important}
+.direction-controls-placeholder .dir-tm .kd-button img{opacity:0.6;vertical-align:2px; display: inline !important}
+.direction-controls-placeholder .kd-button img{display:inline-block !important;margin:-3px 0 0;opacity:0.6;vertical-align:middle}
+.direction-controls-placeholder .dir-tm-d{background:url("assets/css/images/directions.png") no-repeat scroll 0 -96px transparent !important;height:12px !important;width:15px !important}
+.direction-controls-placeholder .dir-tm-w{background:url("assets/css/images/directions.png") no-repeat scroll 0 -489px transparent !important;height:16px !important;width:10px !important}
+.direction-controls-placeholder .close{background:url("assets/css/images/utilbuttons.png") no-repeat scroll -108px -26px transparent !important;height:10px !important;opacity:0.7;overflow:hidden;width:9px !important}
+img{-moz-user-select:none;border:0 none;margin:0;padding:0}
+.direction-controls-placeholder .dir-reverse{background:url("assets/css/images/directions.png") no-repeat scroll -10px -489px transparent !important;height:12px !important;margin-top:-15px !important;width:10px !important}
+.direction-controls-placeholder .dir-clear{clear:both;font-size:1px;height:0;line-height:0}
+.direction-controls-placeholder #dir_wps{margin-top:15px;position:relative}
+.direction-controls-placeholder .dir-wp{position:relative}
+.direction-controls-placeholder .dir-wp .dir-wp-hl{margin-left:8px;margin-right:26px;padding:3px 0}
+.direction-controls-placeholder .d-hl .dir-wp-hl{background:none repeat scroll 0 0 #FFF1A8;border-radius:3px 3px 3px 3px}
+.direction-controls-placeholder .dir-wp .dir-m{height:24px;left:15px;position:absolute;top:5px;width:24px}
+.direction-controls-placeholder .dir-input{margin:0 3px 0 35px;padding:1px 6px;text-align:left}
+.direction-controls-placeholder .dir-input .wp{line-height:16px !important;margin:-1px -6px;padding:3px 5px;width:95%}
+.direction-controls-placeholder .wp:focus + .ml-input{background-color:#999;border-color:#7F7F7F;border-radius:1px 1px 1px 1px;color:#FFF;width:auto}
+.direction-controls-placeholder .kd-input-text{background-color:#FFF;border-color:silver #D9D9D9 #D9D9D9;border-radius:1px 1px 1px 1px;border-right:1px solid #D9D9D9;border-style:solid;border-width:1px;padding-left:8px}
+.direction-controls-placeholder .ml-input{background-color:#FFF;border:1px solid #FFF;color:#666;font-size:85%;font-weight:700;height:15px;left:46px;line-height:15px;padding:1px 6px;position:absolute;top:6px}
+.direction-controls-placeholder .dir-ml-img{display:inline;height:9px;margin-right:3px;width:9px}
+.direction-controls-placeholder #dir_rev{cursor:pointer;padding:5px;position:absolute;right:8px;top:-20px;z-index:1}
+.direction-controls-placeholder #dir_rev .kd-button{height:16px;min-width:18px;padding:0;width:18px}
+.direction-controls-placeholder #dir_controls{padding-left: 45px;}
+.direction-controls-placeholder .d_links{font-size:100%;text-align:left}
+.direction-controls-placeholder .dir-sub-cntn{height:29px;position:relative;text-align:left}
+.direction-controls-placeholder #d_sub{height:22px;line-height:16px;margin:2px 0 0;padding:2px 5px !important;position:absolute;text-transform:uppercase}
+.direction-controls-placeholder #print_sub{height:22px;line-height:16px;margin:2px 0 0 125px;padding:2px 5px !important;position:absolute;text-transform:uppercase}
+.google-map-placeholder{border:1px solid #333}
+/** Override styles   */.google-map-placeholder img{background-color:transparent !important;margin:0 !important;max-height:none !important;max-width:none !important;padding:0 !important;visibility:inherit !important}
+.google-map-placeholder div{overflow: none !important}
+.google-map-placeholder div.gmnoprint{right:none !important}
+/** Override styles   */
+.google-map-placeholder-container{text-align: left; margin: 0 auto}
+.google-map-placeholder .bubble-content{font-family:Arial,Tahoma,Verdana !important;font-size:13px !important;line-height:160% !important;margin:0 !important;padding:0 !important}
+.google-map-placeholder .bubble-content h4{background:none !important;border:none !important;color:#111 !important;font-family:Arial,Tahoma,Verdana !important;font-size:14px !important;font-weight:700;line-height:120% !important;margin:0 0 8px !important;padding:0 !important;text-align:left !important}
+.google-map-placeholder .bubble-content p{color:#555;font-family:Arial,Tahoma,Verdana;font-size:13px;line-height:160%;margin:0;padding:0;text-align:left}
+.google-map-placeholder .bubble-content hr{background-color:#CCC !important;border:0 none !important;height:1px !important;margin-bottom:5px !important;margin-top:8px !important}
+.google-map-placeholder .bubble-content a{color:#1982D1 !important;font-weight:400;text-decoration:none !important}
+.google-map-placeholder .bubble-content p {color: #555 !important; margin-bottom:7px !important;}
+.google-map-placeholder .bubble-content p.custom-bubble-text{margin-bottom:5px !important;margin-top:5px !important}
+.google-map-placeholder .bubble-content p.geo-mashup-post-title a{font-size:15px !important;font-weight:700}
+.google-map-placeholder .bubble-content p.geo-mashup-post-excerpt{font-size:12px !important;line-height:130% !important;padding-left:6px !important;padding-right:0px !important}
+.direction-controls-placeholder{font-family:Arial,Tahoma,Verdana !important;font-size:12px !important;line-height:160% !important}
+.direction-controls-placeholder input{font-family:Arial,Tahoma,Verdana !important;font-size:12px !important;line-height:160% !important}
+.direction-controls-placeholder #d_options{color:#222 !important}
+.direction-controls-placeholder input[type="text"]{box-shadow:none !important;color:#000 !important}
+.direction-controls-placeholder .d_error{background-color:#FFC0CB !important}
+.direction-controls-placeholder img{max-width:100% !important}
+.rendered-directions-placeholder table{border:none !important;border-collapse:separate !important;border-spacing:0 !important;margin:0 0 10px !important}
+.rendered-directions-placeholder table td{border:none !important;font-family:Arial,Tahoma,Verdana !important;font-size:12px !important;line-height:160% !important;padding:2px 3px 4px 5px !important;vertical-align:middle !important}
+.rendered-directions-placeholder table.adp-directions td{border-top:1px solid #DDD !important}
+.rendered-directions-placeholder table td.adp-listheader{color:blue;font-family:Arial,Tahoma,Verdana !important;font-size:13px !important;font-weight:700}
+.rendered-directions-placeholder div.adp-legal{font-size:12px !important}
+.rendered-directions-placeholder div.warnbox-content{font-family:Arial,Tahoma,Verdana !important;font-size:13px !important}
+.rendered-directions-placeholder div.adp-summary span{color:blue !important;font-family:Arial,Tahoma,Verdana !important;font-size:13px !important;font-weight:700}
+#sgmp-popup-mask{background-color:#222;display:none;left:0;position:absolute;top:0;z-index:9000}
+.sgmp-popup-window{display:none;height:200px;left:0;padding:20px;position:fixed;top:0;width:440px;z-index:9999}
+.sgmp-popup-shortcode-dialog{-moz-border-radius:2px;-moz-box-shadow:0 4px 16px rgba(0, 0, 0, 0.4);-webkit-border-radius:2px;-webkit-box-shadow:0 4px 16px rgba(0, 0, 0, 0.4);background:none repeat scroll 0 0 #F9EDBE;border:1px solid #EBAE3D;border-radius:2px;box-shadow:0 4px 16px rgba(0, 0, 0, 0.4);color:#222;height:auto;min-height:200px;width:560px}
+.sgmp-popup-shortcode-dialog p{font-family:Arial,sans-serif !important;font-size:13px !important}
+.sgmp-popup-shortcode-dialog .dismiss-container{left:0;position:absolute;top:0;width:100%}
+.sgmp-popup-shortcode-dialog .dialog-dismiss{color:#7F7F7F !important;float:right;font:26px Arial,sans-serif;margin:6px 14px;text-decoration:none}
+.sgmp-popup-shortcode-dialog .close-dialog{-moz-transition:all 0.218s ease 0;-moz-user-select:none;background-color:#D14836;background-image:none;border:1px solid transparent;border-radius:2px 2px 2px 2px;color:#FFF;cursor:pointer;display:inline-block;font:bold 11px/27px "Arial","Helvetica",sans-serif;height:27px;min-width:54px;padding:0 8px;text-align:center;text-shadow:0 1px rgba(0, 0, 0, 0.1);text-transform:uppercase}
+.sgmp-popup-shortcode-dialog .close-dialog:hover{-moz-border-bottom-colors:none;-moz-border-image:none;-moz-border-left-colors:none;-moz-border-right-colors:none;-moz-border-top-colors:none;background-color:#C53727;background-image:none;border-color:#B0281A #B0281A #AF301F;border-style:solid;border-width:1px;box-shadow:0 1px 1px rgba(0, 0, 0, 0.2);color:#FFF}
+.attention{color:red;font-weight:700}
+object.sgmp-data-placeholder{background-color:transparent !important;border:none !important;height:0 !important;left:10000000px !important;line-height:0 !important;margin:0 !important;outline:medium none !important;padding:0 !important;position:absolute !important;top:100000px !important;width:0 !important;z-index:9999786 !important}
+.direction-controls-placeholder .d_close-wrapper,.direction-controls-placeholder .dir-rev-wrapper{height:0;line-height:0;position:relative}
+.direction-controls-placeholder .kd-buttonbar .kd-button,.direction-controls-placeholder .kd-buttonbar .kd-combobutton{float:left;margin:0 0 0 16px;position:relative;z-index:1}
+.direction-controls-placeholder .kd-buttonbar .kd-button.small,.direction-controls-placeholder .kd-button.small{min-width:34px;padding:0;width:34px}
+.direction-controls-placeholder .kd-buttonbar .kd-button.left,.direction-controls-placeholder .kd-button.left,.direction-controls-placeholder .kd-buttonbar .kd-button-left,.direction-controls-placeholder .kd-button-left{border-radius:2px 0 0 2px}
+.direction-controls-placeholder .kd-buttonbar .kd-button.left:hover,.direction-controls-placeholder .kd-button.left:hover,.direction-controls-placeholder .kd-buttonbar .kd-button-left:hover,.direction-controls-placeholder .kd-button-left:hover{border-right:1px solid #C6C6C6}
+.direction-controls-placeholder .kd-buttonbar .kd-button.mid,.direction-controls-placeholder .kd-button.mid,.direction-controls-placeholder .kd-buttonbar .kd-button-mid,.direction-controls-placeholder .kd-button-mid{border-radius:0 0 0 0;margin-left:-1px}
+.direction-controls-placeholder .kd-buttonbar .kd-button.right,.direction-controls-placeholder .kd-button.right,.direction-controls-placeholder .kd-button-right{border-radius:0 2px 2px 0;margin-left:-1px}
+.direction-controls-placeholder .kd-buttonbar .kd-button.right:hover,.direction-controls-placeholder .kd-button.right:hover,.direction-controls-placeholder .kd-buttonbar .kd-button-right:hover,.direction-controls-placeholder .kd-button-right:hover{border-left:1px solid #C6C6C6}
+.kd-buttonbar-right .kd-button,.direction-controls-placeholder .kd-buttonbar-right .kd-combobutton{float:right;margin-left:0;margin-right:16px}
+.direction-controls-placeholder .kd-buttonbar-right .kd-button.left,.direction-controls-placeholder .kd-buttonbar-right .kd-button-left{margin-right:-1px}
+.direction-controls-placeholder .kd-buttonbar-right .kd-button.mid,.direction-controls-placeholder .kd-buttonbar-right .kd-button-mid{margin-left:0;margin-right:-1px}
+.direction-controls-placeholder .kd-buttonbar-right .kd-button.right,.direction-controls-placeholder .kd-buttonbar-right .kd-button-right{margin-left:0;margin-right:0}
+.direction-controls-placeholder .msie-7 .kd-button,.direction-controls-placeholder .msie-8 .kd-button{overflow:visible}
+.direction-controls-placeholder .kd-button:active,.direction-controls-placeholder .kd-button:active:hover,.direction-controls-placeholder .kd-button:active:focus{box-shadow:0 1px 2px rgba(0, 0, 0, 0.3) inset}
+.direction-controls-placeholder .kd-button.selected:hover,.direction-controls-placeholder .kd-button.selected:active{background-color:#EEE;background-image:none;border:1px solid #CCC;box-shadow:0 1px 2px rgba(0, 0, 0, 0.1) inset;color:#333}
+.direction-controls-placeholder .kd-button.disabled,.direction-controls-placeholder .kd-button.disabled:hover,.direction-controls-placeholder .kd-button.disabled:active,.direction-controls-placeholder .kd-button:disabled{background:none repeat scroll 0 0 #FFF;border:1px solid rgba(0, 0, 0, 0.05);color:#B8B8B8;cursor:default;pointer-events:none}
+.direction-controls-placeholder .kd-input-text-wrp:hover input,.direction-controls-placeholder .kd-input-text:hover{border-color:#A0A0A0 #B9B9B9 #B9B9B9;border-right:1px solid #B9B9B9;border-style:solid;border-width:1px;box-shadow:0 1px 2px rgba(0, 0, 0, 0.1) inset}
+.direction-controls-placeholder .kd-input-text-wrp input:focus,.direction-controls-placeholder .kd-input-text:focus{border:1px solid #4D90FE;box-shadow:0 1px 2px rgba(0, 0, 0, 0.3) inset;outline:medium none}
+.google-map-placeholder .bubble-content a:focus,.google-map-placeholder .bubble-content a:active,.google-map-placeholder .bubble-content a:hover{text-decoration:underline !important}
+.rendered-directions-placeholder tr,.rendered-directions-placeholder table.adp-fullwidth,.rendered-directions-placeholder div.adp-list{border:none !important}
+.sgmp-popup-shortcode-dialog .close-dialog:focus,.sgmp-popup-shortcode-dialog .close-dialog.focus{box-shadow:0 0 0 1px #FFF inset}
+.sgmp-popup-shortcode-dialog .close-dialog:focus:hover,.sgmp-popup-shortcode-dialog .close-dialog.focus:hover{box-shadow:0 0 0 1px #FFF inset, 0 1px 1px rgba(0, 0, 0, 0.1)}
+.sgmp-popup-shortcode-dialog .close-dialog:active,.sgmp-popup-shortcode-dialog .close-dialog:focus:active,.sgmp-popup-shortcode-dialog .close-dialog.focus:active{background-color:#B0281A;background-image:none;border:1px solid #992A1B;box-shadow:0 1px 2px rgba(0, 0, 0, 0.3) inset}

@@ -1,0 +1,163 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Comprehensive google map plugin\n"
+"POT-Creation-Date: 2012-03-22 13:47+0100\n"
+"PO-Revision-Date: 2012-08-16 12:34+0100\n"
+"Last-Translator: Markus Kottländer <markus.kottlaender@web.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_n\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Language: Italian\n"
+"X-Poedit-Country: ITALY\n"
+
+#: comprehensive-google-map-plugin/functions.php:29
+msgid "Click on map markers to get directions"
+msgstr "Für Routenplanung auf die Markierungen klicken"
+
+#: comprehensive-google-map-plugin/functions.php:50
+msgid "Get Directions"
+msgstr "Route berechnen"
+
+#: comprehensive-google-map-plugin/functions.php:51
+msgid "Print Directions"
+msgstr "Route ausdrucken"
+
+#: comprehensive-google-map-plugin/functions.php:52
+msgid "Additional options"
+msgstr "weitere Optionen"
+
+#: comprehensive-google-map-plugin/functions.php:53
+msgid "Avoid tolls"
+msgstr "Mautgebühren vermeiden"
+
+#: comprehensive-google-map-plugin/functions.php:54
+msgid "Avoid highways"
+msgstr "Autobahnen meiden"
+
+#: comprehensive-google-map-plugin/functions.php:55
+msgid "KM"
+msgstr "KM"
+
+#: comprehensive-google-map-plugin/functions.php:56
+msgid "Miles"
+msgstr "Meilen"
+
+#: comprehensive-google-map-plugin/functions.php:503
+msgid "Documentation"
+msgstr "Dokumentation"
+
+#: comprehensive-google-map-plugin/functions.php:504
+msgid "Shortcode Builder"
+msgstr "Shortcode erstellen"
+
+#: comprehensive-google-map-plugin/functions.php:505
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: comprehensive-google-map-plugin/functions.php:506
+msgid "Donate"
+msgstr "Spenden"
+
+#: comprehensive-google-map-plugin/head.php:105
+msgid ""
+"ATTENTION! (by Comprehensive Google Map Plugin)\\n"
+"\\n"
+"Your blog/site theme or one of your plugins uses jQuery javascript library which is older than the version 1.3.0.\\n"
+"The Comprehensive Google Map plugin will not work with such outdated jQuery version.\\n"
+"\\n"
+"The minimum jQuery requirement for Comprehensive Google Map plugin is version 1.3.0. Apologies for the inconvenience.."
+msgstr ""
+"ACHTUNG! (von Comprehensive Google Map Plugin) \\n"
+"\\n"
+"Ihr Theme oder eines Ihrer Plugins benutzt eine Version der jQuery Javascript-Bibliothek, die älter als Version 1.3.0 ist.\\n"
+"\\n"
+"Das Comprehensive Google Map Plugin funktioniert mit solch einer veralteten Version nicht.\\n"
+"\\n"
+"Die miminal vorrausgesetzte jQuery-Version ist 1.3.0. Verzeihung für die Unannehmlichkeit."
+
+#: comprehensive-google-map-plugin/head.php:106
+msgid "<b>ATTENTION</b>! (by Comprehensive Google Map Plugin)<br /><br />Google found the following address(es) as NON-geographic and could not find them:<br /><br />[REPLACE]<br />Consider revising the address(es). Did you make a mistake when creating marker locations or did not provide a full geo-address? Alternatively use Google web to validate the address(es)"
+msgstr "Comprehensive Google Map Plugin: <b>ACHTUNG!</b><br /><br />Google hat die folgenden Adressen als nicht geografisch erkannt und kann diese nicht finden:<br /><br />[REPLACE]<br />Sie sollten die Adresse überprüfen. Haben Sie einen Fehler beim erstellen des Markers gemacht oder haben Sie keine korrekte geografische Adresse angegeben? Alternativ können Sie Google nutzen um Ihre Adresse zu überprüfen."
+
+#: comprehensive-google-map-plugin/head.php:107
+msgid "<b>ATTENTION</b>! (by Comprehensive Google Map Plugin)<br /><br />Dear blog/website owner,<br />You did not specify any marker locations for the Google map! Please check the following when adding marker locations:<br /><b>[a]</b> In the shortcode builder, did you add location(s) and clicked the Add button before generating shortcode?<br /><b>[b]</b> In the widget, did you add location(s) and clicked Add button before clicking Save?<br /><br />Please revisit and reconfigure your widget or shortcode configuration. The map requires at least one marker location to be added.."
+msgstr "Comprehensive Google Map Plugin: <b>ACHTUNG!</b><br /><br />Sie haben keine Markerpositionen für diese Karte festgelegt! Bitte beachten Sie folgendes.<br /><b>[a]</b> Haben Sie im beim erstellen des Shortcodes eine Markeradresse eingegeben und erst auf hinzufügen geklickt bevor Sie den Shortcode generiert haben?<br /><b>[b]</b> Das selbe gilt für Widgets.<br /><br />Die Karte benötigt mindestens einen Marker."
+
+#: comprehensive-google-map-plugin/head.php:108
+msgid "<b>ATTENTION</b>! (by Comprehensive Google Map Plugin)<br /><br />Dear blog/website owner,<br />Google returned the following error when trying to load KML file:<br /><br />[MSG] ([STATUS])"
+msgstr "Comprehensive Google Map Plugin: <b>ACHTUNG!</b><br /><br />Google gab beim laden der KML-Datei folgende Fehlermeldung zurück:<br /><br />[MSG] ([STATUS])"
+
+#: comprehensive-google-map-plugin/head.php:109
+msgid "The KML file is not a valid KML, KMZ or GeoRSS document."
+msgstr "Die KML-Datei ist kein gültige KML-, KMZ- oder GeoRSS-Datei."
+
+#: comprehensive-google-map-plugin/head.php:110
+msgid "The KML file could not be fetched."
+msgstr "Die KML-Datei konnte nicht gefunden werden."
+
+#: comprehensive-google-map-plugin/head.php:111
+msgid "The KML file exceeds the feature limits of KmlLayer."
+msgstr "Die KML-Datei überschreitet die Funktionsbeschränkungen des KmlLayer."
+
+#: comprehensive-google-map-plugin/head.php:112
+msgid "The KML file could not be found. Most likely it is an invalid URL, or the document is not publicly available."
+msgstr "Die KML-Datei konnte nicht gefunden werden. Wahrscheinlich ist die URL nicht korrekt oder die Datei ist nicht öffentlich zugänglich."
+
+#: comprehensive-google-map-plugin/head.php:113
+msgid "The KmlLayer is invalid."
+msgstr "Der KmlLayer ist ungültig."
+
+#: comprehensive-google-map-plugin/head.php:114
+msgid "The KML file could not be loaded within a reasonable amount of time."
+msgstr "Die KML-Datei konnte in angemessener Zeit nicht geladen werden."
+
+#: comprehensive-google-map-plugin/head.php:115
+msgid "The KML file exceeds the file size limits of KmlLayer."
+msgstr "Die KML-Datei überschreitet die Begrenzung der Dateigröße des KmlLayers."
+
+#: comprehensive-google-map-plugin/head.php:116
+msgid "The KML file failed to load for an unknown reason."
+msgstr "Die KML-Datei konnte aus unbekannten Gründen nicht geladen werden."
+
+#: comprehensive-google-map-plugin/head.php:117
+msgid "<b>ATTENTION</b>! (by Comprehensive Google Map Plugin)<br /><br />Dear blog/website owner,<br />It looks like your webpage has reference to the older Google API v2, in addition to the API v3 used by Comprehensive Google Map! An example of plugin using the older API v2, can be jquery.gmap plugin.<br /><br />Please disable conflicting plugin(s). In the meanwhile, map generation is aborted!"
+msgstr "Comprehensive Google Map Plugin: <b>ACHTUNG!</b><br /><br />Scheinbar enthält Ihr Blog Bestandteile der alten Google Maps API v2, zusätzlich zu der API v3 die das Comprehensive Google Map Plugin nutzt. Beispielsweise das Plugin jquery.gmap nutzt diese veraltete API.<br /><br />Bitte deaktivieren Sie etwaige Plugins."
+
+#: comprehensive-google-map-plugin/head.php:118
+msgid "<b>ATTENTION</b>!(by Comprehensive Google Map Plugin)<br /><br />Dear blog/website owner,<br />It looks like Google map API could not be reached. Map generation was aborted!<br /><br />Please check that Google API script was loaded in the HTML source of your web page"
+msgstr "Comprehensive Google Map Plugin: <b>ATTENZIONE!</b><br /><br />Die Google API konnte nicht eingebunden werden!<br /><br />Bitte prüfen Sie, ob die Googke Maps API korrekt in den HTML-Quelltext Ihrer Seite eingebunden ist."
+
+#: comprehensive-google-map-plugin/head.php:123
+msgid "Street View"
+msgstr "Street View"
+
+#: comprehensive-google-map-plugin/head.php:124
+msgid "Address"
+msgstr "Adresse"
+
+#: comprehensive-google-map-plugin/head.php:125
+msgid "Directions"
+msgstr "Routen"
+
+#: comprehensive-google-map-plugin/head.php:126
+msgid "To here"
+msgstr "hier her"
+
+#: comprehensive-google-map-plugin/head.php:127
+msgid "From here"
+msgstr "von hier"
+
+#: comprehensive-google-map-plugin/menu.php:35
+#: comprehensive-google-map-plugin/menu.php:66
+#: comprehensive-google-map-plugin/menu.php:78
+msgid "You do not have sufficient permissions to access this page."
+msgstr "Sie haben keine ausreichenden Rechte um Zugriff auf diese Seite zu haben."
+
+#: comprehensive-google-map-plugin/widget.php:31
+msgid "AZ :: Google Map"
+msgstr ""
+

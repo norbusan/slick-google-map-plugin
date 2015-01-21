@@ -1,0 +1,88 @@
+span.italic{color:green;font-style:normal}
+span.sep{color:red;font-size:12px;font-style:normal;font-weight:400}
+.marker-input-info-text{color:#ababab; font-size: 11px}
+div#google-map-container-settings input {border-color: #B3B3B3; background: #F1F1F1}
+.google-map-tooltip{-moz-border-radius:5px;-webkit-border-radius:5px;background-color:#000;border:5px solid #777;border-radius:5px;color:#fff;display:none;font-family:verdana;font-size:11px;padding:15px;text-align:left;width:180px;z-index:9999999999}
+fieldset.fieldset{-moz-border-radius:3px;-webkit-border-radius:3px;background-color:#F1F1F1;background-image:0;border-bottom:1px solid #c1c1c1;border-left:1px solid #D1D1D1;border-radius:3px;border-right:1px solid #D1D1D1;border-top:1px solid #D1D1D1;margin-bottom:15px;padding:10px 10px 15px}
+fieldset.fieldset legend{color:gray;font-size:100%;padding:0.2em;text-align:left}
+fieldset.fieldset table{width:100%}
+fieldset.fieldset table p.geo-mashup-marker-options {margin: 0 0 0.3em; padding: 0}
+fieldset.fieldset table td{width:100px}
+fieldset.fieldset table td.first-td-cell{width: 70px}
+fieldset.fieldset table td.btn-add-marker-td{width:22px}
+fieldset.fieldset table select{border:1px solid #aaa;height:1.8em;margin-bottom:2px;padding:3px;width:85px}
+fieldset.fieldset table input[type="text"]{border:1px solid #aaa;margin-bottom:2px;width:120px}
+.errorToken{border:1px solid red !important}
+div.shortcodebuilder fieldset.fieldset table td{width:130px}
+div.shortcodebuilder fieldset.fieldset table td.btn-add-marker-td{width:25px}
+div.documentation fieldset.fieldset table{width:100%}
+div.documentation fieldset.fieldset table td {text-align: justify; padding: 5px}
+div.documentation fieldset.fieldset table td.first-td {width: 10%}
+div.documentation fieldset.fieldset table td.second-td {width: 40%}
+div.documentation fieldset.fieldset table td.third-td {width: 10%}
+div.documentation fieldset.fieldset table td.fourth-td {width: 40%}
+
+fieldset.fieldset table input.text-field{width:85px}
+fieldset.fieldset table input.marker-location-icon{background-color:transparent !important;float:left;font-size:16px;height:40px;margin-left:2px;margin-right:5px;margin-top:5px;/*padding:0 2px 0 30px;*/width:32px !important}
+fieldset.fieldset table input.default-marker-icon{background:url('images/markers/1-default.png') no-repeat scroll 0 0 transparent !important}
+div.shortcodebuilder li.token-input-token p{margin:-1px 0 0 !important}
+li.token-input-highlighted-token{-moz-border-radius:4px;-webkit-border-radius:4px;background-color:#D0D6E7;border:1px solid #8D9EC4;border-radius:4px}
+li.token-input-selected-token{background-color:#08844e;color:#fff}
+li.token-input-selected-token span{color:#bbb}
+li.token-input-token{-moz-border-radius:4px;-webkit-border-radius:4px;background:none repeat scroll 0 0 #E2E6F0;border:1px solid #9DACCC;border-radius:4px;color:#1C2A47;cursor:default;display:block;font-size:11px;height:46px !important;margin:3px;overflow:hidden;padding:3px 5px}
+li.token-input-token p{font-size:12px !important;margin:0 !important;padding:4px 0 0 !important;text-align:left}
+li.token-input-token span{color:#777;cursor:pointer;float:right;position:relative;top:-35px}
+li.token-input-token span.token-input-delete-token-highlighted{background-color:#475C8A;color:#eee}
+ul.token-input-list{-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px;clear:left;cursor:text;font-family:Verdana;font-size:12px;height:auto !important;list-style-type:none;margin-top:3px;overflow:hidden;padding:0;width:100%;z-index:999}
+ul.token-input-list li{list-style-type:none}
+ul.token-input-list li input{-webkit-appearance:caret;background-color:#FFF;border:0;padding:3px 8px;width:350px}
+.sgmp-mce-split-button-menu-item-icon{cursor:pointer !important; z-index: 999; background-image:url("images/close.png"); top: 5px !important; height: 16px !important; left: 5px !important; width: 16px !important;}
+.mce_sgmp-mce-split-button-menu-item-icon{cursor:pointer !important; z-index: 999; background-image:url("images/close.png"); top: 5px !important; height: 16px !important; left: 5px !important; width: 16px !important;}
+div#menu_content_content_shortcode_menu .mceText {text-align: right !important}
+.uiCloseButton{background-image:url("images/facebook-axis.png");background-repeat:no-repeat;height:15px;width:15px}
+.uiCloseButton:active{background-position:left -48px}
+.uiCloseButtonSmall{background-image:url("ogYrclupeJV.png");height:11px;margin-top:2px;width:11px}
+.uiCloseButtonSmall:active{background-position:left -36px}
+ul.tools-tabs-nav{margin-bottom:5px;padding-left:4.2em;padding-right:3.5em;padding-top:3.1em;white-space:nowrap}
+ul.tools-tabs-nav {*margin-bottom: 1px !important; margin-bottom: 1px\0/ !important; margin-bottom: 1px\9 !important;}
+@-moz-document url-prefix() {ul.tools-tabs-nav {/*RH margin-bottom: -1px;*/}}
+@media not all and (-webkit-min-device-pixel-ratio:0) {ul.tools-tabs-nav {margin-bottom: 0px;}}
+ul.tools-tabs-nav li{-moz-border-radius-topleft:6px;-moz-border-radius-topright:6px;-webkit-border-top-left-radius:6px;-webkit-border-top-right-radius:6px;background:none repeat scroll 0 0 #F8F8F8;border:1px solid #C0C0C0;border-top-left-radius:6px;border-top-right-radius:6px;display:inline-block;font-weight:700;margin:0 0.2em 0 0;max-width:20%;/*overflow:hidden;*/text-align:center;text-shadow:0 1px 0 #FFF}
+@media not all and (-webkit-min-device-pixel-ratio:0) {ul.tools-tabs-nav li {margin: 0px 0.2em -1px 0px;}}
+ul.tools-tabs-nav li a{color:#C1C1C1;display:inline-block;padding:0.6em 1em;text-decoration:none}
+ul.tools-tabs-nav li.current{-moz-box-shadow:0 -3px 5px rgba(0, 0, 0, 0.15);-webkit-box-shadow:0 -3px 5px rgba(0, 0, 0, 0.15);background:#FFF;border-bottom-color:#FFF;box-shadow:0 -3px 5px rgba(0, 0, 0, 0.15);color:#000}
+ul.tools-tabs-nav li.current a{color:#000}
+.tools-tabs .documentation a{display:none !important}
+.tools-tabs .tools-tab-body{-moz-border-radius:6px;-moz-border-radius-bottomleft:6px;-moz-border-radius-bottomright:6px;-moz-border-radius-topright:6px;-webkit-border-bottom-left-radius:6px;-webkit-border-bottom-right-radius:6px;-webkit-border-radius:6px;-webkit-border-top-right-radius:6px;background:#FFF;border:1px solid #C0C0C0;border-bottom-left-radius:6px;border-bottom-right-radius:6px;border-radius:6px;border-top-right-radius:6px;border-top-width:1px;margin-top:-70px;min-height:300px;padding:63px 20px 25px 50px;width:70%}
+.tools-tabs .tools-tab-content{border-top:1px solid #C0C0C0;padding-top:25px}
+#sgmp-popup-mask{background-color:#222;display:none;left:0;position:absolute;top:0;z-index:9000}
+.sgmp-popup-window{display:none;height:200px;left:0;padding:20px;position:fixed;top:0;width:440px;z-index:9999}
+.sgmp-popup-shortcode-dialog{-moz-border-radius:2px;-moz-box-shadow:0 4px 16px rgba(0, 0, 0, 0.4);-webkit-border-radius:2px;-webkit-box-shadow:0 4px 16px rgba(0, 0, 0, 0.4);background:none repeat scroll 0 0 #F9EDBE;border:1px solid #EBAE3D;border-radius:2px;box-shadow:0 4px 16px rgba(0, 0, 0, 0.4);color:#222;height:auto;min-height:200px;width:560px}
+.sgmp-popup-shortcode-dialog p{font-family:Arial,sans-serif !important;font-size:13px !important}
+.sgmp-popup-shortcode-dialog .dismiss-container{left:0;position:absolute;top:0;width:100%}
+.sgmp-popup-shortcode-dialog .dialog-dismiss{color:#7F7F7F !important;float:right;font:26px Arial,sans-serif;margin:6px 14px;text-decoration:none}
+.sgmp-popup-shortcode-dialog .save-dialog{-moz-transition:all 0.218s ease 0;-moz-user-select:none;background-color:#D14836;background-image:0;border:1px solid transparent;border-radius:2px 2px 2px 2px;color:#FFF;cursor:pointer;display:inline-block;font:bold 11px/27px "Arial","Helvetica",sans-serif;height:27px;min-width:54px;padding:0 8px;text-align:center;text-shadow:0 1px rgba(0, 0, 0, 0.1);text-transform:uppercase}
+.sgmp-popup-shortcode-dialog .save-dialog:hover{-moz-border-bottom-colors:none;-moz-border-image:none;-moz-border-left-colors:none;-moz-border-right-colors:none;-moz-border-top-colors:none;background-color:#C53727;background-image:0;border-color:#B0281A #B0281A #AF301F;border-style:solid;border-width:1px;box-shadow:0 1px 1px rgba(0, 0, 0, 0.2);color:#FFF}
+div#inner-shortcode-dialog{-moz-border-radius:7px;-webkit-border-radius:7px;background-color:#fff;border:1px solid gray;border-radius:7px;height:90px;overflow:auto;padding:8px}
+div.loaded-db-shortcodes{-moz-border-radius:7px;-webkit-border-radius:7px;background-color:#efefef;border:1px solid gray;border-radius:7px;height:110px;overflow:auto;padding:8px}
+div.shortcodebuilder fieldset.fieldset table input[type="text"],div.shortcodebuilder fieldset.fieldset table select{width:120px}
+fieldset.fieldset table input.marker-text-details,div.shortcodebuilder fieldset.fieldset table input.marker-text-details{width:88%}
+* html li.token-input-token,* html ul.token-input-list{height:1% !important}
+.uiCloseButton:focus,.uiCloseButton:hover{background-position:left -32px}
+.uiCloseButtonSmall:focus,.uiCloseButtonSmall:hover{background-position:left -24px}
+.sgmp-popup-shortcode-dialog .save-dialog:focus,.sgmp-popup-shortcode-dialog .save-dialog.focus{box-shadow:0 0 0 1px #FFF inset}
+.sgmp-popup-shortcode-dialog .save-dialog:focus:hover,.sgmp-popup-shortcode-dialog .save-dialog.focus:hover{box-shadow:0 0 0 1px #FFF inset, 0 1px 1px rgba(0, 0, 0, 0.1)}
+.sgmp-popup-shortcode-dialog .save-dialog:active,.sgmp-popup-shortcode-dialog .save-dialog:focus:active,.sgmp-popup-shortcode-dialog .save-dialog.focus:active{background-color:#B0281A;background-image:0;border:1px solid #992A1B;box-shadow:0 1px 2px rgba(0, 0, 0, 0.3) inset}
+#wp-admin-bar-sgmp > .ab-item .ab-icon:before {content: url('images/google_map.png');}
+#wp-admin-bar-new-content #wp-admin-bar-sgmp-admin-bar-menu-new-shortcode > .ab-item .ab-icon:before {content: url('images/google_map.png');}
+.sgmp-styles-textarea {
+    margin-top: 12px !important;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    width: 100%;
+    padding: 10px;
+    min-height:80px;
+    max-height:250px;
+    resize:vertical;
+}

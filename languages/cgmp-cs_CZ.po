@@ -1,0 +1,175 @@
+# Copyright (C) 2012 Comprehensive Google Map Plugin
+# This file is distributed under the same license as the Comprehensive Google Map Plugin package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Comprehensive Google Map Plugin 7.0.4\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/comprehensive-google-map-plugin\n"
+"POT-Creation-Date: 2012-03-22 13:47+0100\n"
+"PO-Revision-Date: 2012-03-26 12:01+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: comprehensive-google-map-plugin/functions.php:29
+msgid "Click on map markers to get directions"
+msgstr "Klikněte na značku pro naplánování trasy"
+
+#: comprehensive-google-map-plugin/functions.php:50
+msgid "Get Directions"
+msgstr "Vyhledat trasu"
+
+#: comprehensive-google-map-plugin/functions.php:51
+msgid "Print Directions"
+msgstr "Vytisknout trasu"
+
+#: comprehensive-google-map-plugin/functions.php:52
+msgid "Additional options"
+msgstr "Rošířené volby"
+
+#: comprehensive-google-map-plugin/functions.php:53
+msgid "Avoid tolls"
+msgstr "Vyhnout se zpoplatněným úsekům"
+
+#: comprehensive-google-map-plugin/functions.php:54
+msgid "Avoid highways"
+msgstr "Vyhnout se dálnicím"
+
+#: comprehensive-google-map-plugin/functions.php:55
+msgid "KM"
+msgstr "KM"
+
+#: comprehensive-google-map-plugin/functions.php:56
+msgid "Miles"
+msgstr "Míle"
+
+#: comprehensive-google-map-plugin/functions.php:503
+msgid "Documentation"
+msgstr "Dokumentace"
+
+#: comprehensive-google-map-plugin/functions.php:504
+msgid "Shortcode Builder"
+msgstr "Generátor zkráceného zápisu (shortcode)"
+
+#: comprehensive-google-map-plugin/functions.php:505
+msgid "Settings"
+msgstr "Volby"
+
+#: comprehensive-google-map-plugin/functions.php:506
+msgid "Donate"
+msgstr "Darovat"
+
+#: comprehensive-google-map-plugin/head.php:107
+msgid ""
+"ATTENTION! (by Comprehensive Google Map Plugin)\n"
+"\n"
+"Your blog/site theme or one of your plugins uses jQuery javascript library which is older than the version 1.3.0.\n"
+"The Comprehensive Google Map plugin will not work with such outdated jQuery version.\n"
+"\n"
+"The minimum jQuery requirement for Comprehensive Google Map plugin is version 1.3.0. Apologies for the inconvenience.."
+msgstr ""
+"UPOZORNĚNÍ! (od Comprehensive Google Map Pluginu)\n"
+"\n"
+"Váš vzhled nebo některý z Vašich pluginů používá javascriptovou jQuery knihovnu, která je starší než verze 1.3.0.\n"
+"Comprehensive Google Map plugin nemůže s takto starou knihovnou jQuery pracovat.\n"
+"\n"
+"Minimální vyžadovaná verze jQuery pro Comprehensive Google Map plugin je 1.3.0. Omlouváme se za napříjemnotsi.."
+
+#: comprehensive-google-map-plugin/head.php:108
+msgid "<b>ATTENTION</b>! (by Comprehensive Google Map Plugin)<br /><br />Google found the following address(es) as NON-geographic and could not find them:<br /><br />[REPLACE]<br />Consider revising the address(es). Did you make a mistake when creating marker locations or did not provide a full geo-address? Alternatively use Google web to validate the address(es)"
+msgstr "<b>UPOZORNĚNÍ</b>! (od Comprehensive Google Map Pluginu)<br /><br />Google nalezl následující adresu(adresy) jako NEgeograficé a nemohl je zobrazit:<br /><br />[REPLACE]<br />Prosím zkontrolujte zadání. Zadali jste chybně polohu při přidávání značky nebo jste zapsali kompetní adresu? Případně se můžete pokusit použít Google k ověření adresy."
+
+#: comprehensive-google-map-plugin/head.php:109
+msgid "<b>ATTENTION</b>! (by Comprehensive Google Map Plugin)<br /><br />Dear blog/website owner,<br />You did not specify any marker locations for the Google map! Please check the following when adding marker locations:<br /><b>[a]</b> In the shortcode builder, did you add location(s) and clicked the Add button before generating shortcode?<br /><b>[b]</b> In the widget, did you add location(s) and clicked Add button before clicking Save?<br /><br />Please revisit and reconfigure your widget or shortcode configuration. The map requires at least one marker location to be added.."
+msgstr "<b>UPOZORNĚNÍ</b>! (od Comprehensive Google Map Pluginu)<br /><br />Vážený majiteli blogu/stránek,<br />nezadali jste žádnou polohu pro značku pro Google mapu! Prosím zkontrolujte následující při přidávání značek:<br /><b>[a]</b> Zapsali jste adresu a kliknuli jste na Přidej Značku při generování zkráceného zápisu (shortcode)?<br /><b>[b]</b> Ve widgetu, kliknuli jste na Přídej Značku před kliknutím na Uložit?<br /><br />Prosím překontrolujte nastavení widgetu nebo shortcode. Mapa vyžaduje aby byla přidána alespoň jedna značka."
+
+#: comprehensive-google-map-plugin/head.php:110
+msgid "<b>ATTENTION</b>! (by Comprehensive Google Map Plugin)<br /><br />Dear blog/website owner,<br />Google returned the following error when trying to load KML file:<br /><br />[MSG] ([STATUS])"
+msgstr "<b>UPOZORNĚNÍ</b>! (od Comprehensive Google Map Pluginu)<br /><br />Vážený majiteli blogu/stránek,<br />Google vrátil následující chybu při zpracování KML souboru:<br /><br />[MSG] ([STATUS])"
+
+#: comprehensive-google-map-plugin/head.php:111
+msgid "The KML file is not a valid KML, KMZ or GeoRSS document."
+msgstr "KML soubor není platným KML, KMZ nebo GeoRSS dokumentem."
+
+#: comprehensive-google-map-plugin/head.php:112
+msgid "The KML file could not be fetched."
+msgstr "KML soubor nelze stáhnout."
+
+#: comprehensive-google-map-plugin/head.php:113
+msgid "The KML file exceeds the feature limits of KmlLayer."
+msgstr "KML přesahuje možnosti rozhraní KmlLayer."
+
+#: comprehensive-google-map-plugin/head.php:114
+msgid "The KML file could not be found. Most likely it is an invalid URL, or the document is not publicly available."
+msgstr "KML soubor nelze nalézt. Pravděpodobně je chybně zapsána adresa URL nebo dokument není veřejně dostupný."
+
+#: comprehensive-google-map-plugin/head.php:115
+msgid "The KmlLayer is invalid."
+msgstr "KmlLayer je neplatná."
+
+#: comprehensive-google-map-plugin/head.php:116
+msgid "The KML file could not be loaded within a reasonable amount of time."
+msgstr "KML soubor nemohl být načten v přiměřeném čase."
+
+#: comprehensive-google-map-plugin/head.php:117
+msgid "The KML file exceeds the file size limits of KmlLayer."
+msgstr "KML soubor překračuje povolenou velikost rozhraní KmlLayer."
+
+#: comprehensive-google-map-plugin/head.php:118
+msgid "The KML file failed to load for an unknown reason."
+msgstr "Nepodařílo se načíst KML sobor z neznámých důvodů."
+
+#: comprehensive-google-map-plugin/head.php:119
+msgid "<b>ATTENTION</b>! (by Comprehensive Google Map Plugin)<br /><br />Dear blog/website owner,<br />It looks like your webpage has reference to the older Google API v2, in addition to the API v3 used by Comprehensive Google Map! An example of plugin using the older API v2, can be jquery.gmap plugin.<br /><br />Please disable conflicting plugin(s). In the meanwhile, map generation is aborted!"
+msgstr "<b>UPOZORNĚNÍ</b>! (od Comprehensive Google Map Pluginu)<br /><br />Vážený majiteli blogu/stránek,<br />Vaše stránke zřejmě odkazuje na starší Google API v2, Comprehensive Google Map používá navíc API v3! Plugin, která používá API v2 je například jquery.gmap plugin.<br /><br />Prosím zakažte konfilktní plugin(y). Dokud to neuděláte, bude generování map přerušeno!"
+
+#: comprehensive-google-map-plugin/head.php:120
+msgid "<b>ATTENTION</b>!(by Comprehensive Google Map Plugin)<br /><br />Dear blog/website owner,<br />It looks like Google map API could not be reached. Map generation was aborted!<br /><br />Please check that Google API script was loaded in the HTML source of your web page"
+msgstr "<b>UPOZORNĚNÍ</b>! (od Comprehensive Google Map Pluginu)<br /><br />Vážený majiteli blogu/stránek,<br />Nelze načíst Google map API. Generování map je přeřušeno!<br /><br />Prosím zkontrolujte zrojové kódy Vašich HTML stránek a ujistěte se, že Google API scripty jsou načteny"
+
+#: comprehensive-google-map-plugin/head.php:126
+msgid "Street View"
+msgstr "Street View"
+
+#: comprehensive-google-map-plugin/head.php:127
+msgid "Address"
+msgstr "Adresa"
+
+#: comprehensive-google-map-plugin/head.php:128
+msgid "Directions"
+msgstr "Trasa"
+
+#: comprehensive-google-map-plugin/head.php:129
+msgid "To here"
+msgstr "Sem"
+
+#: comprehensive-google-map-plugin/head.php:130
+msgid "From here"
+msgstr "Odtud"
+
+#: comprehensive-google-map-plugin/menu.php:35
+#: comprehensive-google-map-plugin/menu.php:66
+#: comprehensive-google-map-plugin/menu.php:78
+msgid "You do not have sufficient permissions to access this page."
+msgstr "K přístupu na tuto stránku nemáte dostatečná oprávnění"
+
+#: comprehensive-google-map-plugin/widget.php:27
+msgid "A simple and intuitive, yet elegant fully documented Google map plugin that installs as a widget and a short code. The plugin is packed with useful features. Widget and shortcode enabled. Offers extensive configuration options for marker, controls, size, KML files, location by latitude/longitude, location by address, info window, directions, traffic/bike lanes and more."
+msgstr "Jednoduchý a intuitivní přesto však dobře zdokumentuvaný Google map plugin, který lze nainstalovat jako widget nebo zkrácený zápis (shortcode). Plugin má řadu užitečných funkcí. Plně podporuje funkci jako widget a shortcode. Nabízí řadu možností nastavení pro více než 250 volitelných značek, Geo mashup, ovládání, velikost, KML soubory, umistení dle GPS, umístění dle adresy, info okno, plánování trasy, trasy pro auta i cyklisty a více."
+
+#: comprehensive-google-map-plugin/widget.php:31
+msgid "AZ :: Google Map"
+msgstr "AZ :: Google Map"
+
+#~ msgid "Comprehensive Google Map Plugin"
+#~ msgstr "Comprehensive Google Map Plugin"
+
+#~ msgid "http://initbinder.com/comprehensive-google-map-plugin"
+#~ msgstr "http://initbinder.com/comprehensive-google-map-plugin"
+
+#~ msgid "Alexander Zagniotov"
+#~ msgstr "Alexander Zagniotov"
+
+#~ msgid "http://initbinder.com"
+#~ msgstr "http://initbinder.com"
