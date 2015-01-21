@@ -26,7 +26,6 @@
 
     "SGMP_AJAX_CACHE_MAP_ACTION" : "sgmp_ajax_cache_map_action",
     "SGMP_TIMESTAMP" : "timestamp",
-    "SGMP_INITIAL_WARNING" : "sgmp_initial_warning",
     "SGMP_PERSISTED_SHORTCODES" : "sgmp_persisted_shortcodes",
     "SGMP_DB_SELECTED_LANGUAGE" : "sgmp_selected_language",
     "SGMP_DB_SETTINGS_BUILDER_LOCATION" : "sgmp_settings_builder_location",

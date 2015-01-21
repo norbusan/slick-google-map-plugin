@@ -147,6 +147,6 @@ msgid "A simple and intuitive, yet elegant fully documented Google map plugin th
 msgstr ""
 
 #: simple-google-map-plugin/widget.php:31
-msgid "AZ :: Google Map"
+msgid "Simple Google Map"
 msgstr ""
 

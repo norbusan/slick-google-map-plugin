@@ -39,8 +39,7 @@ if ( is_admin() ) {
 		$sgmp_defaults = array(
 			'admin_notice' => 'show',
 			'plugin_notice' => 'show',
-			'metabox_notice' => 'show',
-			'export_notice' => 'show'
+			'metabox_notice' => 'show'
 		);
 		add_option('sgmp_options', $sgmp_defaults );
 

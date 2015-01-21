@@ -9,7 +9,6 @@ if(defined('WP_UNINSTALL_PLUGIN')) {
 			delete_option('sgmp_options');
 			delete_option('widget_simplegooglemap');
 			delete_option('sgmp_persisted_shortcodes');
-			delete_option('sgmp_initial_warning');
 			delete_transient('sgmp_update_routine');
 			delete_transient('sgmp_layers_markers_export');
 
@@ -31,7 +30,6 @@ if(defined('WP_UNINSTALL_PLUGIN')) {
 					delete_option('sgmp_options');
 					delete_option('widget_simplegooglemap');
 					delete_option('sgmp_persisted_shortcodes');
-					delete_option('sgmp_initial_warning');
 					delete_transient('sgmp_update_routine');
 					delete_transient('sgmp_layers_markers_export');
 
@@ -54,7 +52,6 @@ if(defined('WP_UNINSTALL_PLUGIN')) {
 		delete_option('sgmp_options');
 		delete_option('widget_simplegooglemap');
 		delete_option('sgmp_persisted_shortcodes');
-		delete_option('sgmp_initial_warning');
 		delete_transient('sgmp_update_routine');
 		delete_transient('sgmp_layers_markers_export');
 
