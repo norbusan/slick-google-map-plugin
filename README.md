@@ -4,6 +4,7 @@
 **Requires at least:** 3.6  
 **Tested up to:** 4.1  
 **Stable tag:** 0.0.1  
+**License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 
 A simple and intuitive,  yet elegant and fully documented Google map plugin that installs as a widget and a short code.
 
@@ -26,7 +27,7 @@ A simple and intuitive, yet elegant and fully documented Google map plugin that 
 Licenses:
 The plugin uses wonderful custom marker icons from the <a href="http://mapicons.nicolasmollet.com" target="_blank">Maps Icons Collection</a> <img src="http://mapicons.nicolasmollet.com/wp-content/uploads/2011/03/miclogo-88x31.gif" border="0" /> project by Nicolas Mollet.
 
-This plugin is a fork of the Comprehensive Google Map Plugin by Alexander Zagniotov.
+This plugin is a fork of the Comprehensive Google Map Plugin by Alexander Zagniotov. Thanks to Alexander for his excellent work and putting the code under GPL.
 
 ## Contributors ##
 
@@ -104,6 +105,7 @@ You can use one of the following formats:<br />
 ### 0.0.1 ###
 * rebranding the 9.1.2 release of the <a href="http://wordpress.org/plugins/comprehensive-google-map-plugin/">Comprehensive Google Map Plugin</a>
 * remove export code to MMpro
+* rename widget
 
 
 ## Upgrade Notice ##
