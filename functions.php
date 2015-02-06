@@ -17,125 +17,125 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 if ( !function_exists( 'add_action' ) ) {
-	echo "Hi there!  I'm just a plugin, not much I can do when called directly.";
-	exit;
+    echo "Hi there!  I'm just a plugin, not much I can do when called directly.";
+    exit;
 }
-  
+ 
 if ( !function_exists('sgmp_draw_map_placeholder') ):
-		function sgmp_draw_map_placeholder($id, $width, $height, $align, $hint, $poweredby) {
+    function sgmp_draw_map_placeholder($id, $width, $height, $align, $hint, $poweredby) {
 
-				
-				$widthunits = "px";
-				$heightunits = "px";
 
-				$width = strtolower($width);
-				$height = strtolower($height);
-				$directionswidth = $width;
+        $widthunits = "px";
+        $heightunits = "px";
 
-				if (strpos($width, "%") !== false) {
-					$widthunits = "%";
-					$width = substr($width, 0, -1);
-					$directionswidth = $width;
-				}
+        $width = strtolower($width);
+        $height = strtolower($height);
+        $directionswidth = $width;
 
-				if (strpos($width, "px") !== false) {
-					$width = substr($width, 0, -1);
-					$directionswidth = ($width - 10);
-				}
+        if (strpos($width, "%") !== false) {
+            $widthunits = "%";
+            $width = substr($width, 0, -1);
+            $directionswidth = $width;
+        }
 
-				if (strpos($height, "%") !== false) {
-					$height = substr($height, 0, -1);
-				}
+        if (strpos($width, "px") !== false) {
+            $width = substr($width, 0, -1);
+            $directionswidth = ($width - 10);
+        }
 
-				if (strpos($height, "px") !== false) {
-					$height = substr($height, 0, -1);
-				}
+        if (strpos($height, "%") !== false) {
+            $height = substr($height, 0, -1);
+        }
 
-				$toploading = ceil($height / 2) - 50;
+        if (strpos($height, "px") !== false) {
+            $height = substr($height, 0, -1);
+        }
 
-				$map_marker_directions_hint_template = "";
+        $toploading = ceil($height / 2) - 50;
 
-				if ($hint == "true") {
-					$tokens_with_values = array();
-					$tokens_with_values['MARKER_DIRECTIONS_HINT_WIDTH_TOKEN'] = $width.$widthunits;
-					$tokens_with_values['LABEL_DIRECTIONS_HINT'] = __('Click on map markers to get directions',SGMP_NAME);
-					$map_marker_directions_hint_template = sgmp_render_template_with_values($tokens_with_values, SGMP_HTML_TEMPLATE_MAP_MARKER_DIRECTION_HINT);
-				}
+        $map_marker_directions_hint_template = "";
 
-				$map_poweredby_notice_template = "";
-				if ($poweredby == "true") {
-					$tokens_with_values = array();
-					$tokens_with_values['MARKER_DIRECTIONS_HINT_WIDTH_TOKEN'] = $width.$widthunits;
-					$map_poweredby_notice_template = sgmp_render_template_with_values($tokens_with_values, SGMP_HTML_TEMPLATE_MAP_POWEREDBY_NOTICE);
-				}
+        if ($hint == "true") {
+            $tokens_with_values = array();
+            $tokens_with_values['MARKER_DIRECTIONS_HINT_WIDTH_TOKEN'] = $width.$widthunits;
+            $tokens_with_values['LABEL_DIRECTIONS_HINT'] = __('Click on map markers to get directions',SGMP_NAME);
+            $map_marker_directions_hint_template = sgmp_render_template_with_values($tokens_with_values, SGMP_HTML_TEMPLATE_MAP_MARKER_DIRECTION_HINT);
+        }
 
-				$tokens_with_values = array();
-				$tokens_with_values['MAP_PLACEHOLDER_ID_TOKEN'] = $id;
-				$tokens_with_values['MAP_PLACEHOLDER_WIDTH_TOKEN'] = $width.$widthunits;
-				$tokens_with_values['MAP_PLACEHOLDER_HEIGHT_TOKEN'] = $height.$heightunits;
-				$tokens_with_values['LOADING_INDICATOR_TOP_POS_TOKEN'] = $toploading;
-				$tokens_with_values['MAP_ALIGN_TOKEN'] = $align;
-				$tokens_with_values['MARKER_DIRECTIONS_HINT_TOKEN'] = $map_marker_directions_hint_template;
-				$tokens_with_values['MAP_POWEREDBY_NOTICE_TOKEN'] = $map_poweredby_notice_template;
-				$tokens_with_values['IMAGES_DIRECTORY_URI'] = SGMP_PLUGIN_IMAGES;
-				$tokens_with_values['DIRECTIONS_WIDTH_TOKEN'] = $directionswidth.$widthunits;
-				$tokens_with_values['LABEL_GET_DIRECTIONS'] = __('Get Directions',SGMP_NAME);
-				$tokens_with_values['LABEL_PRINT_DIRECTIONS'] = __('Print Directions',SGMP_NAME);
-				$tokens_with_values['LABEL_ADDITIONAL_OPTIONS'] = __('Additional options',SGMP_NAME);
-				$tokens_with_values['LABEL_AVOID_TOLLS'] = __('Avoid tolls',SGMP_NAME);
-				$tokens_with_values['LABEL_AVOID_HIGHWAYS'] = __('Avoid highways',SGMP_NAME);
-				$tokens_with_values['LABEL_KM'] = __('KM',SGMP_NAME);
-				$tokens_with_values['LABEL_MILES'] = __('Miles',SGMP_NAME);
+        $map_poweredby_notice_template = "";
+        if ($poweredby == "true") {
+            $tokens_with_values = array();
+            $tokens_with_values['MARKER_DIRECTIONS_HINT_WIDTH_TOKEN'] = $width.$widthunits;
+            $map_poweredby_notice_template = sgmp_render_template_with_values($tokens_with_values, SGMP_HTML_TEMPLATE_MAP_POWEREDBY_NOTICE);
+        }
 
-				return sgmp_render_template_with_values($tokens_with_values, SGMP_HTML_TEMPLATE_MAP_PLACEHOLDER_AND_DIRECTIONS);
- 	}
+        $tokens_with_values = array();
+        $tokens_with_values['MAP_PLACEHOLDER_ID_TOKEN'] = $id;
+        $tokens_with_values['MAP_PLACEHOLDER_WIDTH_TOKEN'] = $width.$widthunits;
+        $tokens_with_values['MAP_PLACEHOLDER_HEIGHT_TOKEN'] = $height.$heightunits;
+        $tokens_with_values['LOADING_INDICATOR_TOP_POS_TOKEN'] = $toploading;
+        $tokens_with_values['MAP_ALIGN_TOKEN'] = $align;
+        $tokens_with_values['MARKER_DIRECTIONS_HINT_TOKEN'] = $map_marker_directions_hint_template;
+        $tokens_with_values['MAP_POWEREDBY_NOTICE_TOKEN'] = $map_poweredby_notice_template;
+        $tokens_with_values['IMAGES_DIRECTORY_URI'] = SGMP_PLUGIN_IMAGES;
+        $tokens_with_values['DIRECTIONS_WIDTH_TOKEN'] = $directionswidth.$widthunits;
+        $tokens_with_values['LABEL_GET_DIRECTIONS'] = __('Get Directions',SGMP_NAME);
+        $tokens_with_values['LABEL_PRINT_DIRECTIONS'] = __('Print Directions',SGMP_NAME);
+        $tokens_with_values['LABEL_ADDITIONAL_OPTIONS'] = __('Additional options',SGMP_NAME);
+        $tokens_with_values['LABEL_AVOID_TOLLS'] = __('Avoid tolls',SGMP_NAME);
+        $tokens_with_values['LABEL_AVOID_HIGHWAYS'] = __('Avoid highways',SGMP_NAME);
+        $tokens_with_values['LABEL_KM'] = __('KM',SGMP_NAME);
+        $tokens_with_values['LABEL_MILES'] = __('Miles',SGMP_NAME);
+
+        return sgmp_render_template_with_values($tokens_with_values, SGMP_HTML_TEMPLATE_MAP_PLACEHOLDER_AND_DIRECTIONS);
+    }
 endif;
 
 
 if ( !function_exists('sgmp_render_template_with_values') ):
-	function sgmp_render_template_with_values($tokens_with_values, $template_name) {
-		$template = file_get_contents(SGMP_PLUGIN_HTML."/".$template_name);
-  		return sgmp_replace_template_tokens($tokens_with_values, $template);
-	}
+    function sgmp_render_template_with_values($tokens_with_values, $template_name) {
+        $template = file_get_contents(SGMP_PLUGIN_HTML."/".$template_name);
+        return sgmp_replace_template_tokens($tokens_with_values, $template);
+    }
 endif;
 
 
 if ( !function_exists('sgmp_fetch_json_data_file') ):
-	function sgmp_fetch_json_data_file($filename) {
+    function sgmp_fetch_json_data_file($filename) {
 
-		$json_html_string = file_get_contents(SGMP_PLUGIN_DATA_DIR."/".$filename);
-		$json_html = json_decode($json_html_string, true);
-		if (sizeof($json_html) == 1) {
-			$json_html = $json_html[0];
-		}
-		return $json_html;
-	}
+        $json_html_string = file_get_contents(SGMP_PLUGIN_DATA_DIR."/".$filename);
+        $json_html = json_decode($json_html_string, true);
+        if (sizeof($json_html) == 1) {
+            $json_html = $json_html[0];
+        }
+        return $json_html;
+    }
 endif;
 
 
 if ( !function_exists('sgmp_parse_wiki_style_links') ):
-	function sgmp_parse_wiki_style_links($text) {
+    function sgmp_parse_wiki_style_links($text) {
 
-		$pattern = "/\#[^\#]*\#/";
-		preg_match_all($pattern, $text, $wikilinks);
+        $pattern = "/\#[^\#]*\#/";
+        preg_match_all($pattern, $text, $wikilinks);
 
-		if (isset($wikilinks[0])) {
-			foreach ($wikilinks[0] as $wikilink)  {
-				$text = str_replace($wikilink, "[TOKEN]", $text);
-				$wikilink = preg_replace("/(\#)|(\#)/", "", $wikilink);
-				$url_data = preg_split("/[\s,]+/", $wikilink, 2);
-				$href = trim($url_data[0]);
-				$linkName = "Click Here";
-				if (isset($url_data[1])) {
-					$linkName = trim($url_data[1]);
-				}
+        if (isset($wikilinks[0])) {
+            foreach ($wikilinks[0] as $wikilink)  {
+                $text = str_replace($wikilink, "[TOKEN]", $text);
+                $wikilink = preg_replace("/(\#)|(\#)/", "", $wikilink);
+                $url_data = preg_split("/[\s,]+/", $wikilink, 2);
+                $href = trim($url_data[0]);
+                $linkName = "Click Here";
+                if (isset($url_data[1])) {
+                    $linkName = trim($url_data[1]);
+                }
 
-				$anchor = "<a target='_blank' href='".$href."'>".$linkName."</a>";
-				$text = str_replace("[TOKEN]", $anchor, $text);
-			}
-		}
-		return $text;
-	}
+                $anchor = "<a target='_blank' href='".$href."'>".$linkName."</a>";
+                $text = str_replace("[TOKEN]", $anchor, $text);
+            }
+        }
+        return $text;
+    }
 endif;
 
 
@@ -161,35 +161,35 @@ endif;
 
 
 if ( !function_exists('sgmp_load_plugin_textdomain') ):
-	function sgmp_load_plugin_textdomain() {
-		load_plugin_textdomain(SGMP_NAME, false, dirname( plugin_basename( __FILE__ ) ) . '/languages/');
-	}
+    function sgmp_load_plugin_textdomain() {
+        load_plugin_textdomain(SGMP_NAME, false, dirname( plugin_basename( __FILE__ ) ) . '/languages/');
+    }
 endif;
 
 global $wp_version;
 if (version_compare($wp_version,"3.9","<")){
-	if ( !function_exists('sgmp_register_mce') ):
-		function sgmp_register_mce() {
-			if ( current_user_can('edit_posts') &&  current_user_can('edit_pages') ) {
-				add_filter('mce_external_plugins', 'sgmp_load_button_js_into_mce_editor');
-				add_filter('mce_buttons', 'sgmp_load_button_into_mce_editor');
-			}
-		}
-	endif;
+    if ( !function_exists('sgmp_register_mce') ):
+        function sgmp_register_mce() {
+            if ( current_user_can('edit_posts') &&  current_user_can('edit_pages') ) {
+                add_filter('mce_external_plugins', 'sgmp_load_button_js_into_mce_editor');
+                add_filter('mce_buttons', 'sgmp_load_button_into_mce_editor');
+            }
+        }
+    endif;
 
-	if ( !function_exists('sgmp_load_button_js_into_mce_editor') ):
-		function sgmp_load_button_js_into_mce_editor($plugin_array) {
-			$plugin_array['shortcode'] = SGMP_PLUGIN_JS.'/sgmp.mce.js';
-			return $plugin_array;
-		}
-	endif;
-	
-	if ( !function_exists('sgmp_load_button_into_mce_editor') ):
-		function sgmp_load_button_into_mce_editor($buttons) {
-			array_push($buttons, "shortcode");
-			return $buttons;
-		}
-	endif;
+    if ( !function_exists('sgmp_load_button_js_into_mce_editor') ):
+        function sgmp_load_button_js_into_mce_editor($plugin_array) {
+            $plugin_array['shortcode'] = SGMP_PLUGIN_JS.'/sgmp.mce.js';
+            return $plugin_array;
+        }
+    endif;
+    
+    if ( !function_exists('sgmp_load_button_into_mce_editor') ):
+        function sgmp_load_button_into_mce_editor($buttons) {
+            array_push($buttons, "shortcode");
+            return $buttons;
+        }
+    endif;
 }
 
 if ( !function_exists('sgmp_ajax_cache_map_action_callback') ):
@@ -268,13 +268,13 @@ if ( !function_exists('sgmp_show_message') ):
 
 function sgmp_show_message($message, $errormsg = false)
 {
-	if (!isset($message) || $message == '') {
-		return;
-	}
+    if (!isset($message) || $message == '') {
+        return;
+    }
     if ($errormsg == true) {
         echo '<div id="message" class="error"><p><strong>'.$message.'</strong></p></div>';
     } else {
-	    echo '<div id="message" class="updated fade"><p><strong>'.$message.'</strong></p></div>';
+        echo '<div id="message" class="updated fade"><p><strong>'.$message.'</strong></p></div>';
     }
 }
 endif;
@@ -282,61 +282,61 @@ endif;
 
 
 if ( !function_exists('sgmp_map_data_injector') ):
-	function sgmp_map_data_injector($map_json, $id) {
-	    echo sgmp_map_data_hook_function( $map_json, $id );
-	}
+    function sgmp_map_data_injector($map_json, $id) {
+        echo sgmp_map_data_hook_function( $map_json, $id );
+    }
 endif;
 
 
 if ( !function_exists('sgmp_map_data_hook_function') ):
-	function sgmp_map_data_hook_function( $map_json, $id) {
+    function sgmp_map_data_hook_function( $map_json, $id) {
         global $sgmp_global_map_language;
-		$naughty_stuff = array("'", "\r\n", "\n", "\r");
-		$map_json = str_replace($naughty_stuff, "", $map_json);
-		$objectid = 'for-mapid-'.$id;
-		$paramid = 'json-string-'.$objectid;
-	return "<object id='".$objectid."' name='".$objectid."' class='sgmp-data-placeholder sgmp-json-string-placeholder'><param id='".$paramid."' name='".$paramid."' value='".$map_json."' /></object>".PHP_EOL."<script type='text/javascript'>SGMPGlobal.language = '".$sgmp_global_map_language."';</script>".PHP_EOL;
-	}
+        $naughty_stuff = array("'", "\r\n", "\n", "\r");
+        $map_json = str_replace($naughty_stuff, "", $map_json);
+        $objectid = 'for-mapid-'.$id;
+        $paramid = 'json-string-'.$objectid;
+        return "<object id='".$objectid."' name='".$objectid."' class='sgmp-data-placeholder sgmp-json-string-placeholder'><param id='".$paramid."' name='".$paramid."' value='".$map_json."' /></object>".PHP_EOL."<script type='text/javascript'>SGMPGlobal.language = '".$sgmp_global_map_language."';</script>".PHP_EOL;
+    }
 endif;
 
 
 
 if ( !function_exists('sgmp_set_google_map_language') ):
-	function sgmp_set_google_map_language($user_selected_language)  {
+    function sgmp_set_google_map_language($user_selected_language)  {
 
-		global $sgmp_global_map_language;
+        global $sgmp_global_map_language;
 
-		$db_saved_language = get_option(SGMP_DB_SELECTED_LANGUAGE);
+        $db_saved_language = get_option(SGMP_DB_SELECTED_LANGUAGE);
 
-		if (!isset($db_saved_language) || $db_saved_language == '') {
-			if ($user_selected_language != 'default') {
-				update_option(SGMP_DB_SELECTED_LANGUAGE, $user_selected_language);
-				$sgmp_global_map_language = $user_selected_language;
+        if (!isset($db_saved_language) || $db_saved_language == '') {
+            if ($user_selected_language != 'default') {
+                update_option(SGMP_DB_SELECTED_LANGUAGE, $user_selected_language);
+                $sgmp_global_map_language = $user_selected_language;
 
-			} else {
-				if (!is_admin()) {
-					$sgmp_global_map_language = "en";
-				}
-			}
-		} else if (isset($db_saved_language) && $db_saved_language != '') {
+            } else {
+                if (!is_admin()) {
+                    $sgmp_global_map_language = "en";
+                }
+            }
+        } else if (isset($db_saved_language) && $db_saved_language != '') {
 
-			if ($user_selected_language != 'default') {
-				update_option(SGMP_DB_SELECTED_LANGUAGE, $user_selected_language);
-				$sgmp_global_map_language = $user_selected_language;
+            if ($user_selected_language != 'default') {
+                update_option(SGMP_DB_SELECTED_LANGUAGE, $user_selected_language);
+                $sgmp_global_map_language = $user_selected_language;
 
-			} else {
-				$sgmp_global_map_language = $db_saved_language;
-			}
-		}
-	}
+            } else {
+                $sgmp_global_map_language = $db_saved_language;
+            }
+        }
+    }
 endif;
 
 
 if ( !function_exists('trim_marker_value') ):
-	function trim_marker_value(&$value)
-	{
-    	$value = trim($value);
-	}
+    function trim_marker_value(&$value)
+    {
+        $value = trim($value);
+    }
 endif;
 
 if ( !function_exists('trim_to_lower_value') ):
@@ -348,61 +348,61 @@ endif;
 
 
 if ( !function_exists('update_markerlist_from_legacy_locations') ):
-	function update_markerlist_from_legacy_locations($latitude, $longitude, $addresscontent, $hiddenmarkers)  {
+    function update_markerlist_from_legacy_locations($latitude, $longitude, $addresscontent, $hiddenmarkers)  {
 
-		$legacyLoc = isset($addresscontent) ? $addresscontent : "";
+        $legacyLoc = isset($addresscontent) ? $addresscontent : "";
 
-		if (isset($latitude) && isset($longitude)) {
-			if ($latitude != "0" && $longitude != "0" && $latitude != 0 && $longitude != 0) {
-				$legacyLoc = $latitude.",".$longitude;
-			}
-		}
+        if (isset($latitude) && isset($longitude)) {
+            if ($latitude != "0" && $longitude != "0" && $latitude != 0 && $longitude != 0) {
+                $legacyLoc = $latitude.",".$longitude;
+            }
+        }
 
-		if (isset($hiddenmarkers) && $hiddenmarkers != "") {
+        if (isset($hiddenmarkers) && $hiddenmarkers != "") {
 
-			$hiddenmarkers_arr = explode("|", $hiddenmarkers);
-			$filtered = array();
-			foreach($hiddenmarkers_arr as $marker) {
-				if (strpos(trim($marker), SGMP_SEP) === false) {
-					$filtered[] = trim($marker.SGMP_SEP."1-default.png");
-				} else {
-					$filtered[] = trim($marker);
-				}
-			}
+            $hiddenmarkers_arr = explode("|", $hiddenmarkers);
+            $filtered = array();
+            foreach($hiddenmarkers_arr as $marker) {
+                if (strpos(trim($marker), SGMP_SEP) === false) {
+                    $filtered[] = trim($marker.SGMP_SEP."1-default.png");
+                } else {
+                    $filtered[] = trim($marker);
+                }
+            }
 
-			$hiddenmarkers = implode("|", $filtered);
-		}
+            $hiddenmarkers = implode("|", $filtered);
+        }
 
-		if (trim($legacyLoc) != "")  {
-			$hiddenmarkers = $legacyLoc.SGMP_SEP."1-default.png".(isset($hiddenmarkers) && $hiddenmarkers != "" ? "|".$hiddenmarkers : "");
-		}
+        if (trim($legacyLoc) != "")  {
+            $hiddenmarkers = $legacyLoc.SGMP_SEP."1-default.png".(isset($hiddenmarkers) && $hiddenmarkers != "" ? "|".$hiddenmarkers : "");
+        }
 
-		$hiddenmarkers_arr = explode("|", $hiddenmarkers );
-		array_walk($hiddenmarkers_arr, 'trim_marker_value');
-		$hiddenmarkers_arr = array_unique($hiddenmarkers_arr);
-		return implode("|", $hiddenmarkers_arr);
-	}
+        $hiddenmarkers_arr = explode("|", $hiddenmarkers );
+        array_walk($hiddenmarkers_arr, 'trim_marker_value');
+        $hiddenmarkers_arr = array_unique($hiddenmarkers_arr);
+        return implode("|", $hiddenmarkers_arr);
+    }
 endif;
 
 
 
 if ( !function_exists('sgmp_clean_kml') ):
-	function sgmp_clean_kml($kml) {
-		$result = '';
-		if (isset($kml) && $kml != "") {
+    function sgmp_clean_kml($kml) {
+        $result = '';
+        if (isset($kml) && $kml != "") {
 
-			$lowerkml = strtolower(trim($kml));
-			$pos = strpos($lowerkml, "http");
+            $lowerkml = strtolower(trim($kml));
+            $pos = strpos($lowerkml, "http");
 
-			if ($pos !== false && $pos == "0") {
-				$kml = strip_tags($kml);
-				$kml = str_replace("&#038;", "&", $kml);
-				$kml = str_replace("&amp;", "&", $kml);
-				$result = trim($kml);
-			}
-		}
-		return $result;
-	}
+            if ($pos !== false && $pos == "0") {
+                $kml = strip_tags($kml);
+                $kml = str_replace("&#038;", "&", $kml);
+                $kml = str_replace("&amp;", "&", $kml);
+                $result = trim($kml);
+            }
+        }
+        return $result;
+    }
 endif;
 
 if ( !function_exists('sgmp_clean_styles') ):
@@ -415,53 +415,53 @@ endif;
 
 
 if ( !function_exists('sgmp_clean_panoramiouid') ):
-	function sgmp_clean_panoramiouid($userId) {
+    function sgmp_clean_panoramiouid($userId) {
 
-		if (isset($userId) && $userId != "") {
-			$userId = strtolower(trim($userId));
-			$userId = strip_tags($userId);
-		}
+        if (isset($userId) && $userId != "") {
+            $userId = strtolower(trim($userId));
+            $userId = strip_tags($userId);
+        }
 
-		return $userId;
-	}
+        return $userId;
+    }
 endif;
 
 
 
 if ( !function_exists('sgmp_create_html_select') ):
-	function sgmp_create_html_select($attr) {
-		return "<select role='".$attr['role']."' id='".$attr['id']."' style='' class='shortcodeitem' name='".$attr['name']."'>".
-				sgmp_create_html_select_options($attr['options'], $attr['value'])."</select>";
-	}
+    function sgmp_create_html_select($attr) {
+        return "<select role='".$attr['role']."' id='".$attr['id']."' style='' class='shortcodeitem' name='".$attr['name']."'>".
+                sgmp_create_html_select_options($attr['options'], $attr['value'])."</select>";
+    }
 endif;
 
 
 if ( !function_exists('sgmp_create_html_select_options') ):
-	function sgmp_create_html_select_options( $options, $so ){
-		$r = '';
-		foreach ($options as $label => $value){
-			$r .= '<option value="'.$value.'"';
-			if($value == $so){
-				$r .= ' selected="selected"';
-			}
-			$r .= '>&nbsp;'.$label.'&nbsp;</option>';
-		}
-		return $r;
-	}
+    function sgmp_create_html_select_options( $options, $so ){
+        $r = '';
+        foreach ($options as $label => $value){
+            $r .= '<option value="'.$value.'"';
+            if($value == $so){
+                $r .= ' selected="selected"';
+            }
+            $r .= '>&nbsp;'.$label.'&nbsp;</option>';
+        }
+        return $r;
+    }
 endif;
 
 
 if ( !function_exists('sgmp_create_html_input') ):
-	function sgmp_create_html_input($attr) {
-		$type = 'text';
+    function sgmp_create_html_input($attr) {
+        $type = 'text';
 
-		if (isset($attr['type'])) {
-			$type = $attr['type'];
-		}
+        if (isset($attr['type'])) {
+            $type = $attr['type'];
+        }
 
-		if (strpos($attr['class'], "notshortcodeitem") === false) {
-			$attr['class'] = $attr['class']." shortcodeitem";
-		}
+        if (strpos($attr['class'], "notshortcodeitem") === false) {
+            $attr['class'] = $attr['class']." shortcodeitem";
+        }
 
         return sprintf('<input type="%s" id="%s" name="%s" value="%s" role="%s" class="%s" style="%s" />',
                 $type,
@@ -472,13 +472,13 @@ if ( !function_exists('sgmp_create_html_input') ):
                 $attr['class'],
                 $attr['style']
         );
-	}
+    }
 endif;
 
 if ( !function_exists('sgmp_create_html_list') ):
-	function sgmp_create_html_list($attr) {
-		return sprintf('<ul class="%s" id="%s" name="%s" style="%s"></ul>', $attr['class'], $attr['id'], $attr['name'], $attr['style']);
-	}
+    function sgmp_create_html_list($attr) {
+        return sprintf('<ul class="%s" id="%s" name="%s" style="%s"></ul>', $attr['class'], $attr['id'], $attr['name'], $attr['style']);
+    }
 endif;
 
 
@@ -500,136 +500,136 @@ if ( !function_exists('sgmp_create_html_textarea') ):
 endif;
 
 if ( !function_exists('sgmp_create_html_label') ):
-	function sgmp_create_html_label($attr) {
-		 return "<label for=".$attr['for'].">".$attr['value']."</label>";
-	}
+    function sgmp_create_html_label($attr) {
+         return "<label for=".$attr['for'].">".$attr['value']."</label>";
+    }
 endif;
 
 
 if ( !function_exists('sgmp_create_html_geobubble') ):
-		function sgmp_create_html_geobubble($attr) {
-				$falseselected = "checked";
-				$trueselected = "";
+        function sgmp_create_html_geobubble($attr) {
+                $falseselected = "checked";
+                $trueselected = "";
 
-				if ($attr['value'] == "true") {
-					$falseselected = "";
-					$trueselected = "checked";
-				}
+                if ($attr['value'] == "true") {
+                    $falseselected = "";
+                    $trueselected = "checked";
+                }
 
-				$elem = "<p class='geo-mashup-marker-options'>When Geo mashup marker clicked, info bubble should contain:</p>";
-				$elem .= "<input type='radio' class='".$attr['class']."' id='".$attr['id']."-false' role='".$attr['name']."' name='".$attr['name']."' ".$falseselected." value='false' />&nbsp;";
-				$elem .= "<label for='".$attr['id']."-false'> - marker location (address or lat/long, whichever was set in the original map)</label><br />";
-				$elem .= "<input type='radio' class='".$attr['class']."' id='".$attr['id']."-true' role='".$attr['name']."' name='".$attr['name']."' ".$trueselected." value='true' />&nbsp;";
-				$elem .= "<label for='".$attr['id']."-true'> - linked title to the original post/page and the latter's excerpt</label>";
-				return $elem;
-		}
+                $elem = "<p class='geo-mashup-marker-options'>When Geo mashup marker clicked, info bubble should contain:</p>";
+                $elem .= "<input type='radio' class='".$attr['class']."' id='".$attr['id']."-false' role='".$attr['name']."' name='".$attr['name']."' ".$falseselected." value='false' />&nbsp;";
+                $elem .= "<label for='".$attr['id']."-false'> - marker location (address or lat/long, whichever was set in the original map)</label><br />";
+                $elem .= "<input type='radio' class='".$attr['class']."' id='".$attr['id']."-true' role='".$attr['name']."' name='".$attr['name']."' ".$trueselected." value='true' />&nbsp;";
+                $elem .= "<label for='".$attr['id']."-true'> - linked title to the original post/page and the latter's excerpt</label>";
+                return $elem;
+        }
 endif;
 
 
 
 if ( !function_exists('sgmp_create_html_custom') ):
-		function sgmp_create_html_custom($attr) {
-				$markerDir = SGMP_PLUGIN_IMAGES_DIR . "/markers/";
-				$items = "<div id='".$attr['id']."' class='".$attr['class']."' style='margin-bottom: 15px; padding-bottom: 10px; padding-top: 10px; padding-left: 30px; height: 200px; overflow: auto; border-radius: 4px 4px 4px 4px; border: 1px solid #C9C9C9;'>";
-				if (is_readable($markerDir)) {
+    function sgmp_create_html_custom($attr) {
+        $markerDir = SGMP_PLUGIN_IMAGES_DIR . "/markers/";
+        $items = "<div id='".$attr['id']."' class='".$attr['class']."' style='margin-bottom: 15px; padding-bottom: 10px; padding-top: 10px; padding-left: 30px; height: 200px; overflow: auto; border-radius: 4px 4px 4px 4px; border: 1px solid #C9C9C9;'>";
+        if (is_readable($markerDir)) {
 
-					if ($dir = opendir($markerDir)) {
+            if ($dir = opendir($markerDir)) {
 
-						$files = array();
-						while ($files[] = readdir($dir));
-						sort($files);
-						closedir($dir);
+                $files = array();
+                while ($files[] = readdir($dir));
+                sort($files);
+                closedir($dir);
 
-						$extensions = array("png", "jpg", "gif", "jpeg");
+                $extensions = array("png", "jpg", "gif", "jpeg");
 
-						foreach ($files as $file) {
-							$ext = strtolower(pathinfo($file, PATHINFO_EXTENSION));
+                foreach ($files as $file) {
+                    $ext = strtolower(pathinfo($file, PATHINFO_EXTENSION));
 
-							if (!in_array($ext, $extensions)) {
-								continue;
-							}
+                    if (!in_array($ext, $extensions)) {
+                        continue;
+                    }
 
-							if (strrpos($file, "shadow") === false) {
-									$attr['class'] = "";
-									$attr['style'] = "";
-									$sel = "";
-									$iconId = "";
-									$radioId = "";
-									$src = SGMP_PLUGIN_IMAGES."/markers/".$file;
-									if ($file == "1-default.png") {
-											$attr['class'] = "selected-marker-image nomarker";
-											$attr['style'] = "cursor: default; ";
-											$sel = "checked='checked'";
-											$iconId = "default-marker-icon";
-											$radioId = $iconId."-radio";
-									} else if ($file == "2-default.png" || $file == "3-default.png") {
-											$attr['class'] = "nomarker";
-									}
+                    if (strrpos($file, "shadow") === false) {
+                        $attr['class'] = "";
+                        $attr['style'] = "";
+                        $sel = "";
+                        $iconId = "";
+                        $radioId = "";
+                        $src = SGMP_PLUGIN_IMAGES."/markers/".$file;
+                        if ($file == "1-default.png") {
+                            $attr['class'] = "selected-marker-image nomarker";
+                            $attr['style'] = "cursor: default; ";
+                            $sel = "checked='checked'";
+                            $iconId = "default-marker-icon";
+                            $radioId = $iconId."-radio";
+                        } else if ($file == "2-default.png" || $file == "3-default.png") {
+                            $attr['class'] = "nomarker";
+                        }
 
-									$items .= "<div style='float: left; text-align: center; margin-right: 8px;'><a href='javascript:void(0);'><img id='".$iconId."' style='".$attr['style']."' class='".$attr['class']."' src='".$src."' border='0' /></a><br /><input ".$sel." type='radio' id='".$radioId."' value='".$file."' style='' name='custom-icons-radio' /></div>";
+                        $items .= "<div style='float: left; text-align: center; margin-right: 8px;'><a href='javascript:void(0);'><img id='".$iconId."' style='".$attr['style']."' class='".$attr['class']."' src='".$src."' border='0' /></a><br /><input ".$sel." type='radio' id='".$radioId."' value='".$file."' style='' name='custom-icons-radio' /></div>";
 
-							}
-        				}
-					}
-				}
+                    }
+                }
+            }
+        }
 
-			return $items."</div>";
-	}
+        return $items."</div>";
+    }
 endif;
 
 
 if ( !function_exists('sgmp_replace_template_tokens') ):
-	function sgmp_replace_template_tokens($token_values, $template)  {
-		foreach ($token_values as $key => $value) {
-			$template = str_replace($key, $value, $template);
-		}
-		return $template;
-	}
+    function sgmp_replace_template_tokens($token_values, $template)  {
+        foreach ($token_values as $key => $value) {
+            $template = str_replace($key, $value, $template);
+        }
+        return $template;
+    }
 endif;
 
 
 if ( !function_exists('sgmp_build_template_values') ):
-	function sgmp_build_template_values($settings) {
+    function sgmp_build_template_values($settings) {
 
-		$template_values = array();
+        $template_values = array();
 
-		foreach($settings as $setting) {
-			$function_type = $setting['type'];
-			$token = $setting['token'];
-			$token_prefix = (isset($setting['token_prefix']) ? $setting['token_prefix'] : '');
+        foreach($settings as $setting) {
+            $function_type = $setting['type'];
+            $token = $setting['token'];
+            $token_prefix = (isset($setting['token_prefix']) ? $setting['token_prefix'] : '');
 
-			$function_name =  "sgmp_create_html_".$function_type;
-			$html_template_token_name = strtoupper((isset($token_prefix) && $token_prefix != '' ) ? $token_prefix : $function_type)."_".strtoupper($token);
-			$template_values[$html_template_token_name] = "COULD NOT RENDER HTML";
-			if (function_exists($function_name)) {
-				$template_values[$html_template_token_name] = $function_name($setting['attr']);
-			}
-		}
-		return $template_values;
-	}
+            $function_name =  "sgmp_create_html_".$function_type;
+            $html_template_token_name = strtoupper((isset($token_prefix) && $token_prefix != '' ) ? $token_prefix : $function_type)."_".strtoupper($token);
+            $template_values[$html_template_token_name] = "COULD NOT RENDER HTML";
+            if (function_exists($function_name)) {
+                $template_values[$html_template_token_name] = $function_name($setting['attr']);
+            }
+        }
+        return $template_values;
+    }
 endif;
 
 
 if ( !function_exists('sgmp_set_values_for_html_rendering') ):
-	function sgmp_set_values_for_html_rendering(&$settings, $params) {
+    function sgmp_set_values_for_html_rendering(&$settings, $params) {
 
-		$html_element_select_options = array();
+        $html_element_select_options = array();
         $html_element_select_options['miles_km'] = array("Miles" => "miles", "KM" => "km");
-		$html_element_select_options['show_hide'] = array("Show" => "true", "Hide" => "false");
-		$html_element_select_options['enable_disable_xor'] = array("Enable" => "false", "Disable" => "true");
-		$html_element_select_options['enable_disable'] = array("Enable" => "true", "Disable" => "false");
-		$html_element_select_options['map_types'] = array("Roadmap"=>"roadmap", "Satellite"=>"satellite", "Hybrid"=>"hybrid", "Terrain" => "terrain", "OpenStreet"=>"OSM");
-		$html_element_select_options['animation_types'] = array("Drop"=>"DROP", "Bounce"=>"BOUNCE");
-		$html_element_select_options['map_aligns'] = array("Center"=>"center", "Right"=>"right", "Left" => "left");
-		$html_element_select_options['languages'] = array("Default" => "default", "Arabic" => "ar", "Basque" => "eu", "Bulgarian" => "bg", "Bengali" => "bn", "Catalan" => "ca", "Czech" => "cs", "Danish" => "da", "English" => "en", "German" => "de", "Greek" => "el", "Spanish" => "es", "Farsi" => "fa", "Finnish" => "fi", "Filipino" => "fil", "French" => "fr", "Galician" => "gl", "Gujarati" => "gu", "Hindi" => "hi", "Croatian" => "hr", "Hungarian" => "hu", "Indonesian" => "id", "Italian" => "it", "Hebrew" => "iw", "Japanese" => "ja", "Kannada" => "kn", "Korean" => "ko", "Lithuanian" => "lt", "Latvian" => "lv", "Malayalam" => "ml", "Marathi" => "mr", "Dutch" => "nl", "Norwegian" => "no", "Oriya" => "or", "Polish" => "pl", "Portuguese" => "pt", "Romanian" => "ro", "Russian" => "ru", "Slovak" => "sk", "Slovenian" => "sl", "Serbian" => "sr", "Swedish" => "sv", "Tagalog" => "tl", "Tamil" => "ta", "Telugu" => "te", "Thai" => "th", "Turkish" => "tr", "Ukrainian" => "uk", "Vietnamese" => "vi", "Chinese (simpl)" => "zh-CN", "Chinese (tradi)" => "zh-TW");
+        $html_element_select_options['show_hide'] = array("Show" => "true", "Hide" => "false");
+        $html_element_select_options['enable_disable_xor'] = array("Enable" => "false", "Disable" => "true");
+        $html_element_select_options['enable_disable'] = array("Enable" => "true", "Disable" => "false");
+        $html_element_select_options['map_types'] = array("Roadmap"=>"roadmap", "Satellite"=>"satellite", "Hybrid"=>"hybrid", "Terrain" => "terrain", "OpenStreet"=>"OSM");
+        $html_element_select_options['animation_types'] = array("Drop"=>"DROP", "Bounce"=>"BOUNCE");
+        $html_element_select_options['map_aligns'] = array("Center"=>"center", "Right"=>"right", "Left" => "left");
+        $html_element_select_options['languages'] = array("Default" => "default", "Arabic" => "ar", "Basque" => "eu", "Bulgarian" => "bg", "Bengali" => "bn", "Catalan" => "ca", "Czech" => "cs", "Danish" => "da", "English" => "en", "German" => "de", "Greek" => "el", "Spanish" => "es", "Farsi" => "fa", "Finnish" => "fi", "Filipino" => "fil", "French" => "fr", "Galician" => "gl", "Gujarati" => "gu", "Hindi" => "hi", "Croatian" => "hr", "Hungarian" => "hu", "Indonesian" => "id", "Italian" => "it", "Hebrew" => "iw", "Japanese" => "ja", "Kannada" => "kn", "Korean" => "ko", "Lithuanian" => "lt", "Latvian" => "lv", "Malayalam" => "ml", "Marathi" => "mr", "Dutch" => "nl", "Norwegian" => "no", "Oriya" => "or", "Polish" => "pl", "Portuguese" => "pt", "Romanian" => "ro", "Russian" => "ru", "Slovak" => "sk", "Slovenian" => "sl", "Serbian" => "sr", "Swedish" => "sv", "Tagalog" => "tl", "Tamil" => "ta", "Telugu" => "te", "Thai" => "th", "Turkish" => "tr", "Ukrainian" => "uk", "Vietnamese" => "vi", "Chinese (simpl)" => "zh-CN", "Chinese (tradi)" => "zh-TW");
 
 
-		if (isset($params['htmlLabelValue']) && trim($params['htmlLabelValue']) != "") {
-			$settings[] = array("type" => "label", "token" => $params['templateTokenNameSuffix'], 
-				"attr" => array("for" => $params['dbParameterId'], "value" => $params['htmlLabelValue'])); 
-		}
+        if (isset($params['htmlLabelValue']) && trim($params['htmlLabelValue']) != "") {
+            $settings[] = array("type" => "label", "token" => $params['templateTokenNameSuffix'], 
+                "attr" => array("for" => $params['dbParameterId'], "value" => $params['htmlLabelValue'])); 
+        }
 
-		$settings[] = array(
+        $settings[] = array(
                     "type" => (isset($params['backendFunctionNameSuffix']) ? $params['backendFunctionNameSuffix'] : ''),
                     "token" => (isset($params['templateTokenNameSuffix']) ? $params['templateTokenNameSuffix'] : ''),
                     "token_prefix" => (isset($params['templateTokenNamePrefix']) ? $params['templateTokenNamePrefix'] : ''),
@@ -644,36 +644,36 @@ if ( !function_exists('sgmp_set_values_for_html_rendering') ):
                         "options" => (isset($params['htmlSelectOptionsKey']) ? $html_element_select_options[$params['htmlSelectOptionsKey']] : array())
                     )
                 );
-	}
+    }
 endif;
 
 
 
 if ( !function_exists('sgmp_google_map_deregister_scripts') ):
 function sgmp_google_map_deregister_scripts() {
-	$handle = '';
-	global $wp_scripts;
+    $handle = '';
+    global $wp_scripts;
 
-	if (isset($wp_scripts->registered) && is_array($wp_scripts->registered)) {
-		foreach ( $wp_scripts->registered as $script) {
+    if (isset($wp_scripts->registered) && is_array($wp_scripts->registered)) {
+        foreach ( $wp_scripts->registered as $script) {
 
-			if (strpos($script->src, 'http://maps.googleapis.com/maps/api/js') !== false && $script->handle != 'sgmp-google-map-api') {
+            if (strpos($script->src, 'http://maps.googleapis.com/maps/api/js') !== false && $script->handle != 'sgmp-google-map-api') {
 
-				if (!isset($script->handle) || $script->handle == '') {
-					$script->handle = 'remove-google-map-duplicate';
-				}
+                if (!isset($script->handle) || $script->handle == '') {
+                    $script->handle = 'remove-google-map-duplicate';
+                }
 
-				unset($script->src);
-				$handle = $script->handle;
+                unset($script->src);
+                $handle = $script->handle;
 
-				if ($handle != '') {
-					$wp_scripts->remove( $handle );
-					$handle = '';
-					break;
-				}
-			}
-		}
-	}
+                if ($handle != '') {
+                    $wp_scripts->remove( $handle );
+                    $handle = '';
+                    break;
+                }
+            }
+        }
+    }
 }
 endif;
 
@@ -767,153 +767,153 @@ endif;
 
 
 if ( !function_exists('process_collection_of_contents') ):
-		function process_collection_of_contents($published_content_list)  {
+    function process_collection_of_contents($published_content_list)  {
 
-				$db_markers = array();
-				foreach($published_content_list as $post) {
+        $db_markers = array();
+        foreach($published_content_list as $post) {
 
-					$post_content = $post->post_content;
-					$extracted = extract_locations_from_post_content($post_content);
+            $post_content = $post->post_content;
+            $extracted = extract_locations_from_post_content($post_content);
 
-					$bad_entities = array("&quot;", "&#039;", "'", "\"");
-					if (count($extracted) > 0) {
+            $bad_entities = array("&quot;", "&#039;", "'", "\"");
+            if (count($extracted) > 0) {
 
-                        $marker = array();
-                        $post_title = $post->post_title;
-                        $post_title = strip_tags($post_title);
-                        $post_title = str_replace($bad_entities, "", $post_title);
-                        $post_title = preg_replace("/\r\n|\n\r|\n/", " ", $post_title);
-                        $marker[$post->ID]['markers'] = $extracted;
-                        $marker[$post->ID]['title'] = $post_title;
-                        $marker[$post->ID]['permalink'] = get_permalink($post->ID);
-                        $marker[$post->ID]['excerpt'] = '';
+                $marker = array();
+                $post_title = $post->post_title;
+                $post_title = strip_tags($post_title);
+                $post_title = str_replace($bad_entities, "", $post_title);
+                $post_title = preg_replace("/\r\n|\n\r|\n/", " ", $post_title);
+                $marker[$post->ID]['markers'] = $extracted;
+                $marker[$post->ID]['title'] = $post_title;
+                $marker[$post->ID]['permalink'] = get_permalink($post->ID);
+                $marker[$post->ID]['excerpt'] = '';
 
-						$clean = "";
-						if (isset($post->post_excerpt) && trim($post->post_excerpt) != '') {
-							$clean = clean_excerpt($post->post_excerpt);
-						} else {
-							$clean = clean_excerpt($post_content);
-						}
-						if ( trim($clean) != '' ) {
-							$excerpt = mb_substr($clean, 0, 175);
-                            $marker[$post->ID]['excerpt'] = $excerpt."..";
-						}
-                        $db_markers[] = $marker[$post->ID];
-					}
-				}
-				return $db_markers;
+                $clean = "";
+                if (isset($post->post_excerpt) && trim($post->post_excerpt) != '') {
+                    $clean = clean_excerpt($post->post_excerpt);
+                } else {
+                    $clean = clean_excerpt($post_content);
+                }
+                if ( trim($clean) != '' ) {
+                    $excerpt = mb_substr($clean, 0, 175);
+                    $marker[$post->ID]['excerpt'] = $excerpt."..";
+                }
+                $db_markers[] = $marker[$post->ID];
+            }
+        }
+        return $db_markers;
 
-	}
+    }
 endif;
 
 
 
 if ( !function_exists('clean_excerpt') ):
-	function clean_excerpt($content)  {
+    function clean_excerpt($content)  {
 
-		if (!isset($content) || $content == "") {
-			return $content;
-		}
-		$bad_entities = array("&quot;", "&#039;", "'", "\"");
-		$content = strip_tags($content);
-		$content = preg_replace ("/<[^>]*>/", "", $content);
-		$content = preg_replace ("/\[[^\]]*\]/", "", $content);
-		$content = preg_replace("/\r\n|\n\r|\n/", " ", $content);
-		$content = str_replace($bad_entities, "", $content);
-		return trim($content);
-	}
+        if (!isset($content) || $content == "") {
+            return $content;
+        }
+        $bad_entities = array("&quot;", "&#039;", "'", "\"");
+        $content = strip_tags($content);
+        $content = preg_replace ("/<[^>]*>/", "", $content);
+        $content = preg_replace ("/\[[^\]]*\]/", "", $content);
+        $content = preg_replace("/\r\n|\n\r|\n/", " ", $content);
+        $content = str_replace($bad_entities, "", $content);
+        return trim($content);
+    }
 endif;
 
 
 if ( !function_exists('extract_locations_from_post_content') ):
-	function extract_locations_from_post_content($post_content)  {
+    function extract_locations_from_post_content($post_content)  {
 
-		$arr = array();
-		if (isset($post_content) && $post_content != '') {
+        $arr = array();
+        if (isset($post_content) && $post_content != '') {
 
-			if (strpos($post_content, "addresscontent") !== false) {
-				$pattern = "/addresscontent=\"(.*?)\"/";
-				$found = find_for_regex($pattern, $post_content); 
+            if (strpos($post_content, "addresscontent") !== false) {
+                $pattern = "/addresscontent=\"(.*?)\"/";
+                $found = find_for_regex($pattern, $post_content); 
 
-				if (count($found) > 0) {
-					$arr = array_merge($arr, $found);
-				}
-			}
+                if (count($found) > 0) {
+                    $arr = array_merge($arr, $found);
+                }
+            }
 
-			if (strpos($post_content, "addmarkerlist") !== false) {
+            if (strpos($post_content, "addmarkerlist") !== false) {
 
-				$pattern = "/addmarkerlist=\"(.*?)\"/";
+                $pattern = "/addmarkerlist=\"(.*?)\"/";
                 $washed_post_content = str_replace(array("\r\n", "\r", "\n"), " ", $post_content);
                 $found = find_for_regex($pattern, $washed_post_content);
 
-				if (count($found) > 0) {
-					$arr = array_merge($arr, $found);
-				}
-			}
+                if (count($found) > 0) {
+                    $arr = array_merge($arr, $found);
+                }
+            }
 
-			if (strpos($post_content, "latitude") !== false) {
+            if (strpos($post_content, "latitude") !== false) {
 
-				$pattern = "/latitude=\"(.*?)\"(\s{0,})longitude=\"(.*?)\"/";
+                $pattern = "/latitude=\"(.*?)\"(\s{0,})longitude=\"(.*?)\"/";
 
-				preg_match_all($pattern, $post_content, $matches);
+                preg_match_all($pattern, $post_content, $matches);
 
-				if (is_array($matches)) {
+                if (is_array($matches)) {
 
-					if (isset($matches[1]) && is_array($matches[1]) &&
-						isset($matches[3]) && is_array($matches[3])) {
+                    if (isset($matches[1]) && is_array($matches[1]) &&
+                        isset($matches[3]) && is_array($matches[3])) {
 
-						for ($idx = 0; $idx < sizeof($matches[1]); $idx++) {
+                        for ($idx = 0; $idx < sizeof($matches[1]); $idx++) {
 
-							if (isset($matches[1][$idx]) && isset($matches[3][$idx])) {
-								$lat = $matches[1][$idx];
-								$lng = $matches[3][$idx];
+                            if (isset($matches[1][$idx]) && isset($matches[3][$idx])) {
+                                $lat = $matches[1][$idx];
+                                $lng = $matches[3][$idx];
 
-								if (trim($lat) != "0" && trim($lng) != "0") {
-									$coord = trim($lat).",".trim($lng);
-									$arr[$coord] = $coord;
-								}
-							}
-						}
-					}
-				}
-			}
+                                if (trim($lat) != "0" && trim($lng) != "0") {
+                                    $coord = trim($lat).",".trim($lng);
+                                    $arr[$coord] = $coord;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
 
-			$arr = array_unique($arr);
-		}
+            $arr = array_unique($arr);
+        }
 
-		return $arr;
-	}
+        return $arr;
+    }
 
 endif;
 
 
 if ( !function_exists('find_for_regex') ):
 
-	function find_for_regex($pattern, $post_content)  {
-			$arr = array();
-			preg_match_all($pattern, $post_content, $matches);
+    function find_for_regex($pattern, $post_content)  {
+        $arr = array();
+        preg_match_all($pattern, $post_content, $matches);
 
-			if (is_array($matches)) {
-				if (isset($matches[1]) && is_array($matches[1])) {
+        if (is_array($matches)) {
+            if (isset($matches[1]) && is_array($matches[1])) {
 
-					foreach($matches[1] as $key => $value) {
-						if (isset($value) && trim($value) != "") {
+                foreach($matches[1] as $key => $value) {
+                    if (isset($value) && trim($value) != "") {
 
-							if (strpos($value, "|") !== false) {
-								$value_arr = explode("|", $value);
-								foreach ($value_arr as $value) {
-									$arr[$value] = $value;
-								}
-							} else {
-								$arr[$value] = $value;
-							}
-						}
-					}
-				}
-			}
+                        if (strpos($value, "|") !== false) {
+                            $value_arr = explode("|", $value);
+                            foreach ($value_arr as $value) {
+                                $arr[$value] = $value;
+                            }
+                        } else {
+                            $arr[$value] = $value;
+                        }
+                    }
+                }
+            }
+        }
 
-		return $arr;
-	}
+        return $arr;
+    }
 endif;
 
 if ( !function_exists('sgmp_save_post_hook') ):
@@ -1192,4 +1192,5 @@ if ( !function_exists('sgmp_do_serverside_address_validation_2') ):
     }
 endif;
 
+# vim:set expandtab tabstop=4 shiftwidth=4 autoindent smartindent: #
 ?>
