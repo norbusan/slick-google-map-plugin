@@ -26,7 +26,7 @@
 				<tr>
 					<td valign="top"><a id="tooltip-marker-language" class="google-map-tooltip-marker" href="javascript:void(0);" title="The Google Maps API uses the browser's preferred language setting when displaying textual information such as the names for controls, copyright notices, driving directions and labels on maps. In most cases, this is preferable; you usually do not wish to override the user's preferred language setting. However, if you wish to change the Maps API to ignore the browser's language setting and force it to display information in a particular language, you can by selecting on of the available languages in this setting">[Help?]</a>&nbsp;LABEL_LANGUAGE</td>
 					<td valign="top">SELECT_LANGUAGE</td>
-					<td valign="top"><a id="tooltip-powered-by" class="google-map-tooltip-marker" href="javascript:void(0);" title="Displays 'Powered by Simple Google Map Plugin' notice under the generated map. You can choose to hide the notice, but if you want to help spread the word about the plugin, please leave this setting as 'Enable'. Thank you ;)">[Help?]</a>&nbsp;LABEL_POWEREDBY</td>
+					<td valign="top"><a id="tooltip-powered-by" class="google-map-tooltip-marker" href="javascript:void(0);" title="Displays 'Powered by Slick Google Map Plugin' notice under the generated map. You can choose to hide the notice, but if you want to help spread the word about the plugin, please leave this setting as 'Enable'. Thank you ;)">[Help?]</a>&nbsp;LABEL_POWEREDBY</td>
 					<td valign="top">SELECT_POWEREDBY</td>
 				</tr>
 			</tbody>

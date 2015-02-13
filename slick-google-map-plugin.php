@@ -1,7 +1,7 @@
 <?php
 /*
-Plugin Name: Simple Google Map Plugin
-Plugin URI: https://github.com/norbusan/simple-google-map-plugin
+Plugin Name: Slick Google Map Plugin
+Plugin URI: https://github.com/norbusan/slick-google-map-plugin
 Description: A simple and intuitive, yet elegant and fully documented Google map plugin that installs as a widget and a short code. The plugin is packed with useful features. Widget and shortcode enabled. Offers extensive configuration options for markers, over 250 custom marker icons, marker Geo mashup, controls, size, KML files, location by latitude/longitude, location by address, info window, directions, traffic/bike lanes and more. 
 Version: 0.0.1
 Author: Norbert Preining
@@ -130,7 +130,7 @@ if ( !function_exists('sgmp_add_actions') ):
             }
         }
 
-		add_action('widgets_init', create_function('', 'return register_widget("SimpleGoogleMap_Widget");'));
+		add_action('widgets_init', create_function('', 'return register_widget("SlickGoogleMap_Widget");'));
 		add_action('wp_head', 'sgmp_google_map_deregister_scripts', 200);
 		add_action('wp_head', 'sgmp_generate_global_options');
 

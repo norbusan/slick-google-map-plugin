@@ -28,18 +28,18 @@ $sgmp_options = get_option('sgmp_options');
 if ($sgmp_admin_notice != NULL) {
 	$sgmp_options['admin_notice'] = 'hide';
 	update_option('sgmp_options',$sgmp_options);
-	echo '<div class="updated" style="padding:10px;margin:10px 0;">"Simple Google Map Plugin" options have been updated!</div>';
+	echo '<div class="updated" style="padding:10px;margin:10px 0;">"Slick Google Map Plugin" options have been updated!</div>';
 	echo '<script type="text/javascript">jQuery(document).ready(function($) { $("#sgmp_admin_notice").hide(); });</script>';
 }
 if ($sgmp_plugin_notice != NULL) {
 	$sgmp_options['plugin_notice'] = 'hide';
 	update_option('sgmp_options',$sgmp_options);
-	echo '<div class="updated" style="padding:10px;margin:10px 0;">"Simple Google Map Plugin" options have been updated!</div>';
+	echo '<div class="updated" style="padding:10px;margin:10px 0;">"Slick Google Map Plugin" options have been updated!</div>';
 }
 if ($sgmp_metabox_notice != NULL) {
 	$sgmp_options['metabox_notice'] = 'hide';
 	update_option('sgmp_options',$sgmp_options);
-	echo '<div class="updated" style="padding:10px;margin:10px 0;">"Simple Google Map Plugin" options have been updated!</div>';
+	echo '<div class="updated" style="padding:10px;margin:10px 0;">"Slick Google Map Plugin" options have been updated!</div>';
 }
 
 ?>

@@ -1,4 +1,4 @@
-<h2>Simple Google Map by Norbert Preining and Alexander Zagniotov</h2>
+<h2>Slick Google Map by Norbert Preining and Alexander Zagniotov</h2>
 <div class="tools-tabs">
 	<ul class="tools-tabs-nav hide-if-no-js">
 		<li class="">
@@ -20,7 +20,7 @@
 		<div class="tools-tab-content">
 			<h3 class="hide-if-js">Contribute</h3>
 			<div style="border: 1px solid #FFCC99; width: 95%; padding: 5px 15px; -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px;">
-			<p>Please note, <b>DO NOT copy the below shortcode and paste it into your posts/pages content</b>. Use the shortcode builder found under the post/page HTML editor. In other words, do you know the screen where you input content for your posts/pages? Look for the shortcode builder below that editor. The shortcode called "Simple Google Map Shortcode Builder"</p></div>
+			<p>Please note, <b>DO NOT copy the below shortcode and paste it into your posts/pages content</b>. Use the shortcode builder found under the post/page HTML editor. In other words, do you know the screen where you input content for your posts/pages? Look for the shortcode builder below that editor. The shortcode called "Slick Google Map Shortcode Builder"</p></div>
 			<h4>List of allowed values for the manual shortcode configuration</h4>
 			<p style="">
 				[google-map-v3<br />

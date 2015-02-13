@@ -7,7 +7,7 @@ if(defined('WP_UNINSTALL_PLUGIN')) {
 			$wpdb->query( "DELETE FROM ".$options_table." WHERE option_name LIKE '".SGMP_ALL_MAP_CACHED_CONSTANTS_PREFIX."%';" );
 	
 			delete_option('sgmp_options');
-			delete_option('widget_simplegooglemap');
+			delete_option('widget_slickgooglemap');
 			delete_option('sgmp_persisted_shortcodes');
 			delete_transient('sgmp_update_routine');
 			delete_transient('sgmp_layers_markers_export');
@@ -28,7 +28,7 @@ if(defined('WP_UNINSTALL_PLUGIN')) {
 					$wpdb->query( "DELETE FROM ".$options_table." WHERE option_name LIKE '".SGMP_ALL_MAP_CACHED_CONSTANTS_PREFIX."%';" );
 			
 					delete_option('sgmp_options');
-					delete_option('widget_simplegooglemap');
+					delete_option('widget_slickgooglemap');
 					delete_option('sgmp_persisted_shortcodes');
 					delete_transient('sgmp_update_routine');
 					delete_transient('sgmp_layers_markers_export');
@@ -50,7 +50,7 @@ if(defined('WP_UNINSTALL_PLUGIN')) {
 		$wpdb->query( "DELETE FROM ".$options_table." WHERE option_name LIKE '".SGMP_ALL_MAP_CACHED_CONSTANTS_PREFIX."%';" );
 
 		delete_option('sgmp_options');
-		delete_option('widget_simplegooglemap');
+		delete_option('widget_slickgooglemap');
 		delete_option('sgmp_persisted_shortcodes');
 		delete_transient('sgmp_update_routine');
 		delete_transient('sgmp_layers_markers_export');

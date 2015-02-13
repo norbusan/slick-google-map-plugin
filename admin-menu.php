@@ -23,7 +23,7 @@ if ( !function_exists( 'add_action' ) ) {
 
 if ( !function_exists('sgmp_google_map_plugin_menu') ):
       function sgmp_google_map_plugin_menu() {
-      		$hook = add_menu_page("Simple Google Map", 'Google Map', 'activate_plugins', SGMP_HOOK, 'sgmp_parse_menu_html', SGMP_PLUGIN_IMAGES .'/google_map.png');
+      		$hook = add_menu_page("Slick Google Map", 'Google Map', 'activate_plugins', SGMP_HOOK, 'sgmp_parse_menu_html', SGMP_PLUGIN_IMAGES .'/google_map.png');
 	  		add_action('admin_print_scripts-'.$hook, 'sgmp_google_map_tab_script');
 
             $hook = add_submenu_page(SGMP_HOOK, 'Documentation', 'Documentation', 'activate_plugins', SGMP_HOOK);
@@ -119,7 +119,7 @@ function sgmp_generate_support_data() {
     ."<h4>WordPress</h4>"
     ."<ul>"
     ."<li>WordPress v".$wp_version."</li>"
-    ."<li>Simple Google Map Plugin v".SGMP_VERSION."</li>"
+    ."<li>Slick Google Map Plugin v".SGMP_VERSION."</li>"
     ."<li>Theme: ".$current_wp_theme->Name . ", v" . $current_wp_theme->Version."</li>"
     ."<li>Published posts: ".$published_posts."</li>"
     ."<li>Published pages: ".$published_pages."</li>"

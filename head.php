@@ -30,7 +30,7 @@ endif;
 
 if ( !function_exists('sgmp_google_map_admin_add_style') ):
         function sgmp_google_map_admin_add_style()  {
-            wp_enqueue_style('simple-google-map-style', SGMP_PLUGIN_CSS . '/sgmp.admin.css', false, SGMP_VERSION, "screen");
+            wp_enqueue_style('slick-google-map-style', SGMP_PLUGIN_CSS . '/sgmp.admin.css', false, SGMP_VERSION, "screen");
         }
 endif;
 
@@ -47,9 +47,9 @@ if ( !function_exists('sgmp_google_map_admin_add_script') ):
                 }
                 wp_enqueue_script('sgmp-jquery-tokeninput', SGMP_PLUGIN_JS. '/sgmp.tokeninput'.$minified.'.js', array('jquery'), SGMP_VERSION, true);
                 /* temp fix - will probably be fixed with https://core.trac.wordpress.org/ticket/29520#comment:17
-				wp_enqueue_script('simple-google-map-plugin', SGMP_PLUGIN_JS. '/sgmp.admin'.$minified.'.js', array('jquery', 'media', 'wp-ajax-response'), SGMP_VERSION, true);
+				wp_enqueue_script('slick-google-map-plugin', SGMP_PLUGIN_JS. '/sgmp.admin'.$minified.'.js', array('jquery', 'media', 'wp-ajax-response'), SGMP_VERSION, true);
 				*/
-				wp_enqueue_script('simple-google-map-plugin', SGMP_PLUGIN_JS. '/sgmp.admin'.$minified.'.js', array('jquery', 'wp-ajax-response'), SGMP_VERSION, true);
+				wp_enqueue_script('slick-google-map-plugin', SGMP_PLUGIN_JS. '/sgmp.admin'.$minified.'.js', array('jquery', 'wp-ajax-response'), SGMP_VERSION, true);
             }
 
             if (sgmp_should_find_posts_scripts()) {
@@ -210,7 +210,7 @@ if ( !function_exists('sgmp_generate_global_options') ):
 
         echo "<script type='text/javascript'>".PHP_EOL;
         echo "/* <![CDATA[ */".PHP_EOL;
-        echo "// Simple Google Map plugin v".SGMP_VERSION.PHP_EOL;
+        echo "// Slick Google Map plugin v".SGMP_VERSION.PHP_EOL;
         echo "var SGMPGlobal = ".json_encode($properties).PHP_EOL;
         echo "/* ]]> */".PHP_EOL;
         echo "</script>".PHP_EOL;

@@ -201,7 +201,7 @@
                                 break;
                         }
                         if (msg != '') {
-                            var error = SGMPGlobal.kml.replace("[TITLE]", "<b>Simple Google Map Plugin</b><br /><br /><b>Google KML error:</b><br />");
+                            var error = SGMPGlobal.kml.replace("[TITLE]", "<b>Slick Google Map Plugin</b><br /><br /><b>Google KML error:</b><br />");
                             error = error.replace("[MSG]", msg);
                             error = error.replace("[STATUS]", kmlStatus);
                             Logger.error("Google returned KML error: " + msg + " (" + kmlStatus + ")");

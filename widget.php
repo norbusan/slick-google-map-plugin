@@ -21,13 +21,13 @@ if ( !function_exists( 'add_action' ) ) {
 	exit;
 }
 
-class SimpleGoogleMap_Widget extends WP_Widget {
+class SlickGoogleMap_Widget extends WP_Widget {
 
     function __construct() {
         parent::__construct(
-            'simplegooglemap',
-            __('Simple Google Map', SGMP_NAME),
-            array( 'classname' => 'simplegooglemap_widget', 'description' => __("A simple and intuitive, yet elegant fully documented Google map plugin that installs as a widget and a short code. The plugin is packed with useful features. Widget and shortcode enabled. Offers extensive configuration options for marker, controls, size, KML files, location by latitude/longitude, location by address, info window, directions, traffic/bike lanes and more.", SGMP_NAME)),
+            'slickgooglemap',
+            __('Slick Google Map', SGMP_NAME),
+            array( 'classname' => 'slickgooglemap_widget', 'description' => __("A simple and intuitive, yet elegant fully documented Google map plugin that installs as a widget and a short code. The plugin is packed with useful features. Widget and shortcode enabled. Offers extensive configuration options for marker, controls, size, KML files, location by latitude/longitude, location by address, info window, directions, traffic/bike lanes and more.", SGMP_NAME)),
             array( 'width' => 570)
         );
     }

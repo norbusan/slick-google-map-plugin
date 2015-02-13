@@ -39,9 +39,9 @@ var SGMPTinyMCE = tinymce;
         },
         getInfo : function() {
             return {
-                longname : 'Simple Google Map Plugin',
-                author : 'Norbert Preining and Alexander Zagniotov',
-                authorurl : 'http://wordpress.org/plugins/simple-google-map-plugin/',
+                longname : 'Slick Google Map Plugin',
+                author : 'Norbert Preining',
+                authorurl : 'http://wordpress.org/plugins/slick-google-map-plugin/',
                 infourl : 'http://wordpress.org/plugins/simple-google-map-plugin/',
                 version : SGMPGlobal.version
             };

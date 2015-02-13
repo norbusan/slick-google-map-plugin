@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Comprehensive google map plugin\n"
+"Project-Id-Version: slick google map plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-01-21 13:27+0900\n"
 "PO-Revision-Date: 2015-01-21 13:37+0900\n"
@@ -113,8 +113,8 @@ msgid "From here"
 msgstr "Van hier"
 
 #: widget.php:29
-msgid "Simple Google Map"
-msgstr "Simple Google Map"
+msgid "Slick Google Map"
+msgstr "Slick Google Map"
 
 #: widget.php:30
 msgid ""

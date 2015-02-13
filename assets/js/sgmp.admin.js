@@ -546,7 +546,7 @@ function buildShortcode(id, shortcodeId, $) {
 		$(document).ajaxSuccess(
 			function (e, x, o) {
 				if (o != null && o.data != null)	{
-                    var indexOf = o.data.indexOf('id_base=simplegooglemap');
+                    var indexOf = o.data.indexOf('id_base=slickgooglemap');
                     if (indexOf > 0) {
                         initTokenHolders();
                         checkedGPSMarkerOnInit();
