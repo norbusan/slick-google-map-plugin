@@ -5,10 +5,6 @@ JSCSS = assets/js/sgmp.tokeninput.js	\
 
 MINJSCSS = $(patsubst %.js,%.min.js,$(JSCSS))
 
-foo:
-	echo JSCSS    = $(JSCSS)
-	echo MINJSCSS = $(MINJSCSS)
-
 all: README.md $(MINJSCSS)
 
 $(MINJSCSS): %.min.js: %.js
