@@ -1,3 +1,5 @@
+PNAME = slick-google-map
+VERSION = 0.0.1
 
 JSCSS = assets/js/sgmp.tokeninput.js	\
 	assets/js/sgmp.framework.js	\
@@ -15,6 +17,14 @@ assets/js/jquery.tools.tabs.min.js: assets/js/jquery.tools.tabs.js
 
 README.md: readme.txt
 	/usr/local/wp2md/vendor/bin/wp2md convert -i readme.txt -o README.md
+
+# we should check:
+# readme.txt:
+#	Stable tag: 0.0.1
+# slick-google-map.php
+#	Version: 0.0.1
+zip:
+	git archive --format=zip --prefix=${PNAME}/ HEAD > ${PNAME}-${VERSION}.zip
 
 update-pot:
 	xgettext 						\
