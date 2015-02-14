@@ -21,6 +21,6 @@ update-pot:
 		--language=PHP --keyword=__ --keyword=_e	\
 		--sort-by-file					\
 		--copyright-holder="Norbert Preining <norbert@preining.info>" \
-		--package-name=slick-google-map-plugin		\
-		--output=languages/slick-google-map-plugin.pot	\
+		--package-name=slick-google-map		\
+		--output=languages/slick-google-map.pot	\
 		*.php

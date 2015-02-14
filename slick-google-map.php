@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Slick Google Map Plugin
+Plugin Name: Slick Google Map
 Plugin URI: https://github.com/norbusan/slick-google-map-plugin
 Description: A simple and intuitive, yet elegant and fully documented Google map plugin that installs as a widget and a short code. The plugin is packed with useful features. Widget and shortcode enabled. Offers extensive configuration options for markers, over 250 custom marker icons, marker Geo mashup, controls, size, KML files, location by latitude/longitude, location by address, info window, directions, traffic/bike lanes and more. 
 Version: 0.0.1
@@ -31,48 +31,53 @@ if ( !function_exists( 'add_action' ) ) {
 	exit;
 }
 
-if ( is_admin() ) {
-	$sgmp_transient = get_transient( 'sgmp_update_routine' );
-	if ( $sgmp_transient === FALSE ) {
-		set_transient( 'sgmp_update_routine', 'execute only once a week', 60*60*24*7 );
-		//info: options to hide notices
-		$sgmp_defaults = array(
-			'admin_notice' => 'show',
-			'plugin_notice' => 'show',
-			'metabox_notice' => 'show'
-		);
-		add_option('sgmp_options', $sgmp_defaults );
-
-		//info: copy map icons to wp-content/uploads
-		require_once(ABSPATH . 'wp-admin' . DIRECTORY_SEPARATOR . 'includes' . DIRECTORY_SEPARATOR . 'file.php');
-		WP_Filesystem();
-		$cmpg_upload_dir = wp_upload_dir();
-		define ("CMPG_PLUGIN_ICONS_DIR", $cmpg_upload_dir['basedir'] . DIRECTORY_SEPARATOR . "leaflet-maps-marker-icons");
-		define ("CMPG_PLUGIN_DIR", plugin_dir_path(__FILE__));
-		$target = CMPG_PLUGIN_ICONS_DIR;
-		
-		if ( !file_exists(CMPG_PLUGIN_ICONS_DIR . DIRECTORY_SEPARATOR . '1-default.png') )
-		{
-			wp_mkdir_p( $target );
-			$source = CMPG_PLUGIN_DIR . 'assets' . DIRECTORY_SEPARATOR . 'css' . DIRECTORY_SEPARATOR . 'images' . DIRECTORY_SEPARATOR . 'markers' . DIRECTORY_SEPARATOR . 'zip';
-			copy_dir($source, $target, $skip_list = array() );
-			$zipfile = CMPG_PLUGIN_ICONS_DIR . DIRECTORY_SEPARATOR . 'sgmp-markers.zip';
-			unzip_file( $zipfile, $target );
-			//info: fallback for hosts where copying zipfile to LEAFLET_PLUGIN_ICON_DIR doesnt work
-			if ( !file_exists(CMPG_PLUGIN_ICONS_DIR . DIRECTORY_SEPARATOR . '1-default.png') ) {
-				if (class_exists('ZipArchive')) {
-					$zip = new ZipArchive;
-					$res = $zip->open( CMPG_PLUGIN_DIR . 'assets' . DIRECTORY_SEPARATOR . 'css' . DIRECTORY_SEPARATOR . 'images' . DIRECTORY_SEPARATOR . 'markers' . DIRECTORY_SEPARATOR . 'zip' . DIRECTORY_SEPARATOR . 'sgmp-markers.zip');
-					if ($res === TRUE) {
-						$zip->extractTo(CMPG_PLUGIN_ICONS_DIR);
-						$zip->close();
-					}
-				}
-			}
-		}
-
-	}
-}
+/* this seems to be related to the transition routine, disable it
+*
+*
+*if ( is_admin() ) {
+*	$sgmp_transient = get_transient( 'sgmp_update_routine' );
+*	if ( $sgmp_transient === FALSE ) {
+*		set_transient( 'sgmp_update_routine', 'execute only once a week', 60*60*24*7 );
+*		//info: options to hide notices
+*		$sgmp_defaults = array(
+*			'admin_notice' => 'show',
+*			'plugin_notice' => 'show',
+*			'metabox_notice' => 'show'
+*		);
+*		add_option('sgmp_options', $sgmp_defaults );
+*
+*		//info: copy map icons to wp-content/uploads
+*		require_once(ABSPATH . 'wp-admin' . DIRECTORY_SEPARATOR . 'includes' . DIRECTORY_SEPARATOR . 'file.php');
+*		WP_Filesystem();
+*		$cmpg_upload_dir = wp_upload_dir();
+*		define ("CMPG_PLUGIN_ICONS_DIR", $cmpg_upload_dir['basedir'] . DIRECTORY_SEPARATOR . "leaflet-maps-marker-icons");
+*		define ("CMPG_PLUGIN_DIR", plugin_dir_path(__FILE__));
+*		$target = CMPG_PLUGIN_ICONS_DIR;
+*		
+*		if ( !file_exists(CMPG_PLUGIN_ICONS_DIR . DIRECTORY_SEPARATOR . '1-default.png') )
+*		{
+*			wp_mkdir_p( $target );
+*			$source = CMPG_PLUGIN_DIR . 'assets' . DIRECTORY_SEPARATOR . 'css' . DIRECTORY_SEPARATOR . 'images' . DIRECTORY_SEPARATOR . 'markers' . DIRECTORY_SEPARATOR . 'zip';
+*			copy_dir($source, $target, $skip_list = array() );
+*			$zipfile = CMPG_PLUGIN_ICONS_DIR . DIRECTORY_SEPARATOR . 'sgmp-markers.zip';
+*			unzip_file( $zipfile, $target );
+*			//info: fallback for hosts where copying zipfile to LEAFLET_PLUGIN_ICON_DIR doesnt work
+*			if ( !file_exists(CMPG_PLUGIN_ICONS_DIR . DIRECTORY_SEPARATOR . '1-default.png') ) {
+*				if (class_exists('ZipArchive')) {
+*					$zip = new ZipArchive;
+*					$res = $zip->open( CMPG_PLUGIN_DIR . 'assets' . DIRECTORY_SEPARATOR . 'css' . DIRECTORY_SEPARATOR . 'images' . DIRECTORY_SEPARATOR . 'markers' . DIRECTORY_SEPARATOR . 'zip' . DIRECTORY_SEPARATOR . 'sgmp-markers.zip');
+*					if ($res === TRUE) {
+*						$zip->extractTo(CMPG_PLUGIN_ICONS_DIR);
+*						$zip->close();
+*					}
+*				}
+*			}
+*		}
+*
+*	}
+*}
+*
+********************************************************/
 
 if ( !function_exists('sgmp_define_constants') ):
 	function sgmp_define_constants() {
