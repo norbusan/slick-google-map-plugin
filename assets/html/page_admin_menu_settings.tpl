@@ -1,4 +1,4 @@
-<h2>Slick Google Map by Norbert Preining and Alexander Zagniotov</h2>
+<h2>Slick Google Map</h2>
 <div class="tools-tabs">
 	<ul class="tools-tabs-nav hide-if-no-js">
 		<li class="">
