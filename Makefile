@@ -1,5 +1,5 @@
 PNAME = slick-google-map
-VERSION = 0.0.1
+VERSION = 0.1
 
 JSCSS = assets/js/sgmp.tokeninput.js	\
 	assets/js/sgmp.framework.js	\
