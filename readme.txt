@@ -10,7 +10,9 @@ A simple and intuitive,  yet elegant and fully documented Google map plugin that
 
 == Description ==
 
-A simple and intuitive, yet elegant and fully documented Google map plugin that installs as a widget and a short code. No limited plugin editions or limited functionality! This is the full version of this free and premium plugin, which comes packed with useful features: 
+A simple and intuitive, yet elegant and fully documented Google map plugin that installs as a widget and a short code. Packed with useful features (geo mashup, KML support, custom marker icons, …), this plugin is fully free and open source – no need for yearly subscriptions or expensive purchases. The only Google Map plugin you will ever need for your WordPress blog!
+
+Features:
 
 * Intuitive and user friendly interface, which makes it very easy to configure Google map. No complex configuration options. OpenStreetMap imagery available
 * With over 250 amazing custom marker icons to choose from!
