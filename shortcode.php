@@ -131,6 +131,10 @@ if ( !function_exists('sgmp_shortcode_googlemap_handler') ):
         $map_data_properties['panoramiouid'] = sgmp_clean_panoramiouid($map_data_properties['panoramiouid']);
 
         sgmp_set_google_map_language($language);
+
+// That outputs things like the following code
+//
+// <object id='for-mapid-fcf6faf4bdf2c64b1c09b4c8b0d8726e' name='for-mapid-fcf6faf4bdf2c64b1c09b4c8b0d8726e' class='sgmp-data-placeholder sgmp-json-string-placeholder'><param id='json-string-for-mapid-fcf6faf4bdf2c64b1c09b4c8b0d8726e' name='json-string-for-mapid-fcf6faf4bdf2c64b1c09b4c8b0d8726e' value='{"shortcodeid":"13caa3c929","zoom":"12","width":"100%","height":"350","maptype":"roadmap","maptypecontrol":"true","pancontrol":"true","zoomcontrol":"true","scalecontrol":"true","streetviewcontrol":"true","scrollwheelcontrol":"false","showbike":"false","styles":"","enablemarkerclustering":"false","bubbleautopan":"true","distanceunits":"miles","showtraffic":"false","showpanoramio":"false","kml":"","directionhint":"false","mapalign":"center","panoramiouid":"","enablegeolocationmarker":"false","addmarkermashup":"false","language":"default","poweredby":"false","draggable":"true","tiltfourtyfive":"false","addmarkermashupbubble":"false","debug":{"shortcodeid":"13caa3c929","post_id":25,"post_type":"post","state":"cached","since":"1424934050"},"id":"fcf6faf4bdf2c64b1c09b4c8b0d8726e","markerlist":"\u77f3\u5ddd\u770c\u91d1\u6ca2\u5e02{}1-default.png{}Kenrokuen at preining{}36.56132540000001, 136.65620509999997"}' /></object>
         sgmp_map_data_injector(json_encode($map_data_properties), $id);
 
         return sgmp_draw_map_placeholder($id, $width, $height, $mapalign, $directionhint, $poweredby);

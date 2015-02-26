@@ -950,6 +950,7 @@
                     var randomNumber = Math.floor(Math.random() * 111111);
                     randomNumber = randomNumber + "-" + mapDivId;
 
+                    Logger.info("NORB DEBUG buildBubble - customBubbleText (here we could have proper html) = " + markersElement.customBubbleText);
                     var bubble = "<div id='bubble-" + randomNumber + "' style='height: 130px !important; width: 300px !important;' class='bubble-content'>";
                     if ((!markersElement.geoMashup || (markersElement.geoMashup && !markersElement.infoBubbleContainPostLink))) {
                         bubble += "<h4>" + SGMPGlobal.address + ":</h4>";

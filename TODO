@@ -1,0 +1,20 @@
+
+add support for full HTML in descriptions
+=========================================
+
+trace of description text, (far from complete)
+
+
+
+
+
+assets/js/sgmp.framework.js
+		need to trace where it is set/read/parsed
+	google.load
+	google_map_api_callback
+	buildAddressMarkers
+	createGoogleMarkersFromCsvAddressData  (?? or geocoderCallback)
+	instrumentMarker
+	attachEventlistener
+	buildBubble
+	google API
