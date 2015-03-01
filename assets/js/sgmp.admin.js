@@ -19,11 +19,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 var SGMPGlobal = {};
 var jQuerySgmp = jQuery.noConflict();
 
-function sendShortcodeToEditor(container_id) {
+function sendShortcodeToEditor(shortcode_title, shortcode) {
 	(function ($) {
-		var id = '#' + container_id;
-		var code = buildShortcode(id, muid(), $);
-		confirm("SEND TO SHORTCODE of " + code + " END CODE");
+		// var id = '#' + container_id;
+		// var code = buildShortcode(id, muid(), $);
+		confirm("SEND TO SHORTCODE of " + shortcode_title + ": " + shortcode + " END CODE");
 		// NOT IMPLEMENTED !!! send_to_editor('<br />' + code + '<br />');
 	}(jQuerySgmp));
 }

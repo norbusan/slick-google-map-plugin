@@ -301,7 +301,7 @@ if ( !function_exists('sgmp_saved_shortcodes_callback') ):
                         $content .= "&nbsp;&nbsp;&nbsp;";
                         $content .= "<a href='javascript:void(0)' onclick='return confirmShortcodeDelete(\"admin.php?page=sgmp-saved-shortcodes&delete_shortcode=".$shortcode['title']."\", \"".$shortcode['title']."\");'>";
                         $content .= "<img src='".SGMP_PLUGIN_IMAGES."/close.png' border='0' valign='middle' /></a>";
-			$content .= "<input type='button' onclick='return sendShortcodeToEditor(\"google-map-container-metabox\");' 
+			$content .= "<input type='button' onclick='return sendShortcodeToEditor(\"" . $shortcode['title'] . "\", \"" . htmlspecialchars($raw_code) . "\");' 
 			class='button button-highlighted' tabindex='4' value='Send to Editor' id='send-to-editor' name='send-to-editor' />";
                         $content .= "</div>";
                         $content .= "<div class='loaded-db-shortcodes'><b>".stripslashes($raw_code) . "</b></div><br />";
