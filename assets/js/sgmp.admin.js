@@ -23,7 +23,8 @@ function sendShortcodeToEditor(container_id) {
 	(function ($) {
 		var id = '#' + container_id;
 		var code = buildShortcode(id, muid(), $);
-		send_to_editor('<br />' + code + '<br />');
+		confirm("SEND TO SHORTCODE of " + code + " END CODE");
+		// NOT IMPLEMENTED !!! send_to_editor('<br />' + code + '<br />');
 	}(jQuerySgmp));
 }
 
