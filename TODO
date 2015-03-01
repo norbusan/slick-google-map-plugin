@@ -24,6 +24,14 @@ shortcode id naming
 this is completely messed up, the ids have no meaning whatsover for now, and
 are anyway not saved into the database, but genrated only for display, it seems!
 
+Furthermore, in the database the persistent shortcodes are currently 
+saved as:
+	{ "<SHCDTITLE>" : { "title" : "SHCDTITLE", "code" : "[google..." } }
+so we have:
+- double appearance of SHCDTITLE
+- useless shortcodeid
+
+
 
 add support for full HTML in descriptions
 =========================================
