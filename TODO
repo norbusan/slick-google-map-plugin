@@ -1,9 +1,51 @@
 
+editing of shortcodes
+=====================
+
+there seems to be already some functionality, that has never been
+included:
+metabox.php's function sgmp_render_shortcode_builder_form renders
+the template 
+   echo sgmp_render_template_with_values($tokens_with_values, SGMP_HTML_TEMPLATE_MAP_SHORTCODE_BUILDER_METABOX);
+where 
+   SGMP_HTML_TEMPLATE_MAP_SHORTCODE_BUILDER_METABOX = snippet_shortcode_builder_wyswyg_editor_container_div.tpl
+and that file contains:
+   <input type='button' onclick='return sendShortcodeToEditor("google-map-container-metabox");' 
+   class='button button-highlighted' tabindex='4' value='Send to Editor' id='send-to-editor' name='send-to-editor' />
+
+But we don't need all that, what we want is a button SEND TO EDITOR next to each saved shortcode,
+that loads the shortcode and sends it to the editor.
+
+The button is now here ... not well styled, but we need to add the javascript code
+
+
+shortcode id naming
+===================
+this is completely messed up, the ids have no meaning whatsover for now, and
+are anyway not saved into the database, but genrated only for display, it seems!
+
+
 add support for full HTML in descriptions
 =========================================
 
-trace of description text, (far from complete)
+Since we already support MD style links, let us do the following:
+* add an option:
+	htmldescription	defaults to false
+* if option is not set, use the current code path and parse wiki links
+* if option is set:
+  - use htmlspecialchars() to encode the content in the shortcode builder
+  THIS is not enough, we need also get rid of:
+  - vertical bars
+  - newlines, \r
 
+  maybe uuencode the string and use the uuencoded string as doc to safe
+
+  but it makes it hard to edit unless we get editing of saved shortcodes
+
+
+
+
+trace of description text, (far from complete)
 
 
 
