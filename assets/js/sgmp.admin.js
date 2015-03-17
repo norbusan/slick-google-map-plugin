@@ -19,18 +19,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 var SGMPGlobal = {};
 var jQuerySgmp = jQuery.noConflict();
 
-function sendShortcodeToEditor(shortcode_title, shortcode) {
-    (function ($) {
-        // var id = '#' + container_id;
-        // var code = buildShortcode(id, muid(), $);
-        confirm("SEND TO SHORTCODE of " + shortcode_title + ": " + shortcode + " END CODE");
-        // NOT IMPLEMENTED !!! send_to_editor('<br />' + code + '<br />');
-        // since we have to go to a different page, we cannot use post here, but
-        // need to add the code to the url as title=...&code=... and reparse
-        // it in the shortcode builder ... I guess..
-        // but then, all is in one WP instance and there might be other ways
-        // to pass things around and call things?
-    }(jQuerySgmp));
+function sendShortcodeToEditor(url, title) {
+    window.location.href = url;
 }
 
 function confirmShortcodeDelete(url, title) {

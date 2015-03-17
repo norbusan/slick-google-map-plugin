@@ -207,18 +207,35 @@ if ( !function_exists('sgmp_shortcodebuilder_callback') ):
                  wp_die( __('You do not have sufficient permissions to access this page.') );
         }
 
-        // UNFINISHED TODO
-        // no idea if this can be used ...
-        if (isset($_POST['edit-shortcode-code'])) {
-            // trial on editing a short code
-            $bad_entities = array("&quot;", "&#039;", "'");
-            $title = str_replace($bad_entities, "", $_POST['edit-shortcode-title']);
-            $title = preg_replace('/\s+/', ' ', trim($title));
-            $code = str_replace($bad_entities, "", $_POST['edit-shortcode-code']);
+        $settings = array();
+        if (isset($_REQUEST['edit_shortcode']) && trim($_REQUEST['edit_shortcode']) != "")  {
+            echo("<!-- DEBUG: " . $_REQUEST['edit_shortcode'] . " -->\n");
+            // TODO here we need to lead the shortcode, parse it, and pre-fill the forms
+            $title = trim($_REQUEST['edit_shortcode']);
+            $persisted_shortcodes_json = get_option(SGMP_PERSISTED_SHORTCODES);
+            if (isset($persisted_shortcodes_json) && trim($persisted_shortcodes_json) != "") {
+                $persisted_shortcodes = json_decode($persisted_shortcodes_json, true);
+                if (is_array($persisted_shortcodes)) {
+                    echo("<!-- DEBUG persistent shortcodes are:\n");
+                    print_r($persisted_shortcodes);
+                    if (isset($persisted_shortcodes[$title])) {
+                        $code = $persisted_shortcodes[$title]['code'];
+                        // TODO here we could probably use similar code
+                        // from shortcode.php to extract the data from $code
+                        // possibly interesting functions:
+                        //  shortcode_parse_atts
+                        //  do_shortcode
+                        $code = str_replace("[google-map-v3 ", "", $code);
+                        $code = preg_replace('/\]$/', '', $code);
+                        $parsedparams = shortcode_parse_atts( stripslashes($code) );
+                        echo( "\nparsedatts = ");
+                        print_r($settings);
+                        echo( " \n\n settings[zoom] = " . $settings['zoom']);
 
-            $shortcodes = array();
-
-            $shortcodes[$title] = array("title" => $title, "code" => $code);
+                    }
+                    echo("\n-->\n");
+                }
+            }
         }
 
         if (isset($_POST['hidden-shortcode-code']))  {
@@ -247,15 +264,24 @@ if ( !function_exists('sgmp_shortcodebuilder_callback') ):
             //sgmp_show_message("Look for the map icon&nbsp;<img src='".SGMP_PLUGIN_IMAGES."/google_map.png' border='0' valign='middle' />&nbsp;in WordPress page/post WYSIWYG editor or check <a href='admin.php?page=sgmp-saved-shortcodes'>Saved Shortcodes</a> page");
         }
 
-        $settings = array();
         $json_string = file_get_contents(SGMP_PLUGIN_DATA_DIR."/".SGMP_JSON_DATA_HTML_ELEMENTS_FORM_PARAMS);
         $parsed_json = json_decode($json_string, true);
 
+        echo ("<!-- DEBUG settings work\n");
         if (is_array($parsed_json)) {
             foreach ($parsed_json as $data_chunk) {
+                echo(" datachunk: ");
+                print_r($data_chunk);
                 sgmp_set_values_for_html_rendering($settings, $data_chunk);
+                echo("\n settings: ");
+                print_r($settings);
             }
         }
+        echo("-->\n\n");
+        // TODO TODO that does not work as is, we need to set the parameters manually!
+        //if (isset($parsedparams)) {
+        //    sgmp_set_values_for_html_rendering($settings, $parsedparams);
+        //}
 
         $template_values = sgmp_build_template_values($settings);
         $template_values['SHORTCODEBUILDER_FORM_TITLE'] = sgmp_render_template_with_values($template_values, SGMP_HTML_TEMPLATE_SHORTCODE_BUILDER_FORM_TITLE);
@@ -314,7 +340,7 @@ if ( !function_exists('sgmp_saved_shortcodes_callback') ):
                         $content .= "&nbsp;&nbsp;&nbsp;";
                         $content .= "<a href='javascript:void(0)' onclick='return confirmShortcodeDelete(\"admin.php?page=sgmp-saved-shortcodes&delete_shortcode=".$shortcode['title']."\", \"".$shortcode['title']."\");'>";
                         $content .= "<img src='".SGMP_PLUGIN_IMAGES."/close.png' border='0' valign='middle' /></a>";
-            $content .= "<input type='button' onclick='return sendShortcodeToEditor(\"" . $shortcode['title'] . "\", \"" . htmlspecialchars($raw_code) . "\");' 
+            $content .= "<input type='button' onclick='return sendShortcodeToEditor(\"admin.php?page=sgmp-shortcodebuilder&edit_shortcode=" . $shortcode['title'] . "\", \"" . $shortcode['title'] . "\");' 
             class='button button-highlighted' tabindex='4' value='Send to Editor' id='send-to-editor' name='send-to-editor' />";
                         $content .= "</div>";
                         $content .= "<div class='loaded-db-shortcodes'><b>".stripslashes($raw_code) . "</b></div><br />";
