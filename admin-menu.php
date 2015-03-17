@@ -207,6 +207,20 @@ if ( !function_exists('sgmp_shortcodebuilder_callback') ):
                  wp_die( __('You do not have sufficient permissions to access this page.') );
         }
 
+        // UNFINISHED TODO
+        // no idea if this can be used ...
+        if (isset($_POST['edit-shortcode-code'])) {
+            // trial on editing a short code
+            $bad_entities = array("&quot;", "&#039;", "'");
+            $title = str_replace($bad_entities, "", $_POST['edit-shortcode-title']);
+            $title = preg_replace('/\s+/', ' ', trim($title));
+            $code = str_replace($bad_entities, "", $_POST['edit-shortcode-code']);
+
+            $shortcodes = array();
+
+            $shortcodes[$title] = array("title" => $title, "code" => $code);
+        }
+
         if (isset($_POST['hidden-shortcode-code']))  {
 
             $bad_entities = array("&quot;", "&#039;", "'");
