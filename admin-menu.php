@@ -208,16 +208,15 @@ if ( !function_exists('sgmp_shortcodebuilder_callback') ):
         }
 
         $settings = array();
-        if (isset($_REQUEST['edit_shortcode']) && trim($_REQUEST['edit_shortcode']) != "")  {
-            echo("<!-- DEBUG: " . $_REQUEST['edit_shortcode'] . " -->\n");
-            // TODO here we need to lead the shortcode, parse it, and pre-fill the forms
+        if (isset($_REQUEST['edit_shortcode']) && trim($_REQUEST['edit_shortcode']) != "" && !isset($_POST['hidden-shortcode-code']))  {
+            // echo("<!-- DEBUG: " . $_REQUEST['edit_shortcode'] . " -->\n");
             $title = trim($_REQUEST['edit_shortcode']);
             $persisted_shortcodes_json = get_option(SGMP_PERSISTED_SHORTCODES);
             if (isset($persisted_shortcodes_json) && trim($persisted_shortcodes_json) != "") {
                 $persisted_shortcodes = json_decode($persisted_shortcodes_json, true);
                 if (is_array($persisted_shortcodes)) {
-                    echo("<!-- DEBUG persistent shortcodes are:\n");
-                    print_r($persisted_shortcodes);
+                    // echo("<!-- DEBUG persistent shortcodes are:\n");
+                    // print_r($persisted_shortcodes);
                     if (isset($persisted_shortcodes[$title])) {
                         $code = $persisted_shortcodes[$title]['code'];
                         // TODO here we could probably use similar code
@@ -229,12 +228,12 @@ if ( !function_exists('sgmp_shortcodebuilder_callback') ):
                         $code = preg_replace('/\]$/', '', $code);
                         $parsedparams = shortcode_parse_atts( stripslashes($code) );
                         $parsedparams{'shortcodetitle'} = $_REQUEST['edit_shortcode'];
-                        echo( "\nparsedatts = ");
-                        print_r($parsedparams);
-                        echo( " \n\n settings[zoom] = " . $settings['zoom']);
+                        // echo( "\nparsedatts = ");
+                        // print_r($parsedparams);
+                        // echo( " \n\n settings[zoom] = " . $settings['zoom']);
 
                     }
-                    echo("\n-->\n");
+                    // echo("\n-->\n");
                 }
             }
         }
@@ -273,10 +272,6 @@ if ( !function_exists('sgmp_shortcodebuilder_callback') ):
                 sgmp_set_values_for_html_rendering($settings, $data_chunk);
             }
         }
-        echo("\n<!-- DEBUG DEFAULT SETTINGS:\n");
-        print_r($settings);
-        echo("-->\n\n");
-
         for ($idx = 0; $idx < sizeof($settings); $idx++) {
             if ($settings[$idx]{'type'} != 'label') {
                 $token = $settings[$idx]{'token'};
@@ -285,58 +280,22 @@ if ( !function_exists('sgmp_shortcodebuilder_callback') ):
                     $token = 'zoomcontrol';
                 } elseif ($token == 'm_aptypecontrol') {
                     $token = 'maptypecontrol';
+                } elseif ($token == 'addmarkerlisthidden') {
+                    // we need to set the code already
+                    // that also takes care (somewhere, but where?) of showing the items!
+                    if (isset($parsedparams{'addmarkerlist'})) {
+                        $settings[$idx]{'attr'}{'value'} = $parsedparams{'addmarkerlist'};
+                    }
                 }
-                echo ("<!-- DEBUG try to work on token: \n");
-                print_r($token);
-                echo ("-->\n");
                 if (isset($parsedparams{$token})) {
                     $settings[$idx]{'attr'}{'value'} = $parsedparams{$token};
-                    echo ("<!-- DEBUG setting $token to ");
-                    print_r($parsedparams{$token});
-                    echo ("-->\n");
-                    unset($parsedparams{$token});
                 }
             }
         }
-        echo("<!-- DEBUG WARNING WARNING the following fields are not processed:\n");
-        print_r($parsedparams);
-        echo("-->\n");
-        // still not checked is
-        echo("\n<!-- DEBUG FINAL SETTINGS:\n");
-        print_r($settings);
-        echo ("-->\n");
+        // echo("\n<!-- DEBUG FINAL SETTINGS:\n");
+        // print_r($settings);
+        // echo ("-->\n");
 
-        // TODO TODO
-        // we need to save the saved locations into the
-        //   type=list token=addmarkerlist entry of $settings, into {'attr'}{'value'} but it needs to 
-        // look like the following:
-        // we still have to somehow treat the list of add markers:
-        // <ul id="addmarkerlist" class="token-input-list" style="border: 1px solid rgb(201, 201, 201);" name="addmarkerlist"
-        // <li class="token-input-token">
-
-        //  <img border="0" style="float: left; margin-right: 8px;" src="http://localhost/norbert/wordpress/wp-content/plugins/slick-google-map/assets/css/images/markers/1-default.png"></img>
-        //   <p>
-        //     <b>
-        //        Wien
-        //     </b>
-        //   </p>
-        //   <p style="padding-left: 50px">
-        //     <i>
-        //        Wien
-        //     </i>
-        //   </p>
-        //   <span class="token-input-delete-token uiCloseButton"></span>
-        // </li>
-        // </ul>
-        // this is generated in principle by assets/js/sgmp.tokeninput.js as far as I understand
-        // I guess we have to recreate the same structure in PHP (there is a function
-        // sgmp_create_html_custom that does something similar, but is *NOWHERE* used!)
-        // and assign it to
-        //    LIST_ADDMARKERLIST
-        // but I am not sure how far we have to do something with 
-        //    INPUT_ADDMARKERLISTHIDDEN
-        // too. Both are listed in assets/html/snippet_shortcode_builder_html_form.tpl
-        // which is SGMP_HTML_TEMPLATE_MAP_CONFIGURATION_FORM and is rendered as map cnfig page
         
         $template_values = sgmp_build_template_values($settings);
         $template_values['SHORTCODEBUILDER_FORM_TITLE'] = sgmp_render_template_with_values($template_values, SGMP_HTML_TEMPLATE_SHORTCODE_BUILDER_FORM_TITLE);
@@ -429,5 +388,9 @@ function sgmp_parse_menu_html() {
 }
 endif;
 
+### Local Variables:
+### tab-width: 2
+### indent-tabs-mode: nil
+### End:
 # vim:set expandtab tabstop=4 shiftwidth=4 autoindent smartindent: #
 ?>

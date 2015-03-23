@@ -109,6 +109,8 @@ You can use one of the following formats:<br />
 * remove export code to MMpro
 * rename widget
 
+### 0.2dev ###
+* allow for editing of saved shortcodes
 
 ## Upgrade Notice ##
 * currently none
