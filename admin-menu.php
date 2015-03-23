@@ -228,8 +228,9 @@ if ( !function_exists('sgmp_shortcodebuilder_callback') ):
                         $code = str_replace("[google-map-v3 ", "", $code);
                         $code = preg_replace('/\]$/', '', $code);
                         $parsedparams = shortcode_parse_atts( stripslashes($code) );
+                        $parsedparams{'shortcodetitle'} = $_REQUEST['edit_shortcode'];
                         echo( "\nparsedatts = ");
-                        print_r($settings);
+                        print_r($parsedparams);
                         echo( " \n\n settings[zoom] = " . $settings['zoom']);
 
                     }
@@ -267,22 +268,76 @@ if ( !function_exists('sgmp_shortcodebuilder_callback') ):
         $json_string = file_get_contents(SGMP_PLUGIN_DATA_DIR."/".SGMP_JSON_DATA_HTML_ELEMENTS_FORM_PARAMS);
         $parsed_json = json_decode($json_string, true);
 
-        echo ("<!-- DEBUG settings work\n");
         if (is_array($parsed_json)) {
             foreach ($parsed_json as $data_chunk) {
-                echo(" datachunk: ");
-                print_r($data_chunk);
                 sgmp_set_values_for_html_rendering($settings, $data_chunk);
-                echo("\n settings: ");
-                print_r($settings);
             }
         }
+        echo("\n<!-- DEBUG DEFAULT SETTINGS:\n");
+        print_r($settings);
         echo("-->\n\n");
-        // TODO TODO that does not work as is, we need to set the parameters manually!
-        //if (isset($parsedparams)) {
-        //    sgmp_set_values_for_html_rendering($settings, $parsedparams);
-        //}
 
+        for ($idx = 0; $idx < sizeof($settings); $idx++) {
+            if ($settings[$idx]{'type'} != 'label') {
+                $token = $settings[$idx]{'token'};
+                // special cases for strange names:
+                if ($token == 'z_oomcontrol') {
+                    $token = 'zoomcontrol';
+                } elseif ($token == 'm_aptypecontrol') {
+                    $token = 'maptypecontrol';
+                }
+                echo ("<!-- DEBUG try to work on token: \n");
+                print_r($token);
+                echo ("-->\n");
+                if (isset($parsedparams{$token})) {
+                    $settings[$idx]{'attr'}{'value'} = $parsedparams{$token};
+                    echo ("<!-- DEBUG setting $token to ");
+                    print_r($parsedparams{$token});
+                    echo ("-->\n");
+                    unset($parsedparams{$token});
+                }
+            }
+        }
+        echo("<!-- DEBUG WARNING WARNING the following fields are not processed:\n");
+        print_r($parsedparams);
+        echo("-->\n");
+        // still not checked is
+        echo("\n<!-- DEBUG FINAL SETTINGS:\n");
+        print_r($settings);
+        echo ("-->\n");
+
+        // TODO TODO
+        // we need to save the saved locations into the
+        //   type=list token=addmarkerlist entry of $settings, into {'attr'}{'value'} but it needs to 
+        // look like the following:
+        // we still have to somehow treat the list of add markers:
+        // <ul id="addmarkerlist" class="token-input-list" style="border: 1px solid rgb(201, 201, 201);" name="addmarkerlist"
+        // <li class="token-input-token">
+
+        //  <img border="0" style="float: left; margin-right: 8px;" src="http://localhost/norbert/wordpress/wp-content/plugins/slick-google-map/assets/css/images/markers/1-default.png"></img>
+        //   <p>
+        //     <b>
+        //        Wien
+        //     </b>
+        //   </p>
+        //   <p style="padding-left: 50px">
+        //     <i>
+        //        Wien
+        //     </i>
+        //   </p>
+        //   <span class="token-input-delete-token uiCloseButton"></span>
+        // </li>
+        // </ul>
+        // this is generated in principle by assets/js/sgmp.tokeninput.js as far as I understand
+        // I guess we have to recreate the same structure in PHP (there is a function
+        // sgmp_create_html_custom that does something similar, but is *NOWHERE* used!)
+        // and assign it to
+        //    LIST_ADDMARKERLIST
+        // but I am not sure how far we have to do something with 
+        //    INPUT_ADDMARKERLISTHIDDEN
+        // too. Both are listed in assets/html/snippet_shortcode_builder_html_form.tpl
+        // which is SGMP_HTML_TEMPLATE_MAP_CONFIGURATION_FORM and is rendered as map cnfig page
+        
         $template_values = sgmp_build_template_values($settings);
         $template_values['SHORTCODEBUILDER_FORM_TITLE'] = sgmp_render_template_with_values($template_values, SGMP_HTML_TEMPLATE_SHORTCODE_BUILDER_FORM_TITLE);
         $template_values['SHORTCODEBUILDER_HTML_FORM'] = sgmp_render_template_with_values($template_values, SGMP_HTML_TEMPLATE_SHORTCODE_BUILDER_HTML_FORM);
