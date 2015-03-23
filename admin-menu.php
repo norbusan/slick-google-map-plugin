@@ -17,52 +17,51 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 if ( !function_exists( 'add_action' ) ) {
-	echo "Hi there!  I'm just a plugin, not much I can do when called directly.";
-	exit;
+    echo "Hi there!  I'm just a plugin, not much I can do when called directly.";
+    exit;
 }
 
 if ( !function_exists('sgmp_google_map_plugin_menu') ):
-      function sgmp_google_map_plugin_menu() {
-      		$hook = add_menu_page("Slick Google Map", 'Google Map', 'activate_plugins', SGMP_HOOK, 'sgmp_parse_menu_html', SGMP_PLUGIN_IMAGES .'/google_map.png');
-	  		add_action('admin_print_scripts-'.$hook, 'sgmp_google_map_tab_script');
+    function sgmp_google_map_plugin_menu() {
+        $hook = add_menu_page("Slick Google Map", 'Google Map', 'activate_plugins', SGMP_HOOK, 'sgmp_parse_menu_html', SGMP_PLUGIN_IMAGES .'/google_map.png');
+        add_action('admin_print_scripts-'.$hook, 'sgmp_google_map_tab_script');
 
-            $hook = add_submenu_page(SGMP_HOOK, 'Documentation', 'Documentation', 'activate_plugins', SGMP_HOOK);
-            add_action('admin_print_scripts-'.$hook, 'sgmp_google_map_tab_script');
+        $hook = add_submenu_page(SGMP_HOOK, 'Documentation', 'Documentation', 'activate_plugins', SGMP_HOOK);
+        add_action('admin_print_scripts-'.$hook, 'sgmp_google_map_tab_script');
 
-            $hook = add_submenu_page(SGMP_HOOK, 'Shortcode Builder', 'Shortcode Builder', 'activate_plugins', 'sgmp-shortcodebuilder', 'sgmp_shortcodebuilder_callback' );
-			add_action('admin_print_scripts-'.$hook, 'sgmp_google_map_tab_script');
+        $hook = add_submenu_page(SGMP_HOOK, 'Shortcode Builder', 'Shortcode Builder', 'activate_plugins', 'sgmp-shortcodebuilder', 'sgmp_shortcodebuilder_callback' );
+        add_action('admin_print_scripts-'.$hook, 'sgmp_google_map_tab_script');
 
-            $hook = add_submenu_page(SGMP_HOOK, 'Saved Shortcodes', 'Saved Shortcodes', 'activate_plugins', 'sgmp-saved-shortcodes', 'sgmp_saved_shortcodes_callback' );
-            add_action('admin_print_scripts-'.$hook, 'sgmp_google_map_tab_script');
+        $hook = add_submenu_page(SGMP_HOOK, 'Saved Shortcodes', 'Saved Shortcodes', 'activate_plugins', 'sgmp-saved-shortcodes', 'sgmp_saved_shortcodes_callback' );
+        add_action('admin_print_scripts-'.$hook, 'sgmp_google_map_tab_script');
 
-            $hook = add_submenu_page(SGMP_HOOK, 'Settings', 'Settings', 'activate_plugins', 'sgmp-settings', 'sgmp_settings_callback' );
-		   	add_action('admin_print_scripts-'.$hook, 'sgmp_google_map_tab_script');
-
-	  }
+        $hook = add_submenu_page(SGMP_HOOK, 'Settings', 'Settings', 'activate_plugins', 'sgmp-settings', 'sgmp_settings_callback' );
+        add_action('admin_print_scripts-'.$hook, 'sgmp_google_map_tab_script');
+      }
 endif;
 
 if ( !function_exists('sgmp_info_callback') ):
-	function sgmp_info_callback() {
-		include('info.php');
-	}
+    function sgmp_info_callback() {
+        include('info.php');
+    }
 endif;
 
 if ( !function_exists('sgmp_settings_callback') ):
 
-	function sgmp_settings_callback() {
+    function sgmp_settings_callback() {
 
-		if (!current_user_can('activate_plugins'))  {
-             	wp_die( __('You do not have sufficient permissions to access this page.') );
-		}
+        if (!current_user_can('activate_plugins'))  {
+            wp_die( __('You do not have sufficient permissions to access this page.') );
+        }
 
-		if (isset($_POST['sgmp-save-settings']))  {
-		    update_option(SGMP_DB_SETTINGS_BUILDER_LOCATION, $_POST['builder-under-post']);
-		    update_option(SGMP_DB_SETTINGS_CUSTOM_POST_TYPES, $_POST['custom-post-types']);
-		    update_option(SGMP_DB_SETTINGS_TINYMCE_BUTTON, $_POST['tinymce-button-in-editor']);
-		    update_option(SGMP_DB_SETTINGS_PLUGIN_ADMIN_BAR_MENU, $_POST['plugin-admin-bar-menu']);
-		    update_option(SGMP_DB_SETTINGS_MAP_SHOULD_FILL_VIEWPORT, $_POST['map-fill-viewport']);
+        if (isset($_POST['sgmp-save-settings']))  {
+            update_option(SGMP_DB_SETTINGS_BUILDER_LOCATION, $_POST['builder-under-post']);
+            update_option(SGMP_DB_SETTINGS_CUSTOM_POST_TYPES, $_POST['custom-post-types']);
+            update_option(SGMP_DB_SETTINGS_TINYMCE_BUTTON, $_POST['tinymce-button-in-editor']);
+            update_option(SGMP_DB_SETTINGS_PLUGIN_ADMIN_BAR_MENU, $_POST['plugin-admin-bar-menu']);
+            update_option(SGMP_DB_SETTINGS_MAP_SHOULD_FILL_VIEWPORT, $_POST['map-fill-viewport']);
             sgmp_show_message("Settings updated successfully!");
-		}
+        }
 
         $template_values = array();
         $template_values = sgmp_populate_token_builder_under_post($template_values);
@@ -72,7 +71,7 @@ if ( !function_exists('sgmp_settings_callback') ):
         $template_values = sgmp_populate_map_should_fill_viewport($template_values);
         $template_values["SUPPORT_DATA"] = sgmp_generate_support_data();
         echo sgmp_render_template_with_values($template_values, SGMP_HTML_TEMPLATE_PLUGIN_SETTINGS_PAGE);
-	}
+    }
 
 endif;
 
@@ -202,10 +201,41 @@ function sgmp_populate_token_custom_post_types($template_values) {
 
 if ( !function_exists('sgmp_shortcodebuilder_callback') ):
 
-	function sgmp_shortcodebuilder_callback() {
+    function sgmp_shortcodebuilder_callback() {
 
-		if (!current_user_can('activate_plugins'))  {
-             	wp_die( __('You do not have sufficient permissions to access this page.') );
+        if (!current_user_can('activate_plugins'))  {
+                 wp_die( __('You do not have sufficient permissions to access this page.') );
+        }
+
+        $settings = array();
+        if (isset($_REQUEST['edit_shortcode']) && trim($_REQUEST['edit_shortcode']) != "" && !isset($_POST['hidden-shortcode-code']))  {
+            // echo("<!-- DEBUG: " . $_REQUEST['edit_shortcode'] . " -->\n");
+            $title = trim($_REQUEST['edit_shortcode']);
+            $persisted_shortcodes_json = get_option(SGMP_PERSISTED_SHORTCODES);
+            if (isset($persisted_shortcodes_json) && trim($persisted_shortcodes_json) != "") {
+                $persisted_shortcodes = json_decode($persisted_shortcodes_json, true);
+                if (is_array($persisted_shortcodes)) {
+                    // echo("<!-- DEBUG persistent shortcodes are:\n");
+                    // print_r($persisted_shortcodes);
+                    if (isset($persisted_shortcodes[$title])) {
+                        $code = $persisted_shortcodes[$title]['code'];
+                        // TODO here we could probably use similar code
+                        // from shortcode.php to extract the data from $code
+                        // possibly interesting functions:
+                        //  shortcode_parse_atts
+                        //  do_shortcode
+                        $code = str_replace("[google-map-v3 ", "", $code);
+                        $code = preg_replace('/\]$/', '', $code);
+                        $parsedparams = shortcode_parse_atts( stripslashes($code) );
+                        $parsedparams{'shortcodetitle'} = $_REQUEST['edit_shortcode'];
+                        // echo( "\nparsedatts = ");
+                        // print_r($parsedparams);
+                        // echo( " \n\n settings[zoom] = " . $settings['zoom']);
+
+                    }
+                    // echo("\n-->\n");
+                }
+            }
         }
 
         if (isset($_POST['hidden-shortcode-code']))  {
@@ -234,7 +264,6 @@ if ( !function_exists('sgmp_shortcodebuilder_callback') ):
             //sgmp_show_message("Look for the map icon&nbsp;<img src='".SGMP_PLUGIN_IMAGES."/google_map.png' border='0' valign='middle' />&nbsp;in WordPress page/post WYSIWYG editor or check <a href='admin.php?page=sgmp-saved-shortcodes'>Saved Shortcodes</a> page");
         }
 
-        $settings = array();
         $json_string = file_get_contents(SGMP_PLUGIN_DATA_DIR."/".SGMP_JSON_DATA_HTML_ELEMENTS_FORM_PARAMS);
         $parsed_json = json_decode($json_string, true);
 
@@ -243,14 +272,38 @@ if ( !function_exists('sgmp_shortcodebuilder_callback') ):
                 sgmp_set_values_for_html_rendering($settings, $data_chunk);
             }
         }
+        for ($idx = 0; $idx < sizeof($settings); $idx++) {
+            if ($settings[$idx]{'type'} != 'label') {
+                $token = $settings[$idx]{'token'};
+                // special cases for strange names:
+                if ($token == 'z_oomcontrol') {
+                    $token = 'zoomcontrol';
+                } elseif ($token == 'm_aptypecontrol') {
+                    $token = 'maptypecontrol';
+                } elseif ($token == 'addmarkerlisthidden') {
+                    // we need to set the code already
+                    // that also takes care (somewhere, but where?) of showing the items!
+                    if (isset($parsedparams{'addmarkerlist'})) {
+                        $settings[$idx]{'attr'}{'value'} = $parsedparams{'addmarkerlist'};
+                    }
+                }
+                if (isset($parsedparams{$token})) {
+                    $settings[$idx]{'attr'}{'value'} = $parsedparams{$token};
+                }
+            }
+        }
+        // echo("\n<!-- DEBUG FINAL SETTINGS:\n");
+        // print_r($settings);
+        // echo ("-->\n");
 
+        
         $template_values = sgmp_build_template_values($settings);
         $template_values['SHORTCODEBUILDER_FORM_TITLE'] = sgmp_render_template_with_values($template_values, SGMP_HTML_TEMPLATE_SHORTCODE_BUILDER_FORM_TITLE);
         $template_values['SHORTCODEBUILDER_HTML_FORM'] = sgmp_render_template_with_values($template_values, SGMP_HTML_TEMPLATE_SHORTCODE_BUILDER_HTML_FORM);
         $map_configuration_template = sgmp_render_template_with_values($template_values, SGMP_HTML_TEMPLATE_MAP_CONFIGURATION_FORM);
 
-		echo sgmp_render_template_with_values(array("SGMP_PLUGIN_IMAGES" => SGMP_PLUGIN_IMAGES, "SHORTCODEBUILDER_TOKEN" => $map_configuration_template), SGMP_HTML_TEMPLATE_MAP_SHORTCODE_BUILDER_PAGE);
-	}
+        echo sgmp_render_template_with_values(array("SGMP_PLUGIN_IMAGES" => SGMP_PLUGIN_IMAGES, "SHORTCODEBUILDER_TOKEN" => $map_configuration_template), SGMP_HTML_TEMPLATE_MAP_SHORTCODE_BUILDER_PAGE);
+    }
 endif;
 
 if ( !function_exists('sgmp_saved_shortcodes_callback') ):
@@ -295,12 +348,14 @@ if ( !function_exists('sgmp_saved_shortcodes_callback') ):
                         $content .= "<div style='line-height: 15px; min-height: 20px; height: 20px; width: 70%; padding: 0; margin: 0'>";
                         $content .= "Title: <span style='color: green;'><b>".$shortcode['title']."</b></span>";
                         /* broken with WP 4.0
-						$content .= "&nbsp;&nbsp;&nbsp;";
+                        $content .= "&nbsp;&nbsp;&nbsp;";
                         $content .= "<a id='".$shortcode['title']."' href='javascript:void(0)' class='insert-shortcode-to-post'>[insert to post]</a>";
-						*/
+                        */
                         $content .= "&nbsp;&nbsp;&nbsp;";
                         $content .= "<a href='javascript:void(0)' onclick='return confirmShortcodeDelete(\"admin.php?page=sgmp-saved-shortcodes&delete_shortcode=".$shortcode['title']."\", \"".$shortcode['title']."\");'>";
                         $content .= "<img src='".SGMP_PLUGIN_IMAGES."/close.png' border='0' valign='middle' /></a>";
+            $content .= "<input type='button' onclick='return sendShortcodeToEditor(\"admin.php?page=sgmp-shortcodebuilder&edit_shortcode=" . $shortcode['title'] . "\", \"" . $shortcode['title'] . "\");' 
+            class='button button-highlighted' tabindex='4' value='Send to Editor' id='send-to-editor' name='send-to-editor' />";
                         $content .= "</div>";
                         $content .= "<div class='loaded-db-shortcodes'><b>".stripslashes($raw_code) . "</b></div><br />";
                     }
@@ -320,17 +375,22 @@ function sgmp_parse_menu_html() {
                 wp_die( __('You do not have sufficient permissions to access this page.') );
         }
 
-		$json_html_doco_params = sgmp_fetch_json_data_file(SGMP_JSON_DATA_HTML_ELEMENTS_DOCO_PARAMS);
+        $json_html_doco_params = sgmp_fetch_json_data_file(SGMP_JSON_DATA_HTML_ELEMENTS_DOCO_PARAMS);
 
-		if (is_array($json_html_doco_params)) {
+        if (is_array($json_html_doco_params)) {
             $json_html_doco_params['SHORTCODEBUILDER_FORM_TITLE'] = "";
-			$map_configuration_form_template = sgmp_render_template_with_values($json_html_doco_params, SGMP_HTML_TEMPLATE_MAP_CONFIGURATION_FORM);
-			$template_values = array();
-        	$template_values["DOCUMENTATION_TOKEN"] = $map_configuration_form_template;
+            $map_configuration_form_template = sgmp_render_template_with_values($json_html_doco_params, SGMP_HTML_TEMPLATE_MAP_CONFIGURATION_FORM);
+            $template_values = array();
+            $template_values["DOCUMENTATION_TOKEN"] = $map_configuration_form_template;
 
-        	echo sgmp_render_template_with_values($template_values, SGMP_HTML_TEMPLATE_MAP_CONFIG_DOCUMENTATION_PAGE);
-		}
+            echo sgmp_render_template_with_values($template_values, SGMP_HTML_TEMPLATE_MAP_CONFIG_DOCUMENTATION_PAGE);
+        }
 }
 endif;
 
+### Local Variables:
+### tab-width: 2
+### indent-tabs-mode: nil
+### End:
+# vim:set expandtab tabstop=4 shiftwidth=4 autoindent smartindent: #
 ?>

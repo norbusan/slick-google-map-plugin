@@ -66,6 +66,9 @@ if ( !function_exists('sgmp_shortcode_googlemap_handler') ):
             'tiltfourtyfive' => 'false',
             'addmarkermashupbubble' => 'false'), $attr);
 
+        // TODO seems that this should NOT be used anymore!!!
+        // core.trac.wordpress.org/ticket/22400
+        // http://wordpress.stackexchange.com/questions/99603/what-does-extract-shortcode-atts-array-do
         extract($shortcode_attribs);
 
         $id = md5(time().' '.rand());
