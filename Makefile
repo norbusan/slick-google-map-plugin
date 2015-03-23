@@ -1,5 +1,5 @@
 PNAME = slick-google-map
-VERSION = 0.1
+VERSION = 0.2
 
 JSCSS = assets/js/sgmp.tokeninput.js	\
 	assets/js/sgmp.framework.js	\
@@ -34,3 +34,11 @@ update-pot:
 		--package-name=slick-google-map		\
 		--output=languages/slick-google-map.pot	\
 		*.php
+
+# the following checks whether all versions agree!
+version-check:
+	@NV1=`grep "^Stable tag:" readme.txt | awk -F' ' '{print $$NF}'` ;      \
+	NV2=`grep "^Version:" slick-google-map.php | awk -F' ' '{print $$NF}'` ;             \
+	echo "V1 = $$NV1 (readme.txt)\nV2 = $$NV2 (piwigopress.php header)"; \
+	if [ "$$NV1" != "$$NV2" ] ; then exit 1 ; fi
+
