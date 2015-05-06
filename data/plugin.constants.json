@@ -1,9 +1,11 @@
 [ {
     "SGMP_DB_POST_COUNT" : "sgmp_total_published_posts",
     "SGMP_DB_PUBLISHED_POST_MARKERS" : "sgmp_published_post_markers",
-	"SGMP_DB_PUBLISHED_POST_IDS" : "sgmp_published_post_ids",
-	"SGMP_DB_PUBLISHED_PAGE_IDS" : "sgmp_published_page_ids",
-	"SGMP_DB_PURGE_GEOMASHUP_CACHE" : "sgmp_purge_geomashup_cache",
+    "SGMP_DB_PUBLISHED_POST_IDS" : "sgmp_published_post_ids",
+    "SGMP_DB_PUBLISHED_PAGE_IDS" : "sgmp_published_page_ids",
+    "SGMP_DB_PURGE_GEOMASHUP_CACHE" : "sgmp_purge_geomashup_cache",
+    "SGMP_DB_GEOMASHUP_DATA_CACHE" : "sgmp_geomashup_data_cache",
+    "SGMP_DB_GEOMASHUP_DATA_CACHE_TIME" : "sgmp_geomashup_data_cache_time",
 
 
     "SGMP_ALL_MAP_CACHED_CONSTANTS_PREFIX" : "sgmp_cache_",
