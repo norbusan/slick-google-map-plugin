@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Norbert Preining <norbert@preining.info>
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the slick-google-map package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: slick-google-map\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-13 09:36+0900\n"
+"POT-Creation-Date: 2015-11-27 14:41+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: admin-menu.php:55 admin-menu.php:208 admin-menu.php:260 admin-menu.php:320
+#: admin-menu.php:54 admin-menu.php:207 admin-menu.php:313 admin-menu.php:375
 msgid "You do not have sufficient permissions to access this page."
 msgstr ""
 
