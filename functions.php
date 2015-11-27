@@ -1189,9 +1189,11 @@ if ( !function_exists('sgmp_do_serverside_address_validation_2') ):
             # a revalidation
             # We do this only under the condition that the input only
             # contains exactly one comma "," which is used to separate lat/lon
-            list($lat, $lon) = explode(",", $address);
-            $latdms = sgmp_convert_dms_to_decimal($lat);
-            $londms = sgmp_convert_dms_to_decimal($lon);
+            $latlon = preg_split("/[,;]/", $address);
+            if (count($latlon) == 2) {
+                $latdms = sgmp_convert_dms_to_decimal($latlon[0]);
+                $londms = sgmp_convert_dms_to_decimal($latlon[1]);
+            }
             # if we have been successful, use the decimal representation,
             # otherwise force a revalidation
             if (isset($latdms) && isset($londms) && trim($latdms) != "" && trim($londms) != "") {
