@@ -1,9 +1,9 @@
 <?php
 /*
 Plugin Name: Slick Google Map
-Plugin URI: https://github.com/norbusan/slick-google-map-plugin
+Plugin URI: http://www.preining.info/blog/software-projects/slick-google-map-plugin/
 Description: A simple and intuitive, yet elegant and fully documented Google map plugin that installs as a widget and a short code. The plugin is packed with useful features. Widget and shortcode enabled. Offers extensive configuration options for markers, over 250 custom marker icons, marker Geo mashup, controls, size, KML files, location by latitude/longitude, location by address, info window, directions, traffic/bike lanes and more. 
-Version: 0.2
+Version: 0.3
 Author: Norbert Preining
 Author URI: http://www.preining.info/
 License: GPLv2
