@@ -1182,13 +1182,122 @@ if ( !function_exists('sgmp_do_serverside_address_validation_2') ):
             $icon = isset($marker_data_segments[1]) && trim($marker_data_segments[1]) != "" ? SGMP_SEP.$marker_data_segments[1] : SGMP_SEP."1-default.png";
             $description = isset($marker_data_segments[2]) && trim($marker_data_segments[2]) != "" ? SGMP_SEP.$marker_data_segments[2] : SGMP_SEP.SGMP_NO_BUBBLE_DESC;
 
-            if (preg_match('/[^0-9,\s{1,}\-\.+]/', $address) !== 0) {
-                $validated_addresses[] = $address.$icon.$description.SGMP_SEP.SGMP_GEO_VALIDATION_CLIENT_REVALIDATE;
+
+            # we use the general DMS to decimal conversion routine
+            # from below to check for format. If a positional format is
+            # recognized, then we use the decimal form, otherwise we request
+            # a revalidation
+            # We do this only under the condition that the input only
+            # contains exactly one comma "," which is used to separate lat/lon
+            list($lat, $lon) = explode(",", $address);
+            $latdms = sgmp_convert_dms_to_decimal($lat);
+            $londms = sgmp_convert_dms_to_decimal($lon);
+            # if we have been successful, use the decimal representation,
+            # otherwise force a revalidation
+            if (isset($latdms) && isset($londms) && trim($latdms) != "" && trim($londms) != "") {
+                $validated_addresses[] = $address.$icon.$description.SGMP_SEP."$latdms,$londms";
             } else {
-                $validated_addresses[] = $address.$icon.$description.SGMP_SEP.$address;
+                $validated_addresses[] = $address.$icon.$description.SGMP_SEP.SGMP_GEO_VALIDATION_CLIENT_REVALIDATE;
             }
+
+            # old code
+            # if (preg_match('/[^0-9,\s{1,}\-\.+]/', $address) !== 0) {
+            #     $validated_addresses[] = $address.$icon.$description.SGMP_SEP.SGMP_GEO_VALIDATION_CLIENT_REVALIDATE;
+            # } else {
+            #     $validated_addresses[] = $address.$icon.$description.SGMP_SEP.$address;
+            # }
         }
         return implode("|", $validated_addresses);
+    }
+endif;
+
+if ( !function_exists('sgmp_convert_dms_to_decimal') ):
+    function sgmp_convert_dms_to_decimal($latlng) {
+        /*
+         * Convert DMS (degrees / minutes / seconds) to decimal degrees
+         *
+         * adapted from https://github.com/prairiewest/PHPconvertDMSToDecimal
+         * Todd Trann
+         * May 22, 2015
+         *
+         * MIT license
+         */
+        $valid = false;
+        $decimal_degrees = 0;
+        $degrees = 0; $minutes = 0; $seconds = 0; $direction = 1;
+
+        // Determine if there are extra periods in the input string
+        $num_periods = substr_count($latlng, '.');
+        if ($num_periods > 1) {
+            $temp = preg_replace('/\./', ' ', $latlng, $num_periods - 1); // replace all but last period with delimiter
+            $temp = trim(preg_replace('/[a-zA-Z]/','',$temp)); // when counting chunks we only want numbers
+            $chunk_count = count(explode(" ",$temp));
+            if ($chunk_count > 2) {
+                $latlng = preg_replace('/\./', ' ', $latlng, $num_periods - 1); // remove last period
+            } else {
+                $latlng = str_replace("."," ",$latlng); // remove all periods, not enough chunks left by keeping last one
+            }
+        }
+
+        // Remove unneeded characters
+        $latlng = trim($latlng);
+        # NP changes to original version
+        # - add case for °
+        # - replace ° and º with spaces instead
+        $latlng = str_replace("º"," ",$latlng);
+        $latlng = str_replace("°"," ",$latlng);
+        $latlng = str_replace("'","",$latlng);
+        $latlng = str_replace("\"","",$latlng);
+        $latlng = substr($latlng,0,1) . str_replace('-', ' ', substr($latlng,1)); // remove all but first dash
+
+        if ($latlng != "") {
+            // DMS with the direction at the start of the string
+            if (preg_match("/^([nsewNSEW]?)\s*(\d{1,3})\s+(\d{1,3})\s+(\d+\.?\d*)$/",$latlng,$matches)) {
+                $valid = true;
+                $degrees = intval($matches[2]);
+                $minutes = intval($matches[3]);
+                $seconds = floatval($matches[4]);
+                if (strtoupper($matches[1]) == "S" || strtoupper($matches[1]) == "W")
+                    $direction = -1;
+            }
+            // DMS with the direction at the end of the string
+            elseif (preg_match("/^(-?\d{1,3})\s+(\d{1,3})\s+(\d+(?:\.\d+)?)\s*([nsewNSEW]?)$/",$latlng,$matches)) {
+                $valid = true;
+                $degrees = intval($matches[1]);
+                $minutes = intval($matches[2]);
+                $seconds = floatval($matches[3]);
+                if (strtoupper($matches[4]) == "S" || strtoupper($matches[4]) == "W" || $degrees < 0) {
+                    $direction = -1;
+                    $degrees = abs($degrees);
+                }
+            }
+            if ($valid) {
+                // A match was found, do the calculation
+                $decimal_degrees = ($degrees + ($minutes / 60) + ($seconds / 3600)) * $direction;
+            } else {
+                // Decimal degrees with a direction at the start of the string
+                if (preg_match("/^([nsewNSEW]?)\s*(\d+(?:\.\d+)?)$/",$latlng,$matches)) {
+                    $valid = true;
+                    if (strtoupper($matches[1]) == "S" || strtoupper($matches[1]) == "W")
+                        $direction = -1;
+                    $decimal_degrees = $matches[2] * $direction;
+                }
+                // Decimal degrees with a direction at the end of the string
+                elseif (preg_match("/^(-?\d+(?:\.\d+)?)\s*([nsewNSEW]?)$/",$latlng,$matches)) {
+                    $valid = true;
+                    if (strtoupper($matches[2]) == "S" || strtoupper($matches[2]) == "W" || $degrees < 0) {
+                        $direction = -1;
+                        $degrees = abs($degrees);
+                    }
+                    $decimal_degrees = $matches[1] * $direction;
+                }
+            }
+        }
+        if ($valid) {
+            return $decimal_degrees;
+        } else {
+            return "";
+        }
     }
 endif;
 
