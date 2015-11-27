@@ -13,7 +13,6 @@ set -e
 # main config
 PLUGINSLUG="slick-google-map"
 CURRENTDIR=`pwd`
-MAINFILE="slick-google-map.php" # this should be the name of your main php file in the wordpress plugin
 
 # git config
 GITPATH="$CURRENTDIR/" # this file should be in the base of your git repository
@@ -54,11 +53,15 @@ then
 fi
 
 
+
 # version checks have been moved into Makefile
 make version-check
+# we still need NEWVERSION1 for setting!
+
 NEWVERSION1=`grep "^Stable tag:" $GITPATH/readme.txt | awk -F' ' '{print $NF}'`
 
 echo "All versions match. Let's proceed..."
+
 
 if git show-ref --tags --quiet --verify -- "refs/tags/$NEWVERSION1"
 	then 
@@ -73,10 +76,9 @@ cd $GITPATH
 echo "Tagging new version in git"
 git tag -a "$NEWVERSION1" -s -m "Tagging version $NEWVERSION1"
 
-echo "NOT PUSHING TO REMOVE GIT MASTER, DO THIS MANUALLY WITH:"
-#echo "Pushing latest commit to origin, with tags"
-echo git push origin master
-echo git push origin master --tags
+echo "Pushing latest commit to origin, with tags"
+git push 
+git push --tags
 
 tmpd=`mktemp -d`
 echo "Exporting the HEAD of master from git to temp direcory $tmpd"
@@ -98,9 +100,10 @@ rsync -av --delete $tmpd/ $SVNPATH/trunk/
 echo "Changing directory to SVN and committing to trunk"
 cd $SVNPATH/trunk/
 # Add all new files that are not set to be ignored
-svn status | grep -v "^.[ \t]*\..*" | grep "^?" | awk '{print $2}' | xargs svn add
+# don't run when no files are added/removed - this is a GNU extension!
+svn status | grep -v "^.[ \t]*\..*" | grep "^?" | awk '{print $2}' | xargs --no-run-if-empty svn add
 # remove deleted files
-svn status | grep -v "^.[ \t]*\..*" | grep "^!" | awk '{print $2}' | xargs svn rm
+svn status | grep -v "^.[ \t]*\..*" | grep "^!" | awk '{print $2}' | xargs --no-run-if-empty svn rm
 
 echo -e "SVN commit: enter a commit message: \c"
 read COMMITMSG

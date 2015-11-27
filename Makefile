@@ -39,6 +39,6 @@ update-pot:
 version-check:
 	@NV1=`grep "^Stable tag:" readme.txt | awk -F' ' '{print $$NF}'` ;      \
 	NV2=`grep "^Version:" slick-google-map.php | awk -F' ' '{print $$NF}'` ;             \
-	echo "V1 = $$NV1 (readme.txt)\nV2 = $$NV2 (piwigopress.php header)"; \
+	echo "V1 = $$NV1 (readme.txt)\nV2 = $$NV2 (slick-google-map.php header)"; \
 	if [ "$$NV1" != "$$NV2" ] ; then exit 1 ; fi
 
