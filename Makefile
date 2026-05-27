@@ -1,44 +1,52 @@
-PNAME = slick-google-map
-VERSION = 0.2
+PNAME    = slick-google-map
+VERSION  = $(shell awk -F': ' '/^Stable tag:/ {print $$2}' readme.txt | tr -d ' \r')
+HEADERV  = $(shell sed -n 's/^ \* Version: *//p' slick-google-map.php | tr -d ' \r')
 
-JSCSS = assets/js/sgmp.tokeninput.js	\
-	assets/js/sgmp.framework.js	\
-	assets/js/sgmp.admin.js
+.PHONY: all test lint readme version-check zip pot clean
 
-MINJSCSS = $(patsubst %.js,%.min.js,$(JSCSS))
+all: version-check lint test readme
 
-all: README.md $(MINJSCSS)
+test:
+	composer test
 
-$(MINJSCSS): %.min.js: %.js
-	yui-compressor $< -o $@
+lint:
+	@find . -name '*.php' -not -path './vendor/*' -not -path './.git/*' -print0 \
+		| xargs -0 -n1 php -l > /dev/null
+	@echo "PHP lint: OK"
 
-assets/js/jquery.tools.tabs.min.js: assets/js/jquery.tools.tabs.js
+readme:
+	composer readme
 
-
-README.md: readme.txt
-	/usr/local/wp2md/vendor/bin/wp2md convert -i readme.txt -o README.md
-
-# we should check:
-# readme.txt:
-#	Stable tag: 0.0.1
-# slick-google-map.php
-#	Version: 0.0.1
-zip:
-	git archive --format=zip --prefix=${PNAME}/ HEAD > ${PNAME}-${VERSION}.zip
-
-update-pot:
-	xgettext 						\
-		--language=PHP --keyword=__ --keyword=_e	\
-		--sort-by-file					\
-		--copyright-holder="Norbert Preining <norbert@preining.info>" \
-		--package-name=slick-google-map		\
-		--output=languages/slick-google-map.pot	\
-		*.php
-
-# the following checks whether all versions agree!
 version-check:
-	@NV1=`grep "^Stable tag:" readme.txt | awk -F' ' '{print $$NF}'` ;      \
-	NV2=`grep "^Version:" slick-google-map.php | awk -F' ' '{print $$NF}'` ;             \
-	echo "V1 = $$NV1 (readme.txt)\nV2 = $$NV2 (slick-google-map.php header)"; \
-	if [ "$$NV1" != "$$NV2" ] ; then exit 1 ; fi
+	@if [ "$(VERSION)" != "$(HEADERV)" ]; then \
+		echo "Version mismatch: readme.txt Stable tag=$(VERSION), plugin header Version=$(HEADERV)"; \
+		exit 1; \
+	fi
+	@echo "Version: $(VERSION) (readme.txt and plugin header agree)"
 
+zip: version-check
+	git archive --format=zip --prefix=$(PNAME)/ HEAD > $(PNAME)-$(VERSION).zip
+	@echo "Wrote $(PNAME)-$(VERSION).zip"
+
+# Extract translatable strings from PHP and JS into a single .pot file.
+# Requires gettext (xgettext). Run when user-visible strings change.
+pot:
+	@mkdir -p languages
+	xgettext --language=PHP \
+	         --keyword=__ --keyword=_e --keyword=_x --keyword=_n \
+	         --keyword=esc_html__ --keyword=esc_attr__ \
+	         --keyword=esc_html_e --keyword=esc_attr_e \
+	         --from-code=UTF-8 --add-comments=translators: \
+	         --copyright-holder="Norbert Preining <norbert@preining.info>" \
+	         --package-name=$(PNAME) \
+	         --output=languages/$(PNAME).pot \
+	         $$(find . -name '*.php' -not -path './vendor/*' -not -path './tests/*' -not -path './bin/*' -not -path './.git/*')
+	xgettext --language=JavaScript \
+	         --keyword=__ --keyword=_x --keyword=_n \
+	         --from-code=UTF-8 --add-comments=translators: \
+	         --join-existing \
+	         --output=languages/$(PNAME).pot \
+	         $$(find assets -name '*.js' -not -name '*.min.js')
+
+clean:
+	rm -rf .phpunit.cache/ .phpunit.result.cache $(PNAME)-*.zip

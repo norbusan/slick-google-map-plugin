@@ -1,0 +1,7 @@
+.sgmp-map {
+	display: block;
+	max-width: 100%;
+	min-height: 200px;
+	background: #f0f0f0;
+}
+.sgmp-map img { max-width: none; }

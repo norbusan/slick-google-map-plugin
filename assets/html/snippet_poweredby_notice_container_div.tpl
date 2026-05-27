@@ -1,1 +1,0 @@
-<div style="width: DIRECTIONS_WIDTH_TOKENpx !important; display: none" class="powered-by"><a target="_blank" href="http://www.preining.info/blog/software-projects/slick-google-map-plugin/">Powered by Slick Google Map plugin</a></div>

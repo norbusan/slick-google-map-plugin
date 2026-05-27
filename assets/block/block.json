@@ -1,0 +1,44 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "sgmp/map",
+	"title": "Slick Google Map",
+	"category": "embed",
+	"icon": "location-alt",
+	"description": "Embed a Google or Leaflet/OSM map.",
+	"textdomain": "slick-google-map",
+	"editorScript": "file:./editor.js",
+	"attributes": {
+		"lat":      { "type": "string", "default": "" },
+		"lng":      { "type": "string", "default": "" },
+		"zoom":     { "type": "number", "default": 12 },
+		"height":   { "type": "string", "default": "400px" },
+		"title":    { "type": "string", "default": "" },
+		"provider": { "type": "string", "default": "" },
+		"mashup":   { "type": "string", "default": "" },
+		"kml":      { "type": "string", "default": "" },
+		"gpx":      { "type": "string", "default": "" },
+		"markers":  {
+			"type": "array",
+			"default": [],
+			"items": {
+				"type": "object",
+				"properties": {
+					"address": { "type": "string" },
+					"lat":     { "type": "string" },
+					"lng":     { "type": "string" },
+					"title":   { "type": "string" },
+					"icon":    { "type": "string" },
+					"url":     { "type": "string" }
+				}
+			}
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ]
+	},
+	"example": {
+		"attributes": { "lat": "48.2082", "lng": "16.3738", "zoom": 12 }
+	}
+}
